@@ -25,16 +25,18 @@ with open(input_file, 'r', encoding='utf-8') as f:
         temp_chain_list = chain.split(' ')
         chain_list = chain_list + temp_chain_list
 
+sender_list = []
 for chain, tx in zip(chain_list, tx_list):
     # print(chain, tx)
     query.chain = chain
     query.transaction = get_tx_hash(tx)
-    sender = query.find_sender()
     query.rpc_node = query.rpc_node_dist.get(chain, None)
     if query.rpc_node:
         query.w3 = Web3(Web3.HTTPProvider(query.rpc_node))
-    print(sender)
-
+    sender = query.find_sender()
+    sender_list.append(sender)
+print(sender_list)
+print(len(sender_list))
 
 
 

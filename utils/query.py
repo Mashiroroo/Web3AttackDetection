@@ -30,7 +30,7 @@ class Query:
             try:
                 tx = self.w3.eth.get_transaction(self.transaction)
                 from_address = tx['from']
-                print(f'交易 {self.transaction} sender 的地址是: {from_address}')
+                print(f'在{self.chain}上的交易 {self.transaction} from: {from_address}')
                 return from_address
             except Exception as e:
                 print(f"Error: {e}")
