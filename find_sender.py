@@ -1,29 +1,10 @@
-import csv
-
 from web3 import Web3
-
-from utils.query import Query
+from utils.get_fields import get_chain_and_tx
+from utils.processor import Processor
 from utils.get_tx_hash import get_tx_hash
 
-input_file = r'data/utf8Format_standard.csv'
-tx_list = []
-chain_list = []
-query = Query(rpc_node=None, transaction=None, chain=None, config_path='config.yaml')
-
-with open(input_file, 'r', encoding='utf-8') as f:
-    reader = csv.reader(f)
-    # next(reader)
-    rows = list(reader)
-    for row in rows:
-        tx = row[-4]
-        chain = row[2]
-        if '|' in tx:
-            temp_tx_list = tx.split('|')
-            tx_list = tx_list + temp_tx_list
-        else:
-            tx_list.append(tx)
-        temp_chain_list = chain.split(' ')
-        chain_list = chain_list + temp_chain_list
+query = Processor(rpc_node=None, transaction=None, chain=None, config_path='config.yaml')
+chain_list, tx_list = get_chain_and_tx(input_file=r'dataset/utf8Format_standard.csv')
 
 sender_list = []
 for chain, tx in zip(chain_list, tx_list):
@@ -37,6 +18,3 @@ for chain, tx in zip(chain_list, tx_list):
     sender_list.append(sender)
 print(sender_list)
 print(len(sender_list))
-
-
-

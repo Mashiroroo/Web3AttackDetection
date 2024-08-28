@@ -1,8 +1,9 @@
 from web3 import Web3
 import yaml
+import subprocess
 
 
-class Query:
+class Processor:
     def __init__(self, rpc_node, transaction, chain, config_path):
         self.config_path = config_path
         self.config = self.load_config()
@@ -33,8 +34,18 @@ class Query:
         else:
             print("No Web3 instance available.")
 
+    def load_transaction(self, output_dir):
+        output_file = f"{output_dir}/transaction_{self.transaction}.txt"
+        cast_command = f"{self.config['cast_path']} run {self.transaction} --rpc-url {self.rpc_node}"
+        with open(output_file, 'w') as f:
+            subprocess.run(
+                [self.config['git_bash_path'], '-c', cast_command],
+                stdout=f,
+                text=True
+            )
+
 
 if __name__ == '__main__':
-    query = Query(rpc_node=None, transaction='0x93ae5f0a121d5e1aadae052c36bc5ecf2d406d35222f4c6a5d63fef1d6de1081',
-                  chain='BSC')
-    query.find_sender()
+    query = Processor(rpc_node=None, transaction='0x93ae5f0a121d5e1aadae052c36bc5ecf2d406d35222f4c6a5d63fef1d6de1081',
+                      chain='BSC', config_path=r'../config.yaml')
+    # query.find_sender()

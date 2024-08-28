@@ -166,7 +166,9 @@ address_list = ['0x837962b686Fd5A407fb4e5f92E8Be86A230484Bd', '0x837962b686Fd5A4
                 '0x6057A831D43c395198A10cf2d7d6D6A063B1fCe4', '0x1Ae2Dc57399B2f4597366C5Bf4fE39859c006F99']
 
 filtered_addresses = [address for address in address_list if address is not None]
-res = list(tuple(filtered_addresses))
+res = list(set(filtered_addresses))
+print(len(res))
+
 
 output_file = 'hacker_wallet.txt'
 
