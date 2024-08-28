@@ -3,9 +3,9 @@ import logging
 from web3 import Web3
 from utils.get_fields import get_chain_and_tx
 from utils.processor import Processor
+
 from utils.get_tx_hash import get_tx_hash
 
-# 配置日志记录
 logging.basicConfig(level=logging.INFO)
 chain_list, tx_list = get_chain_and_tx(r'./dataset/utf8Format_standard.csv')
 loader = Processor(None, None, None, config_path=r'config.yaml')
