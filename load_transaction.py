@@ -1,7 +1,6 @@
 import time
 import logging
 from web3 import Web3
-from web3.exceptions import TransactionNotFound
 from utils.get_fields import get_chain_and_tx
 from utils.processor import Processor
 from utils.get_tx_hash import get_tx_hash
