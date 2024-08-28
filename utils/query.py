@@ -1,29 +1,25 @@
 from web3 import Web3
+import yaml
 
 
 class Query:
-    def __init__(self, rpc_node, transaction, chain):
-        self.rpc_node_dist = {
-            'ETH': 'https://rpc.ankr.com/eth',
-            'BNB': 'https://rpc.ankr.com/bsc',
-            'BSC': 'https://rpc.ankr.com/bsc',
-            'Polygon': 'https://rpc.ankr.com/polygon',
-            'Arbitrum': 'https://rpc.ankr.com/arbitrum',
-            'Optimism': 'https://rpc.ankr.com/optimism',
-            'Avalanch': 'https://rpc.ankr.com/avalanche',
-            'Base': 'https://rpc.ankr.com/base',
-            'Mantle': 'https://rpc.ankr.com/mantle',
-            'Avalanche': 'https://rpc.ankr.com/avalanche',
-            'TRON': 'https://rpc.ankr.com/http/tron'
-        }
+    def __init__(self, rpc_node, transaction, chain, config_path):
+        self.config_path = config_path
+        self.config = self.load_config()
         self.transaction = transaction
         self.chain = chain
-        self.rpc_node = rpc_node or self.rpc_node_dist.get(chain, None)
+        self.rpc_node = rpc_node or self.config['rpc_nodes'].get(chain, None)
         if self.rpc_node:
             self.w3 = Web3(Web3.HTTPProvider(self.rpc_node))
         else:
             print(f"No valid RPC node found for chain: {chain}")
             self.w3 = None
+
+    def load_config(self):
+        with open(self.config_path, 'r') as file:
+            config = yaml.safe_load(file)
+            print(config)
+        return config
 
     def find_sender(self):
         if self.w3 is not None:

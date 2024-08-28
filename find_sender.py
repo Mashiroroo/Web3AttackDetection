@@ -8,7 +8,7 @@ from utils.get_tx_hash import get_tx_hash
 input_file = r'data/utf8Format_standard.csv'
 tx_list = []
 chain_list = []
-query = Query(rpc_node=None, transaction=None, chain=None)
+query = Query(rpc_node=None, transaction=None, chain=None, config_path='config.yaml')
 
 with open(input_file, 'r', encoding='utf-8') as f:
     reader = csv.reader(f)
@@ -30,7 +30,7 @@ for chain, tx in zip(chain_list, tx_list):
     # print(chain, tx)
     query.chain = chain
     query.transaction = get_tx_hash(tx)
-    query.rpc_node = query.rpc_node_dist.get(chain, None)
+    query.rpc_node = query.config['rpc_nodes'].get(chain, None)
     if query.rpc_node:
         query.w3 = Web3(Web3.HTTPProvider(query.rpc_node))
     sender = query.find_sender()

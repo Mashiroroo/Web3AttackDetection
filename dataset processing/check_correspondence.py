@@ -1,6 +1,6 @@
 import csv
 
-input_file = r'data/utf8Format_standard.csv'
+input_file = r'../data/utf8Format_standard.csv'
 
 t = 'BSC'
 
