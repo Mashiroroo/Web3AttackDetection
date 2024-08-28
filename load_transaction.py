@@ -11,11 +11,10 @@ chain_list, tx_list = get_chain_and_tx(r'./dataset/utf8Format_standard.csv')
 loader = Processor(None, None, None, config_path=r'config.yaml')
 
 
-def load_transaction_with_retry(loader, chain, tx, retries=3, delay=5):
+def load_transaction_with_retry(chain, tx, retries=3, delay=10):
     loader.chain = chain
     loader.transaction = get_tx_hash(tx)
     loader.rpc_node = loader.config['rpc_nodes'].get(chain, None)
-
     if loader.rpc_node:
         loader.w3 = Web3(Web3.HTTPProvider(loader.rpc_node))
 
@@ -24,21 +23,18 @@ def load_transaction_with_retry(loader, chain, tx, retries=3, delay=5):
             loader.load_transaction(output_dir='data')
             logging.info(f"Successfully loaded transaction {tx} on chain {chain}")
             return True
-        # except TransactionNotFound as e:
-        #     logging.warning(f"Transaction not found: {e}. Retry {attempt + 1}/{retries}")
         except Exception as e:
-            print(e)
             logging.error(f"Error loading transaction {tx} on chain {chain}: {e}. Retry {attempt + 1}/{retries}")
-        time.sleep(delay)
+            time.sleep(delay)
     logging.error(f"Failed to load transaction {tx} on chain {chain} after {retries} attempts")
     return False
 
 
 for chain, tx in zip(chain_list, tx_list):
-    success = load_transaction_with_retry(loader, chain, tx)
+    success = load_transaction_with_retry(chain, tx)
     if not success:
         continue  # 记录失败的交易并跳过
-    time.sleep(5)  # 动态调整时间或根据实际情况增加时间
+    time.sleep(5)  # 根据节点情况增加时间
 
 # # 设置最大线程数
 # max_workers = 1

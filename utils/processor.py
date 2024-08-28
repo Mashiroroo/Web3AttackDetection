@@ -47,13 +47,11 @@ class Processor:
                     text=True,
                     timeout=timeout_seconds
                 )
-            print(f"Return Code: {result.returncode}")
+            # print(f"Return Code: {result.returncode}")
             if result.returncode != 0:
-                print(f"Error Output: {result.stderr}")
+                raise RuntimeError(result.stderr)
         except subprocess.TimeoutExpired:
             print(f"Command timed out after {timeout_seconds} seconds.")
-        except Exception as e:
-            print(f"Exception occurred: {e}")
 
 
 if __name__ == '__main__':
