@@ -37,12 +37,23 @@ class Processor:
     def load_transaction(self, output_dir):
         output_file = f"{output_dir}/transaction_{self.transaction}.txt"
         cast_command = f"{self.config['cast_path']} run {self.transaction} --rpc-url {self.rpc_node}"
-        with open(output_file, 'w') as f:
-            subprocess.run(
-                [self.config['git_bash_path'], '-c', cast_command],
-                stdout=f,
-                text=True
-            )
+        timeout_seconds = 30
+        try:
+            with open(output_file, 'w') as f:
+                result = subprocess.run(
+                    [self.config['git_bash_path'], '-c', cast_command],
+                    stdout=f,
+                    stderr=subprocess.PIPE,
+                    text=True,
+                    timeout=timeout_seconds
+                )
+            print(f"Return Code: {result.returncode}")
+            if result.returncode != 0:
+                print(f"Error Output: {result.stderr}")
+        except subprocess.TimeoutExpired:
+            print(f"Command timed out after {timeout_seconds} seconds.")
+        except Exception as e:
+            print(f"Exception occurred: {e}")
 
 
 if __name__ == '__main__':
