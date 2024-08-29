@@ -83,10 +83,8 @@ class Processor:
                         sus_list.append(addr)
                     # 过滤出 addresses_dict_list 中地址属于 sus_list 的项
                     filtered_addresses = [item for item in addresses_dict_list if item['addr'] in sus_list]
-
                     # 按 block 上的 change 从大到小排序
                     sorted_filtered_addresses = sorted(filtered_addresses, key=lambda x: x['change'], reverse=True)
-
                     # 返回 之前金额是几乎是0，同时金额增加的 排序下 top2
                     return sorted_filtered_addresses[:2]
 
