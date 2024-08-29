@@ -10,11 +10,11 @@ class Processor:
         self.transaction = transaction
         self.chain = chain
         self.rpc_node = rpc_node or self.config['rpc_nodes'].get(chain, None)
-        if self.rpc_node:
-            self.w3 = Web3(Web3.HTTPProvider(self.rpc_node))
-        else:
-            print(f"No valid RPC node found for chain: {chain}")
-            self.w3 = None
+        # if self.rpc_node:
+        #     self.w3 = Web3(Web3.HTTPProvider(self.rpc_node))
+        # else:
+        #     print(f"No valid RPC node found for chain: {chain}")
+        #     self.w3 = None
 
     def load_config(self):
         with open(self.config_path, 'r') as file:

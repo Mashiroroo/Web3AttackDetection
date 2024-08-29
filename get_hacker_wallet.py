@@ -17,4 +17,13 @@ for chain, tx in zip(chain_list, tx_list):
     sender = query.find_sender()
     sender_list.append(sender)
 print(sender_list)
-print(len(sender_list))
+
+filtered_addresses = [address for address in sender_list if address is not None]
+# 使用 set 去重
+unique_senders = set(filtered_addresses)
+
+with open('./hacker_wallet/hacker_wallet.txt', 'w') as file:
+    for sender in unique_senders:
+        file.write(f"{sender}\n")
+
+print(f"去重后的发送者数量: {len(unique_senders)}")
