@@ -30,7 +30,7 @@ for root, dirs, files in os.walk(trace_data_dir):
         res = processor.get_ex_balance(address_increase)
         print(res)
         output_file = r'./hacker_wallet/sus_wallet.txt'
-        with open(output_file, 'w') as f:
+        with open(output_file, 'a') as f:
             if res is not None:
                 for item in res:
                     f.write(item['addr'] + '\n')
