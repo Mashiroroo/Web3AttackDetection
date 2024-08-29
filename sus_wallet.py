@@ -29,5 +29,9 @@ for root, dirs, files in os.walk(trace_data_dir):
             processor.w3 = Web3(Web3.HTTPProvider(processor.rpc_node))
         res = processor.get_ex_balance(address_increase)
         print(res)
-        # print(address_increase)
-        print('---------------------------------------------------')
+        output_file = r'./hacker_wallet/sus_wallet.txt'
+        with open(output_file, 'w') as f:
+            if res is not None:
+                for item in res:
+                    f.write(item['addr'] + '\n')
+        print('------------------------------------------------------------------------------------')
