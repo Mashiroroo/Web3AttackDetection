@@ -4,29 +4,28 @@ from web3 import Web3
 from utils.get_fields import get_chain_and_tx
 from utils.processor import Processor
 
-from utils.get_tx_hash import get_tx_hash
-
 logging.basicConfig(level=logging.INFO)
 chain_list, tx_list = get_chain_and_tx(r'./dataset/utf8Format_standard.csv')
-loader = Processor(None, None, None, config_path=r'config.yaml')
+loader = Processor(None, None, None)
 
 
 def load_transaction_with_retry(chain, tx, retries=3, delay=10):
     loader.chain = chain
-    loader.transaction = get_tx_hash(tx)
+    loader.transaction = tx
     loader.rpc_node = loader.config['rpc_nodes'].get(chain, None)
     if loader.rpc_node:
         loader.w3 = Web3(Web3.HTTPProvider(loader.rpc_node))
 
     for attempt in range(retries):
         try:
-            loader.load_transaction(output_dir='tx_trace')
-            logging.info(f"Successfully loaded transaction {tx} on chain {chain}")
+            loader.load_transaction_trace(output_dir='tx_trace')
+            logging.info(f"Successfully loaded transaction {get_tx_hash(tx)} on chain {chain}")
             return True
         except Exception as e:
-            logging.error(f"Error loading transaction {tx} on chain {chain}: {e}. Retry {attempt + 1}/{retries}")
+            logging.error(
+                f"Error loading transaction {get_tx_hash(tx)} on chain {chain}: {e}. Retry {attempt + 1}/{retries}")
             time.sleep(delay)
-    logging.error(f"Failed to load transaction {tx} on chain {chain} after {retries} attempts")
+    logging.error(f"Failed to load transaction {get_tx_hash(tx)} on chain {chain} after {retries} attempts")
     return False
 
 

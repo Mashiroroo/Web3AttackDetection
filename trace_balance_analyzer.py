@@ -5,7 +5,9 @@ from collections import defaultdict
 balance_changes = defaultdict(int)
 
 
-def parse_trace(trace_data):
+def parse_trace(trace_data_file):
+    with open(trace_data_file, 'r', encoding='utf-8') as file:
+        trace_data = file.read()
     balance_changes = defaultdict(int)
 
     transfer_pattern = re.compile(
@@ -43,18 +45,11 @@ def parse_trace(trace_data):
     return balance_changes
 
 
-def read_trace_from_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        trace = file.read()
-    return trace
+if __name__ == '__main__':
+    # 示例文件路径
+    file_path = r'./tx_trace/transaction_0x138daa4cbeaa3db42eefcec26e234fc2c89a4aa17d6b1870fc460b2856fd11a6.txt'
 
+    balance_changes = parse_trace(file_path)
 
-# 示例文件路径
-file_path = r'./data/transaction_0x138daa4cbeaa3db42eefcec26e234fc2c89a4aa17d6b1870fc460b2856fd11a6.txt'
-
-trace = read_trace_from_file(file_path)
-
-balance_changes = parse_trace(trace)
-
-for addr, change in balance_changes.items():
-    print(f"Address: {addr}, Balance Change: {change}")
+    for addr, change in balance_changes.items():
+        print(f"Address: {addr}, Balance Change: {change}")
