@@ -39,7 +39,7 @@ class Processor:
     def load_transaction_trace(self, output_dir):
         output_file = f"{output_dir}/transaction_{self.transaction}.txt"
         cast_command = f"{self.config['cast_path']} run {self.transaction} --rpc-url {self.rpc_node}"
-        timeout_seconds = 30
+        timeout_seconds = 120
         try:
             with open(output_file, 'w') as f:
                 result = subprocess.run(
