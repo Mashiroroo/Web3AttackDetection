@@ -1,7 +1,7 @@
 import csv
 
 input_file = r'../dataset/raw.csv'
-output_file = r'../dataset/utf8Format_standard.csv'
+output_file = r'../temp.csv'
 
 with open(input_file, 'r', encoding='gbk', errors='ignore') as f:
     reader = csv.reader(f)

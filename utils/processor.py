@@ -1,6 +1,4 @@
 import os
-
-import requests
 from web3 import Web3
 import yaml
 import subprocess
