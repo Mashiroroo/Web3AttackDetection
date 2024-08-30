@@ -3,7 +3,7 @@ from utils.get_fields import get_chain_and_tx
 from utils.processor import Processor
 
 processor = Processor(rpc_node=None, transaction=None, chain=None)
-chain_list, tx_list = get_chain_and_tx(input_file=r'dataset/utf8Format_standard.csv')
+chain_list, tx_list = get_chain_and_tx()
 
 sender_list = []
 for chain, tx in zip(chain_list, tx_list):

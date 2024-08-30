@@ -5,7 +5,7 @@ from utils.get_fields import get_chain_and_tx
 from utils.processor import Processor
 
 logging.basicConfig(level=logging.INFO)
-chain_list, tx_list = get_chain_and_tx(r'./dataset/utf8Format_standard.csv')
+chain_list, tx_list = get_chain_and_tx()
 loader = Processor(None, None, None)
 
 
@@ -19,13 +19,13 @@ def load_transaction_with_retry(chain, tx, retries=3, delay=10):
     for attempt in range(retries):
         try:
             loader.load_transaction_trace(output_dir='tx_trace')
-            logging.info(f"Successfully loaded transaction {get_tx_hash(tx)} on chain {chain}")
+            logging.info(f"Successfully loaded transaction {tx} on chain {chain}")
             return True
         except Exception as e:
             logging.error(
-                f"Error loading transaction {get_tx_hash(tx)} on chain {chain}: {e}. Retry {attempt + 1}/{retries}")
+                f"Error loading transaction {tx} on chain {chain}: {e}. Retry {attempt + 1}/{retries}")
             time.sleep(delay)
-    logging.error(f"Failed to load transaction {get_tx_hash(tx)} on chain {chain} after {retries} attempts")
+    logging.error(f"Failed to load transaction {tx} on chain {chain} after {retries} attempts")
     return False
 
 

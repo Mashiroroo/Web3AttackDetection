@@ -23,7 +23,7 @@ class Processor:
     def load_config(self):
         with open(self.config_path, 'r') as file:
             config = yaml.safe_load(file)
-            print(config)
+            print(f"loading config: {config}")
         return config
 
     def find_sender(self):
