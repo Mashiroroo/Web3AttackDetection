@@ -30,8 +30,8 @@ else:
     user_ids = []
 
 # 如果缓存为空或者用户列表有变化，重新获取用户ID
+client = tweepy.Client(bearer_token=bearer_token)
 if not user_ids or len(user_ids) != len(usernames):
-    client = tweepy.Client(bearer_token=bearer_token)
     user_ids = []
     for username in usernames:
         while True:
@@ -63,7 +63,7 @@ class TweetStreamListener(tweepy.StreamingClient):
 
             # 获取推文的详细信息，包括媒体信息
             tweet_details = client.get_tweet(tweet.id, expansions=["attachments.media_keys"], media_fields=["url"])
-            if "media" in tweet_details.includes:
+            if tweet_details.includes.get("media"):
                 for media in tweet_details.includes["media"]:
                     if media["type"] == "photo":
                         img_url = media["url"]
@@ -77,6 +77,15 @@ class TweetStreamListener(tweepy.StreamingClient):
 
 # 初始化监听器
 stream_listener = TweetStreamListener(bearer_token)
+
+# 清除现有的规则以避免重复
+try:
+    existing_rules = stream_listener.get_rules()
+    if existing_rules.data:
+        rule_ids = [rule.id for rule in existing_rules.data]
+        stream_listener.delete_rules(rule_ids)
+except Exception as e:
+    print(f"Error clearing rules: {e}")
 
 # 分批添加规则以避免超过API限制
 try:

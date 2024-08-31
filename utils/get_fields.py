@@ -18,7 +18,7 @@ def get_chain_and_tx():
         # next(reader)
         rows = list(reader)
         for row in rows:
-            tx = row[-4]
+            tx = row[6]
             chain = row[2]
             if '|' in tx:
                 temp_tx_list = tx.split('|')
@@ -43,4 +43,6 @@ def get_chain_by_tx(tx):
 
 
 if __name__ == '__main__':
-    print(get_chain_and_tx())
+    chain_list, tx_list = get_chain_and_tx()
+    print(chain_list)
+    print(tx_list)
