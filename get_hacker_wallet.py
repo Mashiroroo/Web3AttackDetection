@@ -2,7 +2,7 @@ from web3 import Web3
 from utils.get_fields import get_chain_and_tx
 from utils.processor import Processor
 
-processor = Processor(rpc_node=None, transaction=None, chain=None)
+processor = Processor(transaction=None, chain=None)
 chain_list, tx_list = get_chain_and_tx()
 
 sender_list = []

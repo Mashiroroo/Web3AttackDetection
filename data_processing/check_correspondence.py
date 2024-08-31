@@ -1,8 +1,7 @@
 import csv
 
-input_file = r'../dataset/2023.csv'
+input_file = r'../data/all_in_one.csv'
 
-t = 'BSC'
 
 line = 1
 with open(input_file, 'r', encoding='utf-8') as f:

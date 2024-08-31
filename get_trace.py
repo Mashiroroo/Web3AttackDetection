@@ -6,7 +6,7 @@ from utils.processor import Processor
 
 logging.basicConfig(level=logging.INFO)
 chain_list, tx_list = get_chain_and_tx()
-loader = Processor(None, None, None)
+loader = Processor(transaction=None, chain=None)
 
 
 def load_transaction_with_retry(chain, tx, retries=3, delay=10):
@@ -15,6 +15,8 @@ def load_transaction_with_retry(chain, tx, retries=3, delay=10):
     loader.rpc_node = loader.config['rpc_nodes'].get(chain, None)
     if loader.rpc_node:
         loader.w3 = Web3(Web3.HTTPProvider(loader.rpc_node))
+    else:
+        print(f'No RPC node for chain {chain}')
 
     for attempt in range(retries):
         try:

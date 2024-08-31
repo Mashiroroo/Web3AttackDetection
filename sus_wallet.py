@@ -7,7 +7,7 @@ from utils.processor import Processor
 from utils.get_fields import get_chain_by_tx
 
 trace_data_dir = r'./tx_trace'
-processor = Processor(None, None, None)
+processor = Processor(transaction=None, chain=None)
 
 for root, dirs, files in os.walk(trace_data_dir):
     for file in files:
@@ -27,6 +27,8 @@ for root, dirs, files in os.walk(trace_data_dir):
         processor.rpc_node = processor.config['rpc_nodes'].get(chain, None)
         if processor.rpc_node:
             processor.w3 = Web3(Web3.HTTPProvider(processor.rpc_node))
+        else:
+            print(f'No RPC node for chain {chain}')
         res = processor.get_ex_balance(address_increase)
         print(res)
         output_file = r'./hacker_wallet/sus_wallet.txt'
@@ -34,4 +36,4 @@ for root, dirs, files in os.walk(trace_data_dir):
             if res is not None:
                 for item in res:
                     f.write(item['addr'] + '\n')
-        print('------------------------------------------------------------------------------------')
+        print('------------------------------------------------------------------------------------------------------')

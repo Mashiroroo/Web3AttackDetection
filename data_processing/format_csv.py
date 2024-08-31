@@ -1,6 +1,6 @@
 import csv
 
-input_file = r'../dataset/raw.csv'
+input_file = r'../data/raw.csv'
 output_file = r'../temp.csv'
 
 with open(input_file, 'r', encoding='gbk', errors='ignore') as f:

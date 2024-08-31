@@ -9,13 +9,13 @@ def get_tx_hash(tx):
 # 从数据集中读取包含chain 和 包含tx 的两个列表，他们的序列是一一对应的
 def get_chain_and_tx():
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(current_dir, '../dataset/utf8Format_standard.csv')
+    file_path = os.path.join(current_dir, '../data/all_in_one.csv')
     tx_list = []
     chain_list = []
     # print(os.getcwd())
     with open(file_path, 'r', encoding='utf-8') as f:
         reader = csv.reader(f)
-        # next(reader)
+        next(reader)
         rows = list(reader)
         for row in rows:
             tx = row[6]
