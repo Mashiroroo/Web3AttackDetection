@@ -53,8 +53,8 @@ class Processor:
             # print(f"Return Code: {result.returncode}")
             if result.returncode != 0:
                 raise RuntimeError(result.stderr)
-        except subprocess.TimeoutExpired:
-            print(f"Command timed out after {timeout_seconds} seconds.")
+        except Exception as e:
+            print(e)
 
     # 输入balance增加的字典（地址：增加的钱），返回block-1上balance为0的地址的字典
     def get_ex_balance(self, addresses_dict_list):
