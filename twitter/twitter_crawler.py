@@ -9,9 +9,7 @@ import time
 def process_new_tweets(username, new_tweets):
     print(f"Processing {len(new_tweets)} new tweets from {username}:")
     for tweet in new_tweets:
-        # 将新推文保存为JSON格式
-        with open(f'/tweets/{username}_new_tweets.json', 'a', encoding='utf-8') as f:
-            json.dump(tweet, f, ensure_ascii=False, indent=4)
+        print(tweet)
 
 
 async def fetch_tweets():
@@ -23,7 +21,6 @@ async def fetch_tweets():
     client.save_cookies('cookies.json')
     client.load_cookies(path='./cookies.json')
 
-    # 监控的用户
     users_to_monitor = ['CyversAlerts', 'Cyvers_', 'BlockSecTeam', 'Phalcon_xyz', 'SlowMist_Team', 'PeckShieldAlert',
                         'peckshield', 'shiro050822']
     last_tweet_id = {}  # 用于存储每个用户的最新推文ID
