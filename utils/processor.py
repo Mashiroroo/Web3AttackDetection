@@ -47,6 +47,7 @@ class Processor:
                     stdout=f,
                     stderr=subprocess.PIPE,
                     text=True,
+                    encoding='utf-8',
                     timeout=timeout_seconds
                 )
             # print(f"Return Code: {result.returncode}")
