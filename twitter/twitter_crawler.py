@@ -62,7 +62,7 @@ async def fetch_tweets():
                 print(f"No new tweets from {username}")
 
         # 等待 10分钟与30分钟间一随机时间
-        wait_time = random.randint(600, 1800)
+        wait_time = random.randint(1800, 3600)
         time.sleep(wait_time)
 
 
