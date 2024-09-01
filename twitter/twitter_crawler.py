@@ -7,20 +7,21 @@ import time
 
 # 定义一个函数来处理新推文
 def process_new_tweets(username, new_tweets):
-    # 在这里处理新推文，例如打印或执行其他操作
     print(f"Processing {len(new_tweets)} new tweets from {username}:")
     for tweet in new_tweets:
-        print(tweet['full_text'])
+        # 将新推文保存为JSON格式
+        with open(f'/tweets/{username}_new_tweets.json', 'a', encoding='utf-8') as f:
+            json.dump(tweet, f, ensure_ascii=False, indent=4)
 
 
 async def fetch_tweets():
     client = Client('en-US', timeout=120, proxy='http://127.0.0.1:7890')
 
     # 登录
-    await client.login(auth_info_1='shiro050822', auth_info_2='liuxingchen@xayytech.com', password='73942lxc')
+    await client.login(auth_info_1='shiro050822', auth_info_2='liuxingchen@xayytech.com', password='041129abc')
 
-    # 加载cookies
-    client.load_cookies(path='cookies.json')
+    client.save_cookies('cookies.json')
+    client.load_cookies(path='./cookies.json')
 
     # 监控的用户
     users_to_monitor = ['CyversAlerts', 'Cyvers_', 'BlockSecTeam', 'Phalcon_xyz', 'SlowMist_Team', 'PeckShieldAlert',
@@ -53,15 +54,11 @@ async def fetch_tweets():
                 # 调用处理新推文的函数
                 process_new_tweets(username, new_tweets)
 
-                # 将新推文保存为JSON格式
-                with open(f'/data/{username}_new_tweets.json', 'w', encoding='utf-8') as f:
-                    json.dump(new_tweets, f, ensure_ascii=False, indent=4)
-
                 print(f"Fetched {len(new_tweets)} new tweets from {username}")
             else:
                 print(f"No new tweets from {username}")
 
-        # 等待 10分钟与30分钟间一随机时间
+        # 等待 30分钟与60分钟间一随机时间
         wait_time = random.randint(1800, 3600)
         time.sleep(wait_time)
 
