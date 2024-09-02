@@ -40,21 +40,18 @@ class Processor:
         output_file = f"{output_dir}/transaction_{self.transaction}.txt"
         cast_command = f"{self.config['cast_path']} run {self.transaction} --rpc-url {self.rpc_node}"
         timeout_seconds = 120
-        try:
-            with open(output_file, 'w') as f:
-                result = subprocess.run(
-                    [self.config['git_bash_path'], '-c', cast_command],
-                    stdout=f,
-                    stderr=subprocess.PIPE,
-                    text=True,
-                    encoding='utf-8',
-                    timeout=timeout_seconds
-                )
-            # print(f"Return Code: {result.returncode}")
-            if result.returncode != 0:
-                raise RuntimeError(result.stderr)
-        except Exception as e:
-            print(e)
+        with open(output_file, 'w') as f:
+            result = subprocess.run(
+                [self.config['git_bash_path'], '-c', cast_command],
+                stdout=f,
+                stderr=subprocess.PIPE,
+                text=True,
+                encoding='utf-8',
+                timeout=timeout_seconds
+            )
+        # print(f"Return Code: {result.returncode}")
+        if result.returncode != 0:
+            raise RuntimeError(result.stderr)
 
     # 输入balance增加的字典（地址：增加的钱），返回block-1上balance为0的地址的字典
     def get_ex_balance(self, addresses_dict_list):
