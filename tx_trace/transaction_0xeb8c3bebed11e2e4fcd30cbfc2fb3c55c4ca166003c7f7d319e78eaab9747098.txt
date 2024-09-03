@@ -1,0 +1,670 @@
+Executing previous transactions from the block.
+Traces:
+  [3551006] → new <unknown>@0x3EbD3D86f810B141F9b2e9B15961FC66364b54f3
+    ├─ [1615326] → new <unknown>@0x7797A99a2e91646aBdc9DC30e838A149CCB3013B
+    │   └─ ← [Return] 7404 bytes of code
+    ├─ [105672] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::transferFrom(0x6703741e913a30D6604481472b6d81F3da45e6E8, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 1060)
+    │   ├─ emit Approval(param0: 0x6703741e913a30D6604481472b6d81F3da45e6E8, param1: 0x0000000000000000000000000000000000000000, param2: 1060)
+    │   ├─ emit Transfer(param0: 0x6703741e913a30D6604481472b6d81F3da45e6E8, param1: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param2: 1060)
+    │   └─ ← [Stop] 
+    ├─ [1769653] 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B::apein()
+    │   ├─ [1587757] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::flashLoan(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 5200000000000000000 [5.2e18], 0x00)
+    │   │   ├─ [9616] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   ├─ [2376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   ├─ [1570243] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::flashLoan(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 5200000000000000000 [5.2e18], 0x00) [delegatecall]
+    │   │   │   ├─ [3282] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::isLocked(4) [staticcall]
+    │   │   │   │   ├─ [2539] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::isLocked(4) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   ├─ emit Transfer(param0: 0x0000000000000000000000000000000000000000, param1: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param2: 5200000000000000000 [5.2e18])
+    │   │   │   ├─ [1527377] 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B::onFlashLoan(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 5200000000000000000 [5.2e18], 0, 0x00)
+    │   │   │   │   ├─ [2635] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   ├─ [642] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [delegatecall]
+    │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000482a1c7300080000
+    │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000482a1c7300080000
+    │   │   │   │   ├─ [771845] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::redeem(5, [])
+    │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   ├─ [769822] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::redeem(5, []) [delegatecall]
+    │   │   │   │   │   │   ├─ [3282] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::isLocked(2) [staticcall]
+    │   │   │   │   │   │   │   ├─ [2539] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::isLocked(2) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0x0000000000000000000000000000000000000000, param2: 5000000000000000000 [5e18])
+    │   │   │   │   │   │   ├─ [10119] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::vaultFees(2) [staticcall]
+    │   │   │   │   │   │   │   ├─ [9358] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::vaultFees(2) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000016345785d8a0000000000000000000000000000000000000000000000000000008e1bc9bf04000000000000000000000000000000000000000000000000000000d529ae9e860000000000000000000000000000000000000000000000000000008e1bc9bf04000000000000000000000000000000000000000000000000000000d529ae9e860000
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000016345785d8a0000000000000000000000000000000000000000000000000000008e1bc9bf04000000000000000000000000000000000000000000000000000000d529ae9e860000000000000000000000000000000000000000000000000000008e1bc9bf04000000000000000000000000000000000000000000000000000000d529ae9e860000
+    │   │   │   │   │   │   ├─ [3341] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::excludedFromFees(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   │   ├─ [2598] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::excludedFromFees(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [3190] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::feeDistributor() [staticcall]
+    │   │   │   │   │   │   │   ├─ [2450] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::feeDistributor() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param2: 200000000000000000 [2e17])
+    │   │   │   │   │   │   ├─ [223820] 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86::distribute(2)
+    │   │   │   │   │   │   │   ├─ [216492] 0x0Ef372B6A2F8bb030760261b858b6C50e92d1680::distribute(2) [delegatecall]
+    │   │   │   │   │   │   │   │   ├─ [5430] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::vault(2) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [4687] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::vault(2) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000ea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000ea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5
+    │   │   │   │   │   │   │   │   ├─ [2635] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [642] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000002c68af0bb140000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000002c68af0bb140000
+    │   │   │   │   │   │   │   │   ├─ [2635] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [642] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000002c68af0bb140000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000002c68af0bb140000
+    │   │   │   │   │   │   │   │   ├─ [4826] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x688c3E4658B5367da06fd629E41879beaB538E37) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [2830] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x688c3E4658B5367da06fd629E41879beaB538E37) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   ├─ [24589] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::approve(0x688c3E4658B5367da06fd629E41879beaB538E37, 160000000000000000 [1.6e17])
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [22593] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::approve(0x688c3E4658B5367da06fd629E41879beaB538E37, 160000000000000000 [1.6e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0x688c3E4658B5367da06fd629E41879beaB538E37, param2: 160000000000000000 [1.6e17])
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   ├─ [54674] 0x688c3E4658B5367da06fd629E41879beaB538E37::receiveRewards(2, 160000000000000000 [1.6e17])
+    │   │   │   │   │   │   │   │   │   ├─ [47428] 0xf7A232044C586D658f826e1932c37CAD770B0687::receiveRewards(2, 160000000000000000 [1.6e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [1190] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::feeDistributor() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [450] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::feeDistributor() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   │   │   │   │   ├─ [4993] 0xAA3549596ac6E7D9f9aB6fa809C2b7dc01f91cD9::totalSupply() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [2327] 0xC90B47731f9cD4db0df36c1e59FdcA1fe9806475::totalSupply() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000006af638a24994bf8b
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000006af638a24994bf8b
+    │   │   │   │   │   │   │   │   │   │   ├─ [12743] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::transferFrom(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0xAA3549596ac6E7D9f9aB6fa809C2b7dc01f91cD9, 160000000000000000 [1.6e17])
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [10744] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::transferFrom(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0xAA3549596ac6E7D9f9aB6fa809C2b7dc01f91cD9, 160000000000000000 [1.6e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0xAA3549596ac6E7D9f9aB6fa809C2b7dc01f91cD9, param2: 160000000000000000 [1.6e17])
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0x688c3E4658B5367da06fd629E41879beaB538E37, param2: 0)
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   │   ├─ [9608] 0xAA3549596ac6E7D9f9aB6fa809C2b7dc01f91cD9::distributeRewards(160000000000000000 [1.6e17])
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [9439] 0xC90B47731f9cD4db0df36c1e59FdcA1fe9806475::distributeRewards(160000000000000000 [1.6e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit RewardsDistributed(param0: 0x688c3E4658B5367da06fd629E41879beaB538E37, param1: 160000000000000000 [1.6e17])
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 
+    │   │   │   │   │   │   │   │   │   │   ├─ emit FeesReceived(: 2, : 160000000000000000 [1.6e17])
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   ├─ [2826] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x688c3E4658B5367da06fd629E41879beaB538E37) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [830] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x688c3E4658B5367da06fd629E41879beaB538E37) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   ├─ [2635] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [642] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000008e1bc9bf040000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000008e1bc9bf040000
+    │   │   │   │   │   │   │   │   ├─ [4826] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [2830] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   ├─ [24589] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::approve(0x3E135c3E981fAe3383A5aE0d323860a34CfAB893, 40000000000000000 [4e16])
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [22593] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::approve(0x3E135c3E981fAe3383A5aE0d323860a34CfAB893, 40000000000000000 [4e16]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893, param2: 40000000000000000 [4e16])
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   ├─ [47173] 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893::receiveRewards(2, 40000000000000000 [4e16])
+    │   │   │   │   │   │   │   │   │   ├─ [39839] 0x72012Ada1d0a9E9CBa22b3F13f3BC52b57ED6B66::receiveRewards(2, 40000000000000000 [4e16]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [1190] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::feeDistributor() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [450] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::feeDistributor() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   │   │   │   │   ├─ [1430] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::vault(2) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [687] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::vault(2) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000ea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000ea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5
+    │   │   │   │   │   │   │   │   │   │   ├─ [10938] 0x3451b4c5395B3fE06aA629af73207cfaA28131D1::totalSupply() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [3237] 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ [2409] 0x72012Ada1d0a9E9CBa22b3F13f3BC52b57ED6B66::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000addc3e67a500f7037cd622b11df291a6351bfb64
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000addc3e67a500f7037cd622b11df291a6351bfb64
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [2327] 0xaddc3E67A500F7037cd622b11Df291A6351bfb64::totalSupply() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000b6c1f1f72d3ca92
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000b6c1f1f72d3ca92
+    │   │   │   │   │   │   │   │   │   │   ├─ [12743] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::transferFrom(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3451b4c5395B3fE06aA629af73207cfaA28131D1, 40000000000000000 [4e16])
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [10744] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::transferFrom(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3451b4c5395B3fE06aA629af73207cfaA28131D1, 40000000000000000 [4e16]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0x3451b4c5395B3fE06aA629af73207cfaA28131D1, param2: 40000000000000000 [4e16])
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893, param2: 0)
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   │   ├─ emit FeesReceived(: 2, : 40000000000000000 [4e16])
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   ├─ [2826] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [830] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   │   └─ ← [Return] 
+    │   │   │   │   │   │   ├─ [92231] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 8167)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param1: 0x0000000000000000000000000000000000000000, param2: 8167)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param1: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param2: 8167)
+    │   │   │   │   │   │   │   ├─ [1322] 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 8167, 0x)
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ [87431] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 9915)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param1: 0x0000000000000000000000000000000000000000, param2: 9915)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param1: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param2: 9915)
+    │   │   │   │   │   │   │   ├─ [1322] 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 9915, 0x)
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ [77731] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 8214)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param1: 0x0000000000000000000000000000000000000000, param2: 8214)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param1: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param2: 8214)
+    │   │   │   │   │   │   │   ├─ [1322] 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 8214, 0x)
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ [68031] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 4755)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param1: 0x0000000000000000000000000000000000000000, param2: 4755)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param1: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param2: 4755)
+    │   │   │   │   │   │   │   ├─ [1322] 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 4755, 0x)
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ [68031] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 7594)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param1: 0x0000000000000000000000000000000000000000, param2: 7594)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param1: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param2: 7594)
+    │   │   │   │   │   │   │   ├─ [1322] 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 7594, 0x)
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ emit Redeemed(: [8167, 9915, 8214, 4755, 7594], : [], : 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B)
+    │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000050000000000000000000000000000000000000000000000000000000000001fe700000000000000000000000000000000000000000000000000000000000026bb000000000000000000000000000000000000000000000000000000000000201600000000000000000000000000000000000000000000000000000000000012930000000000000000000000000000000000000000000000000000000000001daa
+    │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000050000000000000000000000000000000000000000000000000000000000001fe700000000000000000000000000000000000000000000000000000000000026bb000000000000000000000000000000000000000000000000000000000000201600000000000000000000000000000000000000000000000000000000000012930000000000000000000000000000000000000000000000000000000000001daa
+    │   │   │   │   ├─ [2635] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   ├─ [642] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [delegatecall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   ├─ [262812] 0x025C6da5BD0e6A5dd1350fda9e3B6a614B205a1F::claimTokens()
+    │   │   │   │   │   ├─ [3034] 0x60E4d786628Fea6478F785A6d7e704777c86a7c6::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000424
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 1) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000001fe7
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 2) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000000000000000026bb
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 3) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000002016
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 4) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000001293
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 5) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000001daa
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1034] 0x60E4d786628Fea6478F785A6d7e704777c86a7c6::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   ├─ [2947] 0xba30E5F9Bb24caa003E9f2f0497Ad287FDF95623::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000424
+    │   │   │   │   │   ├─  emit topic 0: 0x592993b07849bd4ab51c2de371aea3db52156da6f3cd8476b1c585454b254f48
+    │   │   │   │   │   │        topic 1: 0x0000000000000000000000000000000000000000000000000000000000000424
+    │   │   │   │   │   │        topic 2: 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │           data: 0x00000000000000000000000000000000000000000000000000000000623325da
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 1) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000001fe7
+    │   │   │   │   │   ├─  emit topic 0: 0x592993b07849bd4ab51c2de371aea3db52156da6f3cd8476b1c585454b254f48
+    │   │   │   │   │   │        topic 1: 0x0000000000000000000000000000000000000000000000000000000000001fe7
+    │   │   │   │   │   │        topic 2: 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │           data: 0x00000000000000000000000000000000000000000000000000000000623325da
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 2) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000000000000000026bb
+    │   │   │   │   │   ├─  emit topic 0: 0x592993b07849bd4ab51c2de371aea3db52156da6f3cd8476b1c585454b254f48
+    │   │   │   │   │   │        topic 1: 0x00000000000000000000000000000000000000000000000000000000000026bb
+    │   │   │   │   │   │        topic 2: 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │           data: 0x00000000000000000000000000000000000000000000000000000000623325da
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 3) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000002016
+    │   │   │   │   │   ├─  emit topic 0: 0x592993b07849bd4ab51c2de371aea3db52156da6f3cd8476b1c585454b254f48
+    │   │   │   │   │   │        topic 1: 0x0000000000000000000000000000000000000000000000000000000000002016
+    │   │   │   │   │   │        topic 2: 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │           data: 0x00000000000000000000000000000000000000000000000000000000623325da
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 4) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000001293
+    │   │   │   │   │   ├─  emit topic 0: 0x592993b07849bd4ab51c2de371aea3db52156da6f3cd8476b1c585454b254f48
+    │   │   │   │   │   │        topic 1: 0x0000000000000000000000000000000000000000000000000000000000001293
+    │   │   │   │   │   │        topic 2: 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │           data: 0x00000000000000000000000000000000000000000000000000000000623325da
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1017] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::tokenOfOwnerByIndex(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 5) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000001daa
+    │   │   │   │   │   ├─  emit topic 0: 0x592993b07849bd4ab51c2de371aea3db52156da6f3cd8476b1c585454b254f48
+    │   │   │   │   │   │        topic 1: 0x0000000000000000000000000000000000000000000000000000000000001daa
+    │   │   │   │   │   │        topic 2: 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │           data: 0x00000000000000000000000000000000000000000000000000000000623325da
+    │   │   │   │   │   ├─ [708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   ├─ [1034] 0x60E4d786628Fea6478F785A6d7e704777c86a7c6::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   ├─ [947] 0xba30E5F9Bb24caa003E9f2f0497Ad287FDF95623::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   ├─ [29953] 0x4d224452801ACEd8B2F0aebE155379bb5D594381::transfer(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 60564000000000000000000 [6.056e22])
+    │   │   │   │   │   │   ├─ emit Transfer(param0: 0x025C6da5BD0e6A5dd1350fda9e3B6a614B205a1F, param1: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param2: 60564000000000000000000 [6.056e22])
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   ├─  emit topic 0: 0xc804beabd6deef69632486188d3b1a0fc6837d20bf348393884d368fa5bf10cd
+    │   │   │   │   │   │        topic 1: 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │        topic 2: 0x000000000000000000000000000000000000000000000cd32e573e2cf5d00000
+    │   │   │   │   │   │           data: 0x00000000000000000000000000000000000000000000000000000000623325da
+    │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   ├─ [24708] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::setApprovalForAll(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, true)
+    │   │   │   │   │   ├─ emit ApprovalForAll(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param2: true)
+    │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   ├─ [420983] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::mint([7594, 4755, 9915, 8214, 8167, 1060], [])
+    │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   ├─ [418945] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::mint([7594, 4755, 9915, 8214, 8167, 1060], []) [delegatecall]
+    │   │   │   │   │   │   ├─ [3282] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::isLocked(1) [staticcall]
+    │   │   │   │   │   │   │   ├─ [2539] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::isLocked(1) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [1184] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::ownerOf(7594) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │   ├─ [18026] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 7594)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0x0000000000000000000000000000000000000000, param2: 7594)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param2: 7594)
+    │   │   │   │   │   │   │   ├─ [2992] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 7594, 0x)
+    │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   ├─ [984] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 7594, 0x) [delegatecall]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ [1184] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::ownerOf(4755) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │   ├─ [18026] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 4755)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0x0000000000000000000000000000000000000000, param2: 4755)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param2: 4755)
+    │   │   │   │   │   │   │   ├─ [2992] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 4755, 0x)
+    │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   ├─ [984] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 4755, 0x) [delegatecall]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ [1184] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::ownerOf(9915) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │   ├─ [18026] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 9915)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0x0000000000000000000000000000000000000000, param2: 9915)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param2: 9915)
+    │   │   │   │   │   │   │   ├─ [2992] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 9915, 0x)
+    │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   ├─ [984] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 9915, 0x) [delegatecall]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ [1184] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::ownerOf(8214) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │   ├─ [18026] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 8214)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0x0000000000000000000000000000000000000000, param2: 8214)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param2: 8214)
+    │   │   │   │   │   │   │   ├─ [2992] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 8214, 0x)
+    │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   ├─ [984] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 8214, 0x) [delegatecall]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ [1184] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::ownerOf(8167) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │   ├─ [18026] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 8167)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0x0000000000000000000000000000000000000000, param2: 8167)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param2: 8167)
+    │   │   │   │   │   │   │   ├─ [2992] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 8167, 0x)
+    │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   ├─ [984] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 8167, 0x) [delegatecall]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ [1184] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::ownerOf(1060) [staticcall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000007797a99a2e91646abdc9dc30e838a149ccb3013b
+    │   │   │   │   │   │   ├─ [64726] 0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D::safeTransferFrom(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 1060)
+    │   │   │   │   │   │   │   ├─ emit Approval(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0x0000000000000000000000000000000000000000, param2: 1060)
+    │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param2: 1060)
+    │   │   │   │   │   │   │   ├─ [2992] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 1060, 0x)
+    │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   ├─ [984] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::onERC721Received(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 1060, 0x) [delegatecall]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x150b7a0200000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   ├─ emit Transfer(param0: 0x0000000000000000000000000000000000000000, param1: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param2: 6000000000000000000 [6e18])
+    │   │   │   │   │   │   ├─ [2119] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::vaultFees(2) [staticcall]
+    │   │   │   │   │   │   │   ├─ [1358] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::vaultFees(2) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000016345785d8a0000000000000000000000000000000000000000000000000000008e1bc9bf04000000000000000000000000000000000000000000000000000000d529ae9e860000000000000000000000000000000000000000000000000000008e1bc9bf04000000000000000000000000000000000000000000000000000000d529ae9e860000
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000000016345785d8a0000000000000000000000000000000000000000000000000000008e1bc9bf04000000000000000000000000000000000000000000000000000000d529ae9e860000000000000000000000000000000000000000000000000000008e1bc9bf04000000000000000000000000000000000000000000000000000000d529ae9e860000
+    │   │   │   │   │   │   ├─ [1341] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::excludedFromFees(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   │   │   │   │   │   ├─ [598] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::excludedFromFees(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   ├─ [1190] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::feeDistributor() [staticcall]
+    │   │   │   │   │   │   │   ├─ [450] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::feeDistributor() [delegatecall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param2: 600000000000000000 [6e17])
+    │   │   │   │   │   │   ├─ [126920] 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86::distribute(2)
+    │   │   │   │   │   │   │   ├─ [126092] 0x0Ef372B6A2F8bb030760261b858b6C50e92d1680::distribute(2) [delegatecall]
+    │   │   │   │   │   │   │   │   ├─ [1430] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::vault(2) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [687] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::vault(2) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000ea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000ea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5
+    │   │   │   │   │   │   │   │   ├─ [2635] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [642] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000853a0d2313c0000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000853a0d2313c0000
+    │   │   │   │   │   │   │   │   ├─ [2635] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [642] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000853a0d2313c0000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000853a0d2313c0000
+    │   │   │   │   │   │   │   │   ├─ [2826] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x688c3E4658B5367da06fd629E41879beaB538E37) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [830] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x688c3E4658B5367da06fd629E41879beaB538E37) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   ├─ [24589] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::approve(0x688c3E4658B5367da06fd629E41879beaB538E37, 480000000000000000 [4.8e17])
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [22593] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::approve(0x688c3E4658B5367da06fd629E41879beaB538E37, 480000000000000000 [4.8e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0x688c3E4658B5367da06fd629E41879beaB538E37, param2: 480000000000000000 [4.8e17])
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   ├─ [19574] 0x688c3E4658B5367da06fd629E41879beaB538E37::receiveRewards(2, 480000000000000000 [4.8e17])
+    │   │   │   │   │   │   │   │   │   ├─ [18828] 0xf7A232044C586D658f826e1932c37CAD770B0687::receiveRewards(2, 480000000000000000 [4.8e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [1190] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::feeDistributor() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [450] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::feeDistributor() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   │   │   │   │   ├─ [493] 0xAA3549596ac6E7D9f9aB6fa809C2b7dc01f91cD9::totalSupply() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [327] 0xC90B47731f9cD4db0df36c1e59FdcA1fe9806475::totalSupply() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000006af638a24994bf8b
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000006af638a24994bf8b
+    │   │   │   │   │   │   │   │   │   │   ├─ [7943] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::transferFrom(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0xAA3549596ac6E7D9f9aB6fa809C2b7dc01f91cD9, 480000000000000000 [4.8e17])
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [5944] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::transferFrom(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0xAA3549596ac6E7D9f9aB6fa809C2b7dc01f91cD9, 480000000000000000 [4.8e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0xAA3549596ac6E7D9f9aB6fa809C2b7dc01f91cD9, param2: 480000000000000000 [4.8e17])
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0x688c3E4658B5367da06fd629E41879beaB538E37, param2: 0)
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   │   ├─ [2808] 0xAA3549596ac6E7D9f9aB6fa809C2b7dc01f91cD9::distributeRewards(480000000000000000 [4.8e17])
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [2639] 0xC90B47731f9cD4db0df36c1e59FdcA1fe9806475::distributeRewards(480000000000000000 [4.8e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit RewardsDistributed(param0: 0x688c3E4658B5367da06fd629E41879beaB538E37, param1: 480000000000000000 [4.8e17])
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 
+    │   │   │   │   │   │   │   │   │   │   ├─ emit FeesReceived(: 2, : 480000000000000000 [4.8e17])
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   ├─ [2826] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x688c3E4658B5367da06fd629E41879beaB538E37) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [830] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x688c3E4658B5367da06fd629E41879beaB538E37) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   ├─ [2635] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [642] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::balanceOf(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000001aa535d3d0c0000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000001aa535d3d0c0000
+    │   │   │   │   │   │   │   │   ├─ [2826] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [830] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   ├─ [24589] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::approve(0x3E135c3E981fAe3383A5aE0d323860a34CfAB893, 120000000000000000 [1.2e17])
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [22593] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::approve(0x3E135c3E981fAe3383A5aE0d323860a34CfAB893, 120000000000000000 [1.2e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893, param2: 120000000000000000 [1.2e17])
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   ├─ [20873] 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893::receiveRewards(2, 120000000000000000 [1.2e17])
+    │   │   │   │   │   │   │   │   │   ├─ [20039] 0x72012Ada1d0a9E9CBa22b3F13f3BC52b57ED6B66::receiveRewards(2, 120000000000000000 [1.2e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [1190] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::feeDistributor() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [450] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::feeDistributor() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000fd8a76dc204e461db5da4f38687adc9cc5ae4a86
+    │   │   │   │   │   │   │   │   │   │   ├─ [1430] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::vault(2) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [687] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::vault(2) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000ea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000ea47b64e1bfccb773a0420247c0aa0a3c1d2e5c5
+    │   │   │   │   │   │   │   │   │   │   ├─ [2438] 0x3451b4c5395B3fE06aA629af73207cfaA28131D1::totalSupply() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [1237] 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ [409] 0x72012Ada1d0a9E9CBa22b3F13f3BC52b57ED6B66::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000addc3e67a500f7037cd622b11df291a6351bfb64
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000000000000000000000addc3e67a500f7037cd622b11df291a6351bfb64
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [327] 0xaddc3E67A500F7037cd622b11Df291A6351bfb64::totalSupply() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000b6c1f1f72d3ca92
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000b6c1f1f72d3ca92
+    │   │   │   │   │   │   │   │   │   │   ├─ [7943] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::transferFrom(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3451b4c5395B3fE06aA629af73207cfaA28131D1, 120000000000000000 [1.2e17])
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [5944] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::transferFrom(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3451b4c5395B3fE06aA629af73207cfaA28131D1, 120000000000000000 [1.2e17]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit Transfer(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0x3451b4c5395B3fE06aA629af73207cfaA28131D1, param2: 120000000000000000 [1.2e17])
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit Approval(param0: 0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, param1: 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893, param2: 0)
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   │   ├─ emit FeesReceived(: 2, : 120000000000000000 [1.2e17])
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   │   │   │   ├─ [2826] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893) [staticcall]
+    │   │   │   │   │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   │   │   │   ├─ [830] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::allowance(0xFD8a76dC204e461dB5da4f38687AdC9CC5ae4a86, 0x3E135c3E981fAe3383A5aE0d323860a34CfAB893) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    │   │   │   │   │   │   │   │   └─ ← [Stop] 
+    │   │   │   │   │   │   │   └─ ← [Return] 
+    │   │   │   │   │   │   ├─ emit Minted(: [7594, 4755, 9915, 8214, 8167, 1060], : [], : 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B)
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000006
+    │   │   │   │   ├─ [26689] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::approve(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   ├─ [24693] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::approve(0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]) [delegatecall]
+    │   │   │   │   │   │   ├─ emit Approval(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param2: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   │   └─ ← [Return] 0x439148f0bbc682ca079e46d6e2c2f0c1e3b820f1a291b069d8882abf8cf18dd9
+    │   │   │   ├─ emit Approval(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, param2: 115792089237316195423570985008687907853269984665640564039452384007913129639935 [1.157e77])
+    │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0x0000000000000000000000000000000000000000, param2: 5200000000000000000 [5.2e18])
+    │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   ├─ [26689] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::approve(0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   ├─ [24693] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::approve(0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]) [delegatecall]
+    │   │   │   ├─ emit Approval(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F, param2: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+    │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   ├─ [2635] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   ├─ [642] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [delegatecall]
+    │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000002c68af0bb140000
+    │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000002c68af0bb140000
+    │   ├─ [110464] 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F::swapExactTokensForETH(200000000000000000 [2e17], 5000000000000000000 [5e18], [0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5, 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2], 0x6703741e913a30D6604481472b6d81F3da45e6E8, 1647519194 [1.647e9])
+    │   │   ├─ [2517] 0xD829dE54877e0b66A2c3890b702fa5Df2245203E::getReserves() [staticcall]
+    │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000004ae2126eec36cbe1d0000000000000000000000000000000000000000000000000e1d40d0d842be83000000000000000000000000000000000000000000000000000000006232dc18
+    │   │   ├─ [12743] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::transferFrom(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xD829dE54877e0b66A2c3890b702fa5Df2245203E, 200000000000000000 [2e17])
+    │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   ├─ [10744] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::transferFrom(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, 0xD829dE54877e0b66A2c3890b702fa5Df2245203E, 200000000000000000 [2e17]) [delegatecall]
+    │   │   │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xD829dE54877e0b66A2c3890b702fa5Df2245203E, param2: 200000000000000000 [2e17])
+    │   │   │   │   ├─ emit Approval(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F, param2: 115792089237316195423570985008687907853269984665640564039457384007913129639935 [1.157e77])
+    │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   ├─ [67327] 0xD829dE54877e0b66A2c3890b702fa5Df2245203E::swap(14152001071896103886 [1.415e19], 0, 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F, 0x)
+    │   │   │   ├─ [29962] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2::transfer(0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F, 14152001071896103886 [1.415e19])
+    │   │   │   │   ├─ emit Transfer(param0: 0xD829dE54877e0b66A2c3890b702fa5Df2245203E, param1: 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F, param2: 14152001071896103886 [1.415e19])
+    │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   │   ├─ [534] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2::balanceOf(0xD829dE54877e0b66A2c3890b702fa5Df2245203E) [staticcall]
+    │   │   │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000003e9bb24f0341c324f
+    │   │   │   ├─ [2635] 0xEA47B64e1BFCCb773A0420247C0aa0a3C1D2E5C5::balanceOf(0xD829dE54877e0b66A2c3890b702fa5Df2245203E) [staticcall]
+    │   │   │   │   ├─ [1116] 0xBE86f647b167567525cCAAfcd6f881F1Ee558216::childImplementation() [staticcall]
+    │   │   │   │   │   ├─ [376] 0x612447E8d0BDB922059cE048bb5a7CeF9e017812::childImplementation() [delegatecall]
+    │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000073d2ff81fcea9832fc9ee90521abde1150f6b52a
+    │   │   │   │   ├─ [642] 0x73D2ff81fceA9832FC9Ee90521ABde1150F6b52a::balanceOf(0xD829dE54877e0b66A2c3890b702fa5Df2245203E) [delegatecall]
+    │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000010e3cbc19356be83
+    │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000010e3cbc19356be83
+    │   │   │   ├─ emit Sync(: 72182328066695770703 [7.218e19], : 1217040356581228163 [1.217e18])
+    │   │   │   ├─ emit Swap(param0: 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F, param1: 0, param2: 200000000000000000 [2e17], param3: 14152001071896103886 [1.415e19], param4: 0, param5: 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F)
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ [9235] 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2::withdraw(14152001071896103886 [1.415e19])
+    │   │   │   ├─ [95] 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F::fallback{value: 14152001071896103886}()
+    │   │   │   │   └─ ← [Stop] 
+    │   │   │   ├─ emit Withdrawal(param0: 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F, param1: 14152001071896103886 [1.415e19])
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ [0] 0x6703741e913a30D6604481472b6d81F3da45e6E8::fallback{value: 14152001071896103886}()
+    │   │   │   └─ ← [Stop] 
+    │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000002c68af0bb140000000000000000000000000000000000000000000000000000c46601fe8f508bce
+    │   ├─ [562] 0x4d224452801ACEd8B2F0aebE155379bb5D594381::balanceOf(0x7797A99a2e91646aBdc9DC30e838A149CCB3013B) [staticcall]
+    │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000cd32e573e2cf5d00000
+    │   ├─ [25153] 0x4d224452801ACEd8B2F0aebE155379bb5D594381::transfer(0x6703741e913a30D6604481472b6d81F3da45e6E8, 60564000000000000000000 [6.056e22])
+    │   │   ├─ emit Transfer(param0: 0x7797A99a2e91646aBdc9DC30e838A149CCB3013B, param1: 0x6703741e913a30D6604481472b6d81F3da45e6E8, param2: 60564000000000000000000 [6.056e22])
+    │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   ├─ [562] 0x4d224452801ACEd8B2F0aebE155379bb5D594381::balanceOf(0x6703741e913a30D6604481472b6d81F3da45e6E8) [staticcall]
+    │   │   └─ ← [Return] 0x000000000000000000000000000000000000000000000cd32e573e2cf5d00000
+    │   └─ ← [Stop] 
+    └─ ← [OutOfGas] custom error 60806040:5234801561001057600080fd5b506004…ccdbf5012264736f6c63430008070033 (1244 bytes)
+
+
+Transaction failed.
+Gas used: 4003010

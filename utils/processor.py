@@ -24,6 +24,7 @@ class Processor:
             print(f"loading config: {config}")
         return config
 
+    # 使用下面方法，不是基于eth的链将无法加载
     def find_sender(self):
         if self.w3 is not None:
             try:
@@ -31,6 +32,19 @@ class Processor:
                 from_address = tx['from']
                 print(f'在{self.chain}上的交易 {self.transaction} from: {from_address}')
                 return from_address
+            except Exception as e:
+                print(f"Error: {e}")
+        else:
+            print("No Web3 instance available.")
+
+    # 使用下面方法，不是基于eth的链将无法加载
+    def find_contract(self):
+        if self.w3 is not None:
+            try:
+                tx = self.w3.eth.get_transaction(self.transaction)
+                contract_address = tx['to']
+                print(f'在{self.chain}上的交易 {self.transaction} to: {contract_address}')
+                return contract_address
             except Exception as e:
                 print(f"Error: {e}")
         else:
