@@ -1,0 +1,14 @@
+Executing previous transactions from the block.
+Traces:
+  [63446] 0x4760fE83d891daE46950c98Af3f795e1c2D637A3::call()
+    ├─ [2465] 0x88503F48e437a377f1aC2892cBB3a5b09949faDd::token0() [staticcall]
+    │   └─ ← [Return] 0x000000000000000000000000bb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c
+    ├─ [2397] 0x88503F48e437a377f1aC2892cBB3a5b09949faDd::token1() [staticcall]
+    │   └─ ← [Return] 0x000000000000000000000000c342774492b54ce5f8ac662113ed702fc1b34972
+    ├─ [32981] 0xc342774492b54ce5F8ac662113ED702Fc1b34972::mint(10000000000000000000000000000000000 [1e34], "ta", 0xde01f6Ce91E4F4bdB94BB934d30647d72182320F, [], [], [])
+    │   └─ ← [OutOfGas] EvmError: OutOfGas
+    └─ ← [Revert] EvmError: Revert
+
+
+Transaction failed.
+Gas used: 84510

@@ -1,15 +1,17 @@
 import asyncio
 import random
+import ssl
+import httpx
 from twikit import Client
+from parse_tweets import parse_tweets
 import json
 import time
 
 
-# 定义一个函数来处理新推文
-def process_new_tweets(username, new_tweets):
-    print(f"Processing {len(new_tweets)} new tweets from {username}:")
+# 处理新推文
+def process_new_tweets(new_tweets):
     for tweet in new_tweets:
-        print(tweet)
+        parse_tweets(tweet)
 
 
 async def fetch_tweets():
@@ -23,41 +25,48 @@ async def fetch_tweets():
 
     users_to_monitor = ['CyversAlerts', 'Cyvers_', 'BlockSecTeam', 'Phalcon_xyz', 'SlowMist_Team', 'PeckShieldAlert',
                         'peckshield', 'shiro050822']
-    last_tweet_id = {}  # 用于存储每个用户的最新推文ID
+    last_tweet_id = {}  # 存储每个用户的最新推文ID
 
     # 初始化时，获取每个用户的最新一条推文ID
     for username in users_to_monitor:
-        user = await client.get_user_by_screen_name(username)
-        tweets = await user.get_tweets('Tweets', count=1)  # 仅获取最新1条推文
-        if tweets:
-            last_tweet_id[username] = tweets[0].id  # 记录最新推文ID
+        try:
+            user = await client.get_user_by_screen_name(username)
+            tweets = await user.get_tweets('Tweets', count=1)  # 仅获取最新1条推文
+            if tweets:
+                last_tweet_id[username] = tweets[0].id  # 记录最新推文ID
+        except (httpx.ReadTimeout, ssl.SSLWantReadError) as e:
+            print(f"Error initializing tweets for {username}: {e}")
 
     while True:
         for username in users_to_monitor:
-            user = await client.get_user_by_screen_name(username)
-            tweets = await user.get_tweets('Tweets', count=5)  # 获取最新5条推文
+            try:
+                user = await client.get_user_by_screen_name(username)
+                tweets = await user.get_tweets('Tweets', count=5)  # 获取最新5条推文
 
-            new_tweets = []
-            for tweet in reversed(tweets):  # 反向遍历推文，从最旧到最新
-                if username not in last_tweet_id or tweet.id > last_tweet_id[username]:
-                    new_tweets.append({
-                        'created_at': tweet.created_at,
-                        'favorite_count': tweet.favorite_count,
-                        'full_text': tweet.full_text,
-                    })
-                    last_tweet_id[username] = tweet.id
+                new_tweets = []
+                for tweet in reversed(tweets):  # 反向遍历推文，从最旧到最新
+                    if username not in last_tweet_id or tweet.id > last_tweet_id[username]:
+                        new_tweets.append({
+                            'created_at': tweet.created_at,
+                            'favorite_count': tweet.favorite_count,
+                            'full_text': tweet.full_text,
+                        })
+                        last_tweet_id[username] = tweet.id
 
-            if new_tweets:
-                # 调用处理新推文的函数
-                process_new_tweets(username, new_tweets)
+                if new_tweets:
+                    # 调用处理新推文的函数
+                    process_new_tweets(username, new_tweets)
 
-                print(f"Fetched {len(new_tweets)} new tweets from {username}")
-            else:
-                print(f"No new tweets from {username}")
+                    print(f"Fetched {len(new_tweets)} new tweets from {username}")
+                else:
+                    print(f"No new tweets from {username}")
+
+            except (httpx.ReadTimeout, ssl.SSLWantReadError) as e:
+                print(f"Error fetching tweets for {username}: {e}")
 
         # 等待 30分钟与60分钟间一随机时间
         wait_time = random.randint(1800, 3600)
-        time.sleep(wait_time)
+        await asyncio.sleep(wait_time)
 
 
 # 在事件循环中运行fetch_tweets函数
