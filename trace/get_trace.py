@@ -46,7 +46,7 @@ def load_transaction_with_retry(chain, tx, retries=2, delay=10):
 
     for attempt in range(retries):
         try:
-            loader.load_transaction_trace(output_dir='../tx_trace')
+            loader.load_transaction_trace(output_dir='../trace_data')
             logging.info(f"Successfully loaded transaction {tx} on chain {chain}")
             log_processed_transaction(chain, tx)  # 记录已处理交易
             return True

@@ -6,7 +6,7 @@ from trace.trace_balance_analyzer import parse_trace
 from utils.processor import Processor
 from utils.get_fields import get_chain_by_tx
 
-trace_data_dir = r'../tx_trace'
+trace_data_dir = r'../trace_data'
 processor = Processor(transaction=None, chain=None)
 
 for root, dirs, files in os.walk(trace_data_dir):
