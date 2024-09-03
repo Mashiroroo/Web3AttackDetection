@@ -6,6 +6,26 @@ from utils.processor import Processor
 processor = Processor(transaction=None, chain=None)
 
 
+def main():
+    chain_list, tx_list = get_chain_and_tx()
+    for chain, tx in zip(chain_list, tx_list):
+        processor.chain = chain
+        processor.transaction = tx
+        processor.rpc_node = processor.config['rpc_nodes'].get(chain, None)
+        if processor.rpc_node:
+            processor.w3 = Web3(Web3.HTTPProvider(processor.rpc_node))
+        contract_address = get_contract_address(chain, tx)
+        if contract_address is not None:
+            # 获取字节码
+            bytecode = get_contract_bytecode(contract_address)
+            # 提取选择器
+            selectors = get_selectors_from_bytecode(bytecode)
+            # 打印选择器
+            for selector in selectors:
+                print(selector)
+            print('---------------------------------------------------------------------------------------------------')
+
+
 def get_contract_address(chain, tx):
     contract_address = processor.find_contract()
     return contract_address
@@ -35,26 +55,6 @@ def get_selectors_from_bytecode(bytecode):
             i += 1
 
     return selectors
-
-
-def main():
-    chain_list, tx_list = get_chain_and_tx()
-    for chain, tx in zip(chain_list, tx_list):
-        processor.chain = chain
-        processor.transaction = tx
-        processor.rpc_node = processor.config['rpc_nodes'].get(chain, None)
-        if processor.rpc_node:
-            processor.w3 = Web3(Web3.HTTPProvider(processor.rpc_node))
-        contract_address = get_contract_address(chain, tx)
-        if contract_address is not None:
-            # 获取字节码
-            bytecode = get_contract_bytecode(contract_address)
-            # 提取选择器
-            selectors = get_selectors_from_bytecode(bytecode)
-            # 打印选择器
-            for selector in selectors:
-                print(selector)
-            print('--------------------------------------------------------------------------')
 
 
 if __name__ == "__main__":

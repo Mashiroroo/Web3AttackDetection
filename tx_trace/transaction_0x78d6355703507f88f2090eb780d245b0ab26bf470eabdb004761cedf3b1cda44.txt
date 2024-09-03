@@ -1,0 +1,13 @@
+Executing previous transactions from the block.
+Traces:
+  [52244] 0xC2704dEc22e552164Dee240B20b840Ea379B878E::finalize()
+    ├─ [49581] 0x76a4E9C8F54Fe236b42Ce9A84B4C33a6216834e4::finalize() [delegatecall]
+    │   ├─ [0] 0x3dDD8b6D092df917473680d6C41F80F708C45395::fallback{value: 864800446078485000000}()
+    │   │   └─ ← [Stop] 
+    │   ├─ emit AuctionFinalized()
+    │   └─ ← [Stop] 
+    └─ ← [Return] 
+
+
+Transaction successfully executed.
+Gas used: 73308

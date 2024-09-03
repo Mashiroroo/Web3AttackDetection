@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 
 from volcenginesdkarkruntime import Ark
 
@@ -33,20 +32,30 @@ def parse_tweets(tweet):
     print(result)
     output_file = 'parsed_tweets.json'
 
+    # 将tweet和解析结果组合成字典
+    entry = {
+        "original_tweet": tweet,
+        "parsed_result": json.loads(result)
+    }
+
+    # 如果文件存在，加载现有数据
     if os.path.exists(output_file):
-        # 如果文件存在，加载现有数据
         with open(output_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
     else:
         data = []
 
-    data.append(json.loads(result))
+    # 添加新数据
+    data.append(entry)
 
+    # 写入文件
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 
 if __name__ == "__main__":
     parse_tweets(
-        "{'created_at': 'Mon Sep 02 22:48:29 +0000 2024', 'favorite_count': 2, 'full_text': '🚨 In August 2024, Web3 security incidents caused losses exceeding $316M, with significant impacts on platforms like Ronin, Nexera, Aave, and more. These incidents ranged from smart contract vulnerabilities to account compromises and phishing attacks.\n\n🙏 A big thank you to @scamsniffer for their invaluable work in investigating scams.\n\n📖 Read the full report at: https://t.co/Yw3t6JfZ1l'}"
+        """
+        {'created_at': 'Mon Sep 02 06:21:52 +0000 2024', 'favorite_count': 0, 'full_text': '🚨ALERT🚨Our system has flagged a suspicious transaction involving an MEV contract at https://t.co/28ZIN0ZQTM\n\nAn address funded via @TornadoCash  on BNB was bridged to the #ETH  chain using OKX Web3 services and exploited the MEV contract, resulting in a $4.6K loss.\n\nStolen funds are deposited to @TornadoCash at https://t.co/PTHkl9vulo\n\nWant to keep your company off our alerts radar? Learn how to secure your assets: Book a Demo 🚀 https://t.co/bUEpLKNwrU\n#CyversAlert'}
+        """
     )

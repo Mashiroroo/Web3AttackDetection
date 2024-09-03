@@ -1,0 +1,11 @@
+Executing previous transactions from the block.
+Traces:
+  [74285] 0x2FD602Ed1F8cb6DEaBA9BEDd560ffE772eb85940::init(1640984401 [1.64e9], [5702400 [5.702e6]], [10000 [1e4]], 0x9fa69536d1cda4A04cFB50688294de75B505a9aE)
+    ├─ [71574] 0xF17CA0E0F24A5FA27944275Fa0ceDec24Fbf8eE2::init(1640984401 [1.64e9], [5702400 [5.702e6]], [10000 [1e4]], 0x9fa69536d1cda4A04cFB50688294de75B505a9aE) [delegatecall]
+    │   ├─ emit OwnershipTransferred(param0: 0x95626473b6782292D20f1b07a85a8B7F6aB63677, param1: 0x2708CACE7b42302aF26F1AB896111d87FAEFf92f)
+    │   └─ ← [Stop] 
+    └─ ← [Return] 
+
+
+Transaction successfully executed.
+Gas used: 77406

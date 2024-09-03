@@ -4,8 +4,8 @@ import ssl
 import httpx
 from twikit import Client
 from parse_tweets import parse_tweets
-import json
-import time
+
+interval_time = random.randint(30, 60)
 
 
 # 处理新推文
@@ -24,7 +24,10 @@ async def fetch_tweets():
     client.load_cookies(path='./cookies.json')
 
     users_to_monitor = ['CyversAlerts', 'Cyvers_', 'BlockSecTeam', 'Phalcon_xyz', 'SlowMist_Team', 'PeckShieldAlert',
-                        'peckshield', 'shiro050822']
+                        'peckshield', 'lunaray_co', 'ChainAegis', 'FortaNetwork', 'HashDit', '0xNickLFranklin',
+                        'blockaid_', 'EXVULSEC', 'MetaTrustAlert', 'shoucccc', 'realScamSniffer', 'DecurityHQ',
+                        'zachxbt', 'spreekaway', 'bbbb', 'hexagate_', 'CertiKAlert', 'MistTrack_io', 'AnciliaInc',
+                        'BeosinAlert']
     last_tweet_id = {}  # 存储每个用户的最新推文ID
 
     # 初始化时，获取每个用户的最新一条推文ID
@@ -36,6 +39,7 @@ async def fetch_tweets():
                 last_tweet_id[username] = tweets[0].id  # 记录最新推文ID
         except (httpx.ReadTimeout, ssl.SSLWantReadError) as e:
             print(f"Error initializing tweets for {username}: {e}")
+        await asyncio.sleep(interval_time)
 
     while True:
         for username in users_to_monitor:
@@ -55,7 +59,7 @@ async def fetch_tweets():
 
                 if new_tweets:
                     # 调用处理新推文的函数
-                    process_new_tweets(username, new_tweets)
+                    process_new_tweets(new_tweets)
 
                     print(f"Fetched {len(new_tweets)} new tweets from {username}")
                 else:
@@ -64,9 +68,11 @@ async def fetch_tweets():
             except (httpx.ReadTimeout, ssl.SSLWantReadError) as e:
                 print(f"Error fetching tweets for {username}: {e}")
 
-        # 等待 30分钟与60分钟间一随机时间
-        wait_time = random.randint(1800, 3600)
-        await asyncio.sleep(wait_time)
+            await asyncio.sleep(interval_time)
+
+        # # 等待 30分钟与60分钟间一随机时间
+        # wait_time = random.randint(1800, 3600)
+        # await asyncio.sleep(wait_time)
 
 
 # 在事件循环中运行fetch_tweets函数

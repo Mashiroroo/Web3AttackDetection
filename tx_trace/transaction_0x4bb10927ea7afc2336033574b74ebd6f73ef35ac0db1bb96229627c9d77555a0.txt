@@ -1,0 +1,10 @@
+Executing previous transactions from the block.
+Traces:
+  [35177] 0x8c8687fC965593DFb2F0b4EAeFD55E9D8df348df::mint(0x18738290AF1Aaf96f0AcfA945C9C31aB21cd65bE, 59471745571000000000000000 [5.947e25])
+    ├─ [12836] 0xB828E66eB5B41B9Ada9Aa42420a6542CD095B9C7::mint(0x18738290AF1Aaf96f0AcfA945C9C31aB21cd65bE, 59471745571000000000000000 [5.947e25]) [delegatecall]
+    │   └─ ← [OutOfGas] EvmError: OutOfGas
+    └─ ← [Revert] EvmError: Revert
+
+
+Transaction failed.
+Gas used: 56857
