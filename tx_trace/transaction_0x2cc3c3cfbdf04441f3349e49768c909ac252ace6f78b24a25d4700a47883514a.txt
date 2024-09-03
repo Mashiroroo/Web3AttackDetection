@@ -1,0 +1,17 @@
+Executing previous transactions from the block.
+Traces:
+  [38217] 0xE55607B2967DDbE5FA9A6A921991545b8277Ef8F::withdrawETH()
+    ├─ [23808] 0x7c5C9AfEcf4013c43217Fb6A626A4687381f080D::withdrawAccountBalance()
+    │   ├─ [18916] 0xE4764f9cd8ECc9659d3abf35259638B20ac536E4::withdrawAccountBalance() [delegatecall]
+    │   │   ├─ [55] 0xE55607B2967DDbE5FA9A6A921991545b8277Ef8F::fallback{value: 50126827091960426151}()
+    │   │   │   └─ ← [Stop] 
+    │   │   ├─ emit WithdrawAccountBalance(: 0xE55607B2967DDbE5FA9A6A921991545b8277Ef8F, : 50126827091960426151 [5.012e19])
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Return] 
+    ├─ [0] 0x2c903F97Ea69B393Ea03E7FAb8D64D722b3f5559::fallback{value: 50126827091960426151}()
+    │   └─ ← [Stop] 
+    └─ ← [Stop] 
+
+
+Transaction successfully executed.
+Gas used: 51681

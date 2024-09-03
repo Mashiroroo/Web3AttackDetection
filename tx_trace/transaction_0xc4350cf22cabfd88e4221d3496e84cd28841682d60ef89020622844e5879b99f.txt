@@ -1,0 +1,18 @@
+Executing previous transactions from the block.
+Traces:
+  [69280] 0x2FfD0D2bEa8E922A722De83c451Ad93e097851F5::acceptOwnership()
+    ├─ [4848] 0x62Cf82FB0484aF382714cD09296260edc1DC0c6c::implementation(0x79ba5097) [staticcall]
+    │   └─ ← [Return] 0x0000000000000000000000008f1374641d3cd7896c29e905346a9630260770b2
+    ├─ [56585] 0x8F1374641d3Cd7896c29E905346a9630260770B2::acceptOwnership() [delegatecall]
+    │   ├─ emit OwnershipTransferred(param0: 0x2d1ABeEb8E7Dc9f08f96652603d2D31A838564a5, param1: 0x4Fb2e0AFA34fa2033405fFCf6D84fcE6b3DD433A)
+    │   ├─ [40460] 0xFf5e3dDaefF411a1dC6CcE00014e4Bca39265c20::changeOwnership(0x4Fb2e0AFA34fa2033405fFCf6D84fcE6b3DD433A)
+    │   │   ├─ [33165] 0x8b5c0352dd98BE579285DA94e51Ea9DC749eb22D::changeOwnership(0x4Fb2e0AFA34fa2033405fFCf6D84fcE6b3DD433A) [delegatecall]
+    │   │   │   └─ ← [Stop] 
+    │   │   └─ ← [Return] 
+    │   ├─ emit OwnershipProposalAccepted(param0: 0x4Fb2e0AFA34fa2033405fFCf6D84fcE6b3DD433A)
+    │   └─ ← [Stop] 
+    └─ ← [Return] 
+
+
+Transaction successfully executed.
+Gas used: 80744

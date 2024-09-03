@@ -1,0 +1,15 @@
+Executing previous transactions from the block.
+Traces:
+  [136927] 0x2d1ABeEb8E7Dc9f08f96652603d2D31A838564a5::initContract(0x2FfD0D2bEa8E922A722De83c451Ad93e097851F5)
+    ├─ [130497] 0x2FfD0D2bEa8E922A722De83c451Ad93e097851F5::init()
+    │   ├─ [4848] 0x62Cf82FB0484aF382714cD09296260edc1DC0c6c::implementation(0xe1c7392a) [staticcall]
+    │   │   └─ ← [Return] 0x0000000000000000000000003e273bcc448d22b9329a56da3a91ace1b57e7d04
+    │   ├─ [117796] 0x3E273bcc448d22b9329a56da3a91ace1B57e7D04::init() [delegatecall]
+    │   │   ├─ emit OwnershipTransferred(param0: 0x81262DfC30A5E3Ae137029F20850566F86f6eB3A, param1: 0x2d1ABeEb8E7Dc9f08f96652603d2D31A838564a5)
+    │   │   └─ ← [Stop] 
+    │   └─ ← [Return] 
+    └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+
+
+Transaction successfully executed.
+Gas used: 158359

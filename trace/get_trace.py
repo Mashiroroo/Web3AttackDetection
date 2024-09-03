@@ -55,6 +55,7 @@ def load_transaction_with_retry(chain, tx, retries=2, delay=10):
                 f"Error loading transaction {tx} on chain {chain}: {e}. Retry {attempt + 1}/{retries}")
             time.sleep(delay)
     logging.error(f"Failed to load transaction {tx} on chain {chain} after {retries} attempts")
+    # log_processed_transaction(chain, tx)
     log_failed_transaction(chain, tx)  # 记录失败交易
     return False
 
@@ -62,6 +63,9 @@ def load_transaction_with_retry(chain, tx, retries=2, delay=10):
 for chain, tx in zip(chain_list, tx_list):
     if f'{chain}:{tx}' in processed:
         print(f'{chain}:{tx} is already processed.')
+        continue
+    elif f'{chain}:{tx}' in failed:
+        print(f'{chain}:{tx} is already failed.')
         continue
 
     success = load_transaction_with_retry(chain, tx)

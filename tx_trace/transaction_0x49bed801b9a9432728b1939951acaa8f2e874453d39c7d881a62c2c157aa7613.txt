@@ -1,0 +1,19 @@
+Executing previous transactions from the block.
+Traces:
+  [187056] 0xdD87D807774c8aA9D70FC6aF5912C97FaDBF531B::invest()
+    ├─ [181509] 0x6f40A3d0c89cFfdC8A1af212A019C220A295E9bB::invest(0, 1)
+    │   ├─ [169533] 0x26bc1245B8476086E85553E60eE5e3e59FeD9BE0::invest(0, 1) [delegatecall]
+    │   │   ├─ [7540] 0x1d64327C74d6519afeF54E58730aD6fc797f05Ba::approve(0x6f40A3d0c89cFfdC8A1af212A019C220A295E9bB, 1)
+    │   │   │   ├─ emit Approval(param0: 0x6f40A3d0c89cFfdC8A1af212A019C220A295E9bB, param1: 0x6f40A3d0c89cFfdC8A1af212A019C220A295E9bB, param2: 1)
+    │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   ├─ [20204] 0x1d64327C74d6519afeF54E58730aD6fc797f05Ba::transferFrom(0xdD87D807774c8aA9D70FC6aF5912C97FaDBF531B, 0x6f40A3d0c89cFfdC8A1af212A019C220A295E9bB, 1)
+    │   │   │   ├─ emit Transfer(param0: 0xdD87D807774c8aA9D70FC6aF5912C97FaDBF531B, param1: 0x6f40A3d0c89cFfdC8A1af212A019C220A295E9bB, param2: 1)
+    │   │   │   ├─ emit Approval(param0: 0xdD87D807774c8aA9D70FC6aF5912C97FaDBF531B, param1: 0x6f40A3d0c89cFfdC8A1af212A019C220A295E9bB, param2: 999)
+    │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000001
+    │   │   └─ ← [OutOfGas] EvmError: OutOfGas
+    │   └─ ← [Revert] EvmError: Revert
+    └─ ← [Revert] EvmError: Revert
+
+
+Transaction failed.
+Gas used: 208120

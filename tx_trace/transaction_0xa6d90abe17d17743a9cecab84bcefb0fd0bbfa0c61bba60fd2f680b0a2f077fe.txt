@@ -1,0 +1,11 @@
+Executing previous transactions from the block.
+Traces:
+  [46051] 0xd1d2Eb1B1e90B638588728b4130137D262C87cae::mint(0xe2Ca471124b124831e231fb835778840Ad100F97, 500000000100000000 [5e17])
+    ├─ [41153] 0x8D92A6812b3dA2346883F0631910c96Cb9c5a5f9::mint(0xe2Ca471124b124831e231fb835778840Ad100F97, 500000000100000000 [5e17]) [delegatecall]
+    │   ├─ emit Transfer(param0: 0x0000000000000000000000000000000000000000, param1: 0xe2Ca471124b124831e231fb835778840Ad100F97, param2: 500000000100000000 [5e17])
+    │   └─ ← [Stop] 
+    └─ ← [Return] 
+
+
+Transaction successfully executed.
+Gas used: 67695
