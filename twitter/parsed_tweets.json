@@ -342,5 +342,149 @@
             "loss_usd_amount": "",
             "url": "https://t.co/rnyKDrrOkR"
         }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 02:35:24 +0000 2024",
+            "favorite_count": 4,
+            "full_text": "🚨SlowMist Security Alert🚨\n\nThe DAI vanity address '0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1' has been compromised.\n\nPlease be cautious and identify these fake DAI #honeypots."
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 02:46:34 +0000 2024",
+            "favorite_count": 6,
+            "full_text": "🚨 55 mins ago, another victim lost $104,668 by signing a \"permit\" phishing signature. 💸 https://t.co/txXPi5Tew8"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "104668",
+            "url": "https://t.co/txXPi5Tew8"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Tue Sep 03 21:27:29 +0000 2024",
+            "favorite_count": 2,
+            "full_text": "@Penpiexyz_io @pendle_fi 2/ The root cause is a re-entry like vulnerability in its batchHarvestMarketRewards() function, the internal function _harvestBatchMarketRewards() will call the function redeemRewards() from hack controlled Sy contract(setup at step 1)."
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Tue Sep 03 21:29:50 +0000 2024",
+            "favorite_count": 4,
+            "full_text": "@Penpiexyz_io @pendle_fi 3/ The double use (liquidity and award) allows hack to gain double amount. https://t.co/rnyKDrrOkR"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/rnyKDrrOkR"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Tue Sep 03 21:27:29 +0000 2024",
+            "favorite_count": 4,
+            "full_text": "@Penpiexyz_io @pendle_fi 2/ The root cause is a re-entry like vulnerability in its batchHarvestMarketRewards() function, the internal function _harvestBatchMarketRewards() will call the function redeemRewards() from hack controlled Sy contract(setup at step 1)."
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Tue Sep 03 21:29:50 +0000 2024",
+            "favorite_count": 5,
+            "full_text": "@Penpiexyz_io @pendle_fi 3/ The double use (liquidity and award) allows hack to gain double amount. https://t.co/rnyKDrrOkR"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/rnyKDrrOkR"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 04:57:11 +0000 2024",
+            "favorite_count": 6,
+            "full_text": "#CertiKInsight 🚨\n\n@Penpiexyz_io Penpie contracts on Ethereum and Arbitrum suffered reentrancy attacks.  \nThe attacker 0x7A2f4D625Fb21F5e51562cE8Dc2E722e12A61d1B exploited the reward accounting and swapped its gain for 11,109 ETH (~$27M).\n\nhttps://t.co/aB2hvxWkch"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "Ethereum and Arbitrum",
+            "attacker": "0x7A2f4D625Fb21F5e51562cE8Dc2E722e12A61d1B",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "~$27M",
+            "url": "https://t.co/aB2hvxWkch"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 05:17:12 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "Thank you @pendle_fi for the mention of our CTO @invlpgtbl!\n\n@hexagate_ monitored the attack in real-time and helped Pendle and others to take control over the incident and prevent further fund loss\n\nContact us to get real time alerts and auto response to any threat onchain!"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 05:41:26 +0000 2024",
+            "favorite_count": 4,
+            "full_text": "A few hours ago, Penpie @Penpiexyz_io , a farming protocol built on the Pendle Protocol, suffered a reentrancy attack resulting in a loss of ~$27M. Since Penpie has been paused, we are now providing a detailed root cause analysis.\n\nThis is a typical issue due to the lack of reentrancy guard. Specifically, the vulnerable contract (0xff51c6, the implementation contract of PendleStaking) fails to consider that the provided argument, i.e., markets, might be untrusted, which can abused to reenter into this contract.\n\nAttack preparation TX: https://t.co/GfqcLFioiO \nThe attacker initially created a counterfeit SY (standardized yield token, i.e., 0x4476b). Although the SY tokens themselves were worthless, the contract was set up with two high-value PENDLE-LPT market tokens (i.e., 0x6010_PENDLE-LPT, 0x038c_PENDLE-LPT) as the reward tokens. By doing so, the attacker then created a market on Pendle and registered it on Penpie.\n\nAttack TX: https://t.co/tyI6SmL5Ao\nDuring the attack, the attacker executed the batchHarvestMarketRewards() function to harvest rewards, which were calculated based on the difference in balanceOf() before and after the redeemRewards() function was invoked. The redeemRewards() function, in turn, triggered the claimRewards() function of the specific market. As the protocol did not anticipate the possibility of a market being maliciously controlled, the attacker was able to re-enter the victim contract through the depositMarket() function. \n\nAfter that, the attacker deposited the two high-value LPT market tokens, which were mistakenly treated as rewards. Simultaneously, the attacker received minted shares corresponding to these deposits. Consequently, the attacker could withdraw the same valuable LPT market tokens along with the corresponding shares minted in depositMarket(), and claim the reward to realize a profit."
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "Penpie @Penpiexyz_io",
+            "tx_hash": "https://t.co/GfqcLFioiO（Attack preparation TX）, https://t.co/tyI6SmL5Ao（Attack TX）",
+            "loss_usd_amount": "~$27M",
+            "url": ""
+        }
     }
 ]

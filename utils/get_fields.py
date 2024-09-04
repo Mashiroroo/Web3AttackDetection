@@ -44,5 +44,5 @@ def get_chain_by_tx(tx):
 
 if __name__ == '__main__':
     chain_list, tx_list = get_chain_and_tx()
-    print(len(chain_list))
+    print(chain_list)
     print(tx_list)

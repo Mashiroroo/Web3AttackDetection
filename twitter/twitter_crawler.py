@@ -2,6 +2,7 @@ import asyncio
 import random
 import ssl
 import httpx
+from tqdm import tqdm
 from twikit import Client
 from parse_tweets import parse_tweets
 
@@ -31,13 +32,14 @@ async def fetch_tweets():
     last_tweet_id = {}  # 存储每个用户的最新推文ID
 
     # 初始化时，获取每个用户的最新一条推文ID
-    for username in users_to_monitor:
+    print("Initializing...")
+    for username in tqdm(users_to_monitor, desc="Initializing", ncols=100):
         try:
             user = await client.get_user_by_screen_name(username)
             tweets = await user.get_tweets('Tweets', count=1)  # 仅获取最新1条推文
             if tweets:
                 last_tweet_id[username] = tweets[0].id  # 记录最新推文ID
-        except (httpx.ReadTimeout, ssl.SSLWantReadError) as e:
+        except (httpx.ConnectError, httpx.ReadTimeout, ssl.SSLWantReadError) as e:
             print(f"Error initializing tweets for {username}: {e}")
         await asyncio.sleep(interval_time)
 
@@ -65,7 +67,7 @@ async def fetch_tweets():
                 else:
                     print(f"No new tweets from {username}")
 
-            except (httpx.ReadTimeout, ssl.SSLWantReadError) as e:
+            except (httpx.ConnectError, httpx.ReadTimeout, ssl.SSLWantReadError) as e:
                 print(f"Error fetching tweets for {username}: {e}")
 
             await asyncio.sleep(interval_time)

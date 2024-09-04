@@ -1,7 +1,6 @@
 import os
 
 from web3 import Web3
-
 from trace.trace_balance_analyzer import parse_trace
 from utils.processor import Processor
 from utils.get_fields import get_chain_by_tx
