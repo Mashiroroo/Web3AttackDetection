@@ -486,5 +486,645 @@
             "loss_usd_amount": "~$27M",
             "url": ""
         }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Tue Sep 03 21:27:29 +0000 2024",
+            "favorite_count": 5,
+            "full_text": "@Penpiexyz_io @pendle_fi 2/ The root cause is a re-entry like vulnerability in its batchHarvestMarketRewards() function, the internal function _harvestBatchMarketRewards() will call the function redeemRewards() from hack controlled Sy contract(setup at step 1)."
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Tue Sep 03 21:29:50 +0000 2024",
+            "favorite_count": 6,
+            "full_text": "@Penpiexyz_io @pendle_fi 3/ The double use (liquidity and award) allows hack to gain double amount. https://t.co/rnyKDrrOkR"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/rnyKDrrOkR"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 08:05:42 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "RT @Phalcon_xyz: A few hours ago, Penpie @Penpiexyz_io , a farming protocol built on the Pendle Protocol, suffered a reentrancy attack resu…"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 08:27:26 +0000 2024",
+            "favorite_count": 1,
+            "full_text": "📢Last night, Cyvers was the first Web3 security company to identify a smart contract exploit targeting @Penpiexyz_io , an independent protocol built on @pendle_fi.\n\n🔍 Analysis: The vulnerability exploited was in the PendleStaking contract, which lacked a reentrancy guard. The attacker created a fake SY token and linked it to valuable PENDLE-LPT market tokens, using untrusted market arguments. By invoking batchHarvestMarketRewards(), they harvested rewards based on changes in balance, triggering a sequence that allowed them to re-enter the contract, deposit, and withdraw minted shares—securing a profit.\n\nCyvers remains committed to safeguarding the Web3 ecosystem. \n\nStay alert and ensure your smart contracts are secure. 🔐\n\n#Web3Security #Blockchain #SmartContract #DeFi #Reentrancy #Penpie #Pendle #HackDetection #Cyvers"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 10:50:52 +0000 2024",
+            "favorite_count": 4,
+            "full_text": "🚨 10 mins ago, another victim lost $397,831 due to signing a \"setOwner\" phishing signature that changed its DSProxy's ownership. 💸 https://t.co/C2pWmXxdUo"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "397831",
+            "url": "https://t.co/C2pWmXxdUo"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 11:00:12 +0000 2024",
+            "favorite_count": 2,
+            "full_text": "Phalcon Explorer now supports Scroll @Scroll_ZKP 🎉\n\nYou can easily check fund flows & balance changes, and explore transaction traces with just a click.\n\nClick the following link to give it a try! https://t.co/IByn7ynuIi\n\n#PhalconExplorer #Scroll #BlockExplorer #DeFi 🧵"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/IByn7ynuIi"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 13:05:00 +0000 2024",
+            "favorite_count": 3,
+            "full_text": "Forta Firewall in a nutshell 🥜\n\nDuring the @kucoincom spaces yesterday, @ajbeal introduced Firewall to the community for the first time…\n\nWant to learn more? 🔥🔒➡️ https://t.co/MDW9l937Ow https://t.co/XeGUBS1oq9"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/MDW9l937Ow https://t.co/XeGUBS1oq9"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 13:52:03 +0000 2024",
+            "favorite_count": 6,
+            "full_text": "🚨 FBI warns: North Korean hackers are ramping up attacks on crypto ETFs! \nWith groups like Lazarus behind major breaches, millions have been stolen. \n\nAt Cyvers, we've been tracking these addresses, identifying threats before they strike. Stay one step ahead! 🔍 \n#Security #Web3 https://t.co/9XMrns2Ry5"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "North Korean hackers (groups like Lazarus)",
+            "victim": "crypto ETFs",
+            "tx_hash": "",
+            "loss_usd_amount": "millions",
+            "url": "https://t.co/9XMrns2Ry5"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 14:30:39 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "RT @Phalcon_xyz: Phalcon Explorer now supports Scroll @Scroll_ZKP 🎉\n\nYou can easily check fund flows &amp; balance changes, and explore transac…"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 15:34:50 +0000 2024",
+            "favorite_count": 7,
+            "full_text": "The offending tokens in the UNI labs CFTC settlement https://t.co/mv47d5TPgz"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/mv47d5TPgz"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 15:37:56 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "CFTC Commissioner Mersinger on point in her dissent imo 🎯 https://t.co/OkmNnhuCha"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/OkmNnhuCha"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 15:52:46 +0000 2024",
+            "favorite_count": 10,
+            "full_text": "if only you knew how bad things really are https://t.co/2rqKNCJteW"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/2rqKNCJteW"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 15:56:20 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "when will google be held accountable for these financial crimes they facilitate??? https://t.co/iajoaQTSUg"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/iajoaQTSUg"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 15:41:58 +0000 2024",
+            "favorite_count": 2,
+            "full_text": "Thanks for the shoutout @blocksek. We are privileged to power the @eigenlayer monitoring setup, which leverages our battle-tested ML models and invariant monitoring engine.\n\nLearn about Restaking Security on this @summit_defi webinar with @algyssss, @ethzed and @SagivMooly \n\n👇"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 16:06:26 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "RT @DanSpuller: 🚨 @FederalReserve Enforcement Action: A Cease and Desist Order for United Texas Bank in Dallas as Operation #Chokepoint 2.0…"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 16:07:41 +0000 2024",
+            "favorite_count": 5,
+            "full_text": "🚨 Breaking Down the ~$30M Penpie Hack! 🚨\n\nOn Sept 3, attackers exploited a flaw in Penpie's market registration process, using malicious contracts to manipulate rewards and steal millions. \n\nKey takeaway: Strengthen security with whitelist checks and rigorous audits!\n\nDon't let your project be next—secure your protocols now! 🔐\n\nRead our full analysis for all the details! 🔍\n\nhttps://t.co/pKKlxHuqyw"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "30M",
+            "url": "https://t.co/pKKlxHuqyw"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 16:44:39 +0000 2024",
+            "favorite_count": 3,
+            "full_text": "Appeal of the Tornado Cash case (decided by the district judge in the government's favor) heard in the 5th circuit yesterday. \nThe 3 judge panel (all republicans) seemed skeptical of the government's arguments (although that doesn't guarantee a reversal)\n\nhttps://t.co/jD0WmBcwwD"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/jD0WmBcwwD"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 17:05:20 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "Jason Derulo has not posted about his JASON token on X/Twitter since July. \n\nWonder what happened to: \n\n“I am committed to this space long term. I want to see everyone win in our community, and I want to grow not just our family but all of crypto”\n\nYesterday Jason promoted another Tron meme coin and deleted shortly after. \n\nShame on all of the influencers who promoted him and thought this time would be different from the 15+ scams he has promoted in the past."
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "Jason Derulo",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 17:05:45 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "RT @zachxbt: Jason Derulo has not posted about his JASON token on X/Twitter since July. \n\nWonder what happened to: \n\n“I am committed to thi…"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 17:38:10 +0000 2024",
+            "favorite_count": 8,
+            "full_text": "buying defi 1.0 again https://t.co/5JfwUXGB3C"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/5JfwUXGB3C"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 19:59:16 +0000 2024",
+            "favorite_count": 1,
+            "full_text": "Penpie protocol fell victim to a $27 million smart contract exploit. There were no references of the victim address, however Defimon instantly identified interactions with the Pendle protocol (Penpie is built on top of it): https://t.co/sjJPFGRd0g"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "27000000",
+            "url": "https://t.co/sjJPFGRd0g"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Wed Sep 04 23:39:06 +0000 2024",
+            "favorite_count": 4,
+            "full_text": "#PeckShieldAlert @Penpiexyz_io exploiter -labeled address has transferred 1K $ETH (worth ~$2.45m) to #Tornadocash within the last 3 hours\nAs of now, @Penpiexyz_io exploiter has transferred a total of 4K $ETH (worth $9.6m) to #Tornadocash https://t.co/3dlHyAaKWe"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "@Penpiexyz_io exploiter -labeled address",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "9600000",
+            "url": "https://t.co/3dlHyAaKWe"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 00:31:59 +0000 2024",
+            "favorite_count": 1,
+            "full_text": "Our bot unconsciously hacked @ethervista hundreds of times over the last two days. Exploit and details below 🧵 https://t.co/mgSSlvRFh2"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "@ethervista",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/mgSSlvRFh2"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 00:37:26 +0000 2024",
+            "favorite_count": 13,
+            "full_text": "Bonus: A @ethervista MEV bot that made 1ETH has been tricked into donating all its balance (31ETH) to block builder. \n\nhttps://t.co/mfOXxUXAdb https://t.co/ZijtnzFdMd"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "A @ethervista MEV bot",
+            "victim": "A @ethervista MEV bot",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/mfOXxUXAdb https://t.co/ZijtnzFdMd"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 00:45:50 +0000 2024",
+            "favorite_count": 8,
+            "full_text": "🚨💔 1 hour ago, a victim lost $1 million by copying the wrong address from a contaminated transfer history. https://t.co/j7ZdTlws7T"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "1 million",
+            "url": "https://t.co/j7ZdTlws7T"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 01:12:10 +0000 2024",
+            "favorite_count": 1,
+            "full_text": "🚨Lunaray Security Alert\n\nAccording to @realScamSniffer monitoring，1 hour ago, a victim lost $1 million by copying the wrong address from a contaminated transfer history.\n\nPlease stay vigilant! https://t.co/zAOVU0VEKV"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "1 million",
+            "url": "https://t.co/zAOVU0VEKV"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 01:51:13 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "RT @WuBlockchain: According to CoinDesk, New York Attorney General Letitia James has joined the regulatory offensive against Uniswap. In th…"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 00:32:01 +0000 2024",
+            "favorite_count": 16,
+            "full_text": "We have a backrun bot that monitors profitable transactions. Our bot received this tx and reconstructed it to a new exploit that gave us money. It then continuously retries that tx to exploit Ethervista.\n\n@tonyke_bot made a better exploit yesterday: https://t.co/tvzwnVWTl1"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "Ethervista",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/tvzwnVWTl1"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 00:37:26 +0000 2024",
+            "favorite_count": 73,
+            "full_text": "Bonus: A @ethervista MEV bot that made 1ETH has been tricked into donating all its balance (31ETH) to block builder. \n\nhttps://t.co/mfOXxUXAdb https://t.co/ZijtnzFdMd"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "A @ethervista MEV bot",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/mfOXxUXAdb https://t.co/ZijtnzFdMd"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Tue Sep 03 21:27:29 +0000 2024",
+            "favorite_count": 5,
+            "full_text": "@Penpiexyz_io @pendle_fi 2/ The root cause is a re-entry like vulnerability in its batchHarvestMarketRewards() function, the internal function _harvestBatchMarketRewards() will call the function redeemRewards() from hack controlled Sy contract(setup at step 1)."
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Tue Sep 03 21:29:50 +0000 2024",
+            "favorite_count": 6,
+            "full_text": "@Penpiexyz_io @pendle_fi 3/ The double use (liquidity and award) allows hack to gain double amount. https://t.co/rnyKDrrOkR"
+        },
+        "parsed_result": {
+            "ti_type": "attack",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/rnyKDrrOkR"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 06:28:26 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "🚨Lunaray Security Alert\n\nNBA star @FCHWPO 's X account was hacked to publish a large amount of fake token information. Users should be careful not to interact with fake contracts. So far, the hacker has used Brown's account to continuously update nearly 30 dynamics. https://t.co/xUGF4pSk2w"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "@FCHWPO",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/xUGF4pSk2w"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 06:51:07 +0000 2024",
+            "favorite_count": 2,
+            "full_text": "Thanks for the shoutout @Penpiexyz_io. Hexagate triaged the incident and was the first one to identify the victim and notify the team.\n\nHappy we could've helped 🫶"
+        },
+        "parsed_result": {
+            "ti_type": "0",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": ""
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 07:48:40 +0000 2024",
+            "favorite_count": 8,
+            "full_text": "🚨ALERT🚨@WazirXIndia hacker just transferred 5K \n$ETH $12M to a new address at \nhttps://t.co/1XC2UjzNun\n\nWant to keep your company off our alerts radar? Learn how to secure your assets: Book a Demo 🚀 https://t.co/uUbFkFTp4h\n#CyversAlert https://t.co/Uul4fGh9Pw"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "@WazirXIndia",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "12M",
+            "url": "https://t.co/1XC2UjzNun"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 07:49:41 +0000 2024",
+            "favorite_count": 6,
+            "full_text": "#PeckShieldAlert #WazirX Exploiter -labeled address has transferred 5K $ETH (worth ~$12M) to a new address 0x2D29...a968\nOn July 18, India's #CEX WazirX suffered a major security breach, resulting in the theft of over $230 million in cryptos. https://t.co/12qlK9Q0KF"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "230000000",
+            "url": "https://t.co/12qlK9Q0KF"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 08:01:16 +0000 2024",
+            "favorite_count": 3,
+            "full_text": "#PeckShieldAlert #WazirX Exploiter -labeled address has begun laundering the stolen funds via #TornadoCash https://t.co/OoLnBxMDk3"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "WazirX Exploiter -labeled address",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/OoLnBxMDk3"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 08:10:14 +0000 2024",
+            "favorite_count": 1,
+            "full_text": "#PeckShieldAlert #Ethereum Foundation -labeled address has swapped 100 $ETH for 241K $DAI https://t.co/PN5kfhQ7lY"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "Ethereum",
+            "attacker": "",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "",
+            "url": "https://t.co/PN5kfhQ7lY"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 08:10:56 +0000 2024",
+            "favorite_count": 0,
+            "full_text": "🚨Lunaray Security Alert\n\nAccording to @PeckShieldAlert, #WazirX Exploiter -labeled address has transferred 5K $ETH (~$12M) to a new address 0x2D29...a968\nOn July 18, India's #CEX WazirX suffered a major security breach, resulting in the theft of over $230 million in cryptos. https://t.co/GNy8peUFTA"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "WazirX Exploiter-labeled address",
+            "victim": "WazirX",
+            "tx_hash": "",
+            "loss_usd_amount": "230 million",
+            "url": "https://t.co/GNy8peUFTA"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 08:14:44 +0000 2024",
+            "favorite_count": 6,
+            "full_text": "🚨UPDATE🚨The @WazirXIndia hacker has started laundering stolen funds via @TornadoCash! \n\n$2M already deposited to @TornadoCash at    https://t.co/2K1onaIGkW\n\nWant to keep your company off our alerts radar? Learn how to secure your assets: Book a Demo 🚀 https://t.co/qYomYZUVB1\n#CyversAlert"
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "The @WazirXIndia hacker",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "2M",
+            "url": "https://t.co/2K1onaIGkW"
+        }
+    },
+    {
+        "original_tweet": {
+            "created_at": "Thu Sep 05 09:17:13 +0000 2024",
+            "favorite_count": 24,
+            "full_text": "A few hours ago, the @WazirXIndia exploiter started depositing funds into @TornadoCash.\n\nAt the time of posting, 1600 ETH or equivalent of $3.85M has been deposited and the amount will mostly likely continue to climb afterwards. \n\nThe hackers address: 0x2D2906F7C8da32E87064d9E71c98f39B2cEBa968 currently has ~3400 ETH. \n\nFollow us for more updates."
+        },
+        "parsed_result": {
+            "ti_type": "scam",
+            "chain_id": "",
+            "attacker": "0x2D2906F7C8da32E87064d9E71c98f39B2cEBa968",
+            "victim": "",
+            "tx_hash": "",
+            "loss_usd_amount": "3850000",
+            "url": ""
+        }
     }
 ]

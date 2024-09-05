@@ -46,30 +46,32 @@ async def fetch_tweets():
     while True:
         for username in users_to_monitor:
             try:
-                user = await client.get_user_by_screen_name(username)
-                tweets = await user.get_tweets('Tweets', count=5)  # 获取最新5条推文
+                try:
+                    user = await client.get_user_by_screen_name(username)
+                    tweets = await user.get_tweets('Tweets', count=5)  # 获取最新5条推文
 
-                new_tweets = []
-                for tweet in reversed(tweets):  # 反向遍历推文，从最旧到最新
-                    if username not in last_tweet_id or tweet.id > last_tweet_id[username]:
-                        new_tweets.append({
-                            'created_at': tweet.created_at,
-                            'favorite_count': tweet.favorite_count,
-                            'full_text': tweet.full_text,
-                        })
-                        last_tweet_id[username] = tweet.id
+                    new_tweets = []
+                    for tweet in reversed(tweets):  # 反向遍历推文，从最旧到最新
+                        if username not in last_tweet_id or tweet.id > last_tweet_id[username]:
+                            new_tweets.append({
+                                'created_at': tweet.created_at,
+                                'favorite_count': tweet.favorite_count,
+                                'full_text': tweet.full_text,
+                            })
+                            last_tweet_id[username] = tweet.id
 
-                if new_tweets:
-                    # 调用处理新推文的函数
-                    process_new_tweets(new_tweets)
+                    if new_tweets:
+                        # 调用处理新推文的函数
+                        process_new_tweets(new_tweets)
 
-                    print(f"Fetched {len(new_tweets)} new tweets from {username}")
-                else:
-                    print(f"No new tweets from {username}")
+                        print(f"Fetched {len(new_tweets)} new tweets from {username}")
+                    else:
+                        print(f"No new tweets from {username}")
 
-            except (httpx.ConnectError, httpx.ReadTimeout, ssl.SSLWantReadError) as e:
-                print(f"Error fetching tweets for {username}: {e}")
-
+                except (httpx.ConnectError, httpx.ReadTimeout, ssl.SSLWantReadError) as e:
+                    print(f"Error fetching tweets for {username}: {e}")
+            except Exception as e:
+                print(e)
             await asyncio.sleep(interval_time)
 
         # # 等待 30分钟与60分钟间一随机时间
