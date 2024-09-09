@@ -42,7 +42,7 @@ async def fetch_tweets():
         except TooManyRequests:  # 捕获速率限制错误
             print(f"Rate limit exceeded. Sleeping for 30 minutes...")
             await asyncio.sleep(1800)  # 全局休眠30分钟
-        await asyncio.sleep(random.randint(30, 60))
+        await asyncio.sleep(random.randint(45, 60))
 
     while True:
         for username in users_to_monitor:
@@ -76,7 +76,7 @@ async def fetch_tweets():
                     await asyncio.sleep(1800)  # 全局休眠30分钟
             except Exception as e:
                 print(e)
-            await asyncio.sleep(random.randint(30, 60))
+            await asyncio.sleep(random.randint(45, 60))
 
         # # 等待 30分钟与60分钟间一随机时间
         # wait_time = random.randint(1800, 3600)
