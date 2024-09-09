@@ -3,7 +3,7 @@ import random
 import ssl
 import httpx
 from tqdm import tqdm
-from twikit import Client
+from twikit import Client, TooManyRequests
 from parse_tweets import parse_tweets
 
 
@@ -39,6 +39,9 @@ async def fetch_tweets():
                 last_tweet_id[username] = tweets[0].id  # 记录最新推文ID
         except (httpx.ConnectError, httpx.ReadTimeout, ssl.SSLWantReadError) as e:
             print(f"Error initializing tweets for {username}: {e}")
+        except TooManyRequests:  # 捕获速率限制错误
+            print(f"Rate limit exceeded. Sleeping for 30 minutes...")
+            await asyncio.sleep(1800)  # 全局休眠30分钟
         await asyncio.sleep(random.randint(30, 60))
 
     while True:
@@ -68,10 +71,9 @@ async def fetch_tweets():
 
                 except (httpx.ConnectError, httpx.ReadTimeout, ssl.SSLWantReadError) as e:
                     print(f"Error fetching tweets for {username}: {e}")
-                except httpx.HTTPStatusError as e:
-                    if e.response.status_code == 429:
-                        print(f"Rate limit exceeded. Sleeping for 30 minutes...")
-                        await asyncio.sleep(1800)  # 休眠30分钟
+                except TooManyRequests:  # 捕获速率限制错误
+                    print(f"Rate limit exceeded. Sleeping for 30 minutes...")
+                    await asyncio.sleep(1800)  # 全局休眠30分钟
             except Exception as e:
                 print(e)
             await asyncio.sleep(random.randint(30, 60))
