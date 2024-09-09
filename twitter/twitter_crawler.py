@@ -6,8 +6,6 @@ from tqdm import tqdm
 from twikit import Client
 from parse_tweets import parse_tweets
 
-interval_time = random.randint(30, 60)
-
 
 # 处理新推文
 def process_new_tweets(new_tweets):
@@ -41,7 +39,7 @@ async def fetch_tweets():
                 last_tweet_id[username] = tweets[0].id  # 记录最新推文ID
         except (httpx.ConnectError, httpx.ReadTimeout, ssl.SSLWantReadError) as e:
             print(f"Error initializing tweets for {username}: {e}")
-        await asyncio.sleep(interval_time)
+        await asyncio.sleep(random.randint(30, 60))
 
     while True:
         for username in users_to_monitor:
@@ -70,9 +68,13 @@ async def fetch_tweets():
 
                 except (httpx.ConnectError, httpx.ReadTimeout, ssl.SSLWantReadError) as e:
                     print(f"Error fetching tweets for {username}: {e}")
+                except httpx.HTTPStatusError as e:
+                    if e.response.status_code == 429:
+                        print(f"Rate limit exceeded. Sleeping for 30 minutes...")
+                        await asyncio.sleep(1800)  # 休眠30分钟
             except Exception as e:
                 print(e)
-            await asyncio.sleep(interval_time)
+            await asyncio.sleep(random.randint(30, 60))
 
         # # 等待 30分钟与60分钟间一随机时间
         # wait_time = random.randint(1800, 3600)
