@@ -1,3 +1,4 @@
+import logging
 import os
 from web3 import Web3
 import yaml
@@ -44,6 +45,20 @@ class Processor:
                 tx = self.w3.eth.get_transaction(self.transaction)
                 contract_address = tx['to']
                 print(f'在{self.chain}上的交易 {self.transaction} to: {contract_address}')
+                if contract_address is None:
+                    if len(tx['input']) < 10:
+                        # print(tx['input'])
+                        return None
+                    try:
+                        receipt = self.w3.eth.get_transaction_receipt(self.transaction)
+                        if receipt['status'] == 1:
+                            # print(receipt)
+                            if 'contractAddress' in receipt and receipt['contractAddress']:
+                                print(f"发现创建合约地址: {receipt['contractAddress']}, 区块编号: {receipt['blockNumber']}")
+
+                    except Exception as err:
+                        logging.error(f"获取交易 receipt 出错，使用区块 receipts: {err}, {self.transaction}")
+                        # receipts = receipt['log']
                 return contract_address
             except Exception as e:
                 print(f"Error: {e}")
