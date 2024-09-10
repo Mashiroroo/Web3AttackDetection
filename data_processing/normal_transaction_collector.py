@@ -27,7 +27,8 @@ seen_contracts = set()  # 用于记录已收集的合约地址
 
 latest_block = processor.w3.eth.block_number
 start_block = latest_block
-end_block = latest_block - 6000
+end_block = latest_block - 10000000
+num = 15000
 
 random_blocks = random.sample(range(end_block, start_block), start_block - end_block)
 
@@ -45,10 +46,12 @@ for block_num in tqdm(random_blocks, desc="Processing blocks", unit="block"):
             sampled_transactions.append({
                 'chain': 'ETH',
                 'blockNumber': block_num,
-                'transactionHash': tx.hash.hex()
+                'transactionHash': '0x' + tx.hash.hex()
             })
             seen_contracts.add(tx.to)  # 将合约地址加入已处理集合
             break
+    if len(sampled_transactions) >= num:
+        break
 
 with open('normal_transactions.csv', 'w', newline='') as csvfile:
     fieldnames = ['chain', 'blockNumber', 'transactionHash']
