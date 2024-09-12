@@ -47,7 +47,7 @@ def parse_trace(trace_data_file):
 
 if __name__ == '__main__':
     # 示例文件路径
-    file_path = r'../trace_data/transaction_0xa96584f8ab7c27daea33798bb8a66286c75a2ba57eee3b4192c771f4eb4ac609.txt'
+    file_path = r'../trace_data/transaction_0xb43748ed668c1e44cf0a3e829ca0fe24eceaee7d33d06072bb11ca99afa7f448.txt'
 
     balance_changes = parse_trace(file_path)
 

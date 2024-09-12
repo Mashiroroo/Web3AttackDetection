@@ -28,7 +28,7 @@ seen_contracts = set()  # 用于记录已收集的合约地址
 latest_block = processor.w3.eth.block_number
 start_block = latest_block
 end_block = latest_block - 10000000
-num = 15000
+num = 100000
 
 random_blocks = random.sample(range(end_block, start_block), start_block - end_block)
 
