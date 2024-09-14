@@ -18,7 +18,7 @@ for chain, tx in zip(chain_list, tx_list):
     print()
 
 filtered_addresses = [address for address in contract_list if address is not None]
-# 使用 set 去重
+
 unique_contracts = set(filtered_addresses)
 
 with open('contract.txt', 'w') as file:

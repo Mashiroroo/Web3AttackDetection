@@ -19,6 +19,9 @@ class Processor:
         else:
             self.w3 = None
 
+        self.balance_dict_list = []
+        self.ex_balance_dict_list = []
+
     def load_config(self):
         with open(self.config_path, 'r') as file:
             config = yaml.safe_load(file)
@@ -54,7 +57,8 @@ class Processor:
                         if receipt['status'] == 1:
                             # print(receipt)
                             if 'contractAddress' in receipt and receipt['contractAddress']:
-                                print(f"发现创建合约地址: {receipt['contractAddress']}, 区块编号: {receipt['blockNumber']}")
+                                print(
+                                    f"发现创建合约地址: {receipt['contractAddress']}, 区块编号: {receipt['blockNumber']}")
 
                     except Exception as err:
                         logging.error(f"获取交易 receipt 出错，使用区块 receipts: {err}, {self.transaction}")
@@ -83,38 +87,42 @@ class Processor:
             raise RuntimeError(result.stderr)
 
     # 输入balance增加的字典（地址：增加的钱），返回block-1上balance为0的地址的字典
-    def get_ex_balance(self, addresses_dict_list):
+
+    def get_balance(self, address_dict):
+        try:
+            tx_receipt = self.w3.eth.get_transaction_receipt(self.transaction)
+            block_number = tx_receipt['blockNumber']
+            if address_dict is not None:
+                for address in address_dict['addresses']:
+                    try:
+                        balance = self.w3.eth.get_balance(address, block_identifier=block_number)
+                        print(balance)
+                        res_dict = {address: balance}
+                        self.balance_dict_list.append(res_dict)
+                    except Exception as e:
+                        print(e)
+        except Exception as e:
+            print(e)
+        return self.balance_dict_list
+
+    def get_ex_balance(self, addresses_dict):
         try:
             tx_receipt = self.w3.eth.get_transaction_receipt(self.transaction)
             block_number = tx_receipt['blockNumber']
             # 计算 block_number - 1
             previous_block = block_number - 1
-
-            balances = {}
-            # addresses_dict_list是 一个交易 在block上的[{adr1:balance1},{adr2:balance2},...]
-            if addresses_dict_list is not None:
-                for item in addresses_dict_list:
+            if addresses_dict is not None:
+                for address in addresses_dict['addresses']:
                     try:
-                        balance = self.w3.eth.get_balance(item['addr'], block_identifier=previous_block)
-                        balances[item['addr']] = self.w3.from_wei(balance, 'wei')
+                        balance = self.w3.eth.get_balance(address, block_identifier=previous_block)
+                        res_dict = {address: balance}
+                        self.ex_balance_dict_list.append(res_dict)
                     except Exception as e:
                         print(e)
                 print(f"Block-1: {previous_block}")
-                # balances是 这个交易 在block - 1 上的[{adr1:balance1},{adr2:balance2},...]
-                sus_list = []
-                for addr, balance in balances.items():
-                    print(f"Address: {addr}, Previous Balance: {balance}")
-                    if balance == 0:
-                        sus_list.append(addr)
-                    # 过滤出 addresses_dict_list 中地址属于 sus_list 的项
-                    filtered_addresses = [item for item in addresses_dict_list if item['addr'] in sus_list]
-                    # 按 block 上的 change 从大到小排序
-                    sorted_filtered_addresses = sorted(filtered_addresses, key=lambda x: x['change'], reverse=True)
-                    # 返回 之前金额是几乎是0，同时金额增加的 排序下 top2
-                    return sorted_filtered_addresses[:2]
-
         except Exception as e:
             print(e)
+        return self.ex_balance_dict_list
 
 
 if __name__ == '__main__':

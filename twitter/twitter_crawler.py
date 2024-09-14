@@ -17,7 +17,7 @@ async def fetch_tweets():
     client = Client('en-US', timeout=120, proxy='http://127.0.0.1:7890')
 
     # 登录
-    await client.login(auth_info_1='shiro050822', auth_info_2='liuxingchen@xayytech.com', password='041129abc')
+    await client.login(auth_info_1='shiro050822', auth_info_2='liuxingchen@xayytech.com', password='050822abc')
 
     client.save_cookies('cookies.json')
     client.load_cookies(path='./cookies.json')

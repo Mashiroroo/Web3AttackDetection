@@ -18,7 +18,7 @@ for chain, tx in zip(chain_list, tx_list):
 print(sender_list)
 
 filtered_addresses = [address for address in sender_list if address is not None]
-# 使用 set 去重
+
 unique_senders = set(filtered_addresses)
 
 with open('hacker_wallet.txt', 'w') as file:
