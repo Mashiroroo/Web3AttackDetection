@@ -1,6 +1,6 @@
 import csv
 
-input_file = r'../data/all_in_one.csv'
+input_file = r'../data/attack.csv'
 
 
 line = 1

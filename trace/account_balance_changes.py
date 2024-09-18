@@ -1,7 +1,7 @@
 import os
 import re
 from web3 import Web3
-from trace.trace_debug2 import parse_trace
+from trace.trace_debug import parse_trace
 from utils.processor import Processor
 from utils.get_fields import get_chain_by_tx
 
@@ -61,12 +61,13 @@ def get_balance_changes(data_dir):
             if processor.rpc_node:
                 processor.w3 = Web3(Web3.HTTPProvider(processor.rpc_node))
             for item in all_addr_dict_list:  # 一个交易的，{tx_hash:..., addresses:[...]}
-                print(item)
+                # print(item)
                 res = {
                     'tx_hash': tx_hash,
                     'addresses': list(processor.get_balance(item)),
                 }
                 result.append(res)
+        print(result)
     return result
 
 

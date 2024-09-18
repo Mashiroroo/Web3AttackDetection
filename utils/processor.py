@@ -96,7 +96,7 @@ class Processor:
                 for address in address_dict['addresses']:
                     try:
                         balance = self.w3.eth.get_balance(address, block_identifier=block_number)
-                        print(balance)
+                        # print(balance)
                         res_dict = {address: balance}
                         self.balance_dict_list.append(res_dict)
                     except Exception as e:
