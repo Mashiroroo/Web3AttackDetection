@@ -103,6 +103,7 @@ class Processor:
                         print(e)
         except Exception as e:
             print(e)
+        # print(self.balance_dict_list)
         return self.balance_dict_list
 
     def get_ex_balance(self, addresses_dict):

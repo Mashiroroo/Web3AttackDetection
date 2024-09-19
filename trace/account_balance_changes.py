@@ -1,5 +1,8 @@
+import json
 import os
 import re
+
+from tqdm import tqdm
 from web3 import Web3
 from trace.trace_debug import parse_trace
 from utils.processor import Processor
@@ -50,7 +53,7 @@ def get_all_addr(data_dir):
 
 def get_balance_changes(data_dir):
     all_addr_dict_list = get_all_addr(trace_data_dir)
-    result = []
+    # result = []
     for root, dirs, files in os.walk(data_dir):
         for file in files:
             file_path = os.path.join(root, file)
@@ -60,15 +63,17 @@ def get_balance_changes(data_dir):
             processor.rpc_node = processor.config['rpc_nodes'].get(processor.chain, None)
             if processor.rpc_node:
                 processor.w3 = Web3(Web3.HTTPProvider(processor.rpc_node))
-            for item in all_addr_dict_list:  # 一个交易的，{tx_hash:..., addresses:[...]}
+            for item in tqdm(all_addr_dict_list):  # 一个交易的，{tx_hash:..., addresses:[...]}
                 # print(item)
                 res = {
-                    'tx_hash': tx_hash,
-                    'addresses': list(processor.get_balance(item)),
+                    "tx_hash": tx_hash,
+                    "addresses": list(processor.get_balance(item)),
                 }
-                result.append(res)
-        print(result)
-    return result
+                with open(f'{tx_hash}.json', 'w', encoding='utf8') as f:
+                    json.dump(res, f, ensure_ascii=False, indent=4)
+                # result.append(res)
+                # print(result)
+    # return result
 
 
 if __name__ == '__main__':
