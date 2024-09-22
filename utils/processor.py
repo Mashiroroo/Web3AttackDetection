@@ -1,8 +1,9 @@
 import logging
 import os
-from web3 import Web3
-import yaml
 import subprocess
+
+import yaml
+from web3 import Web3
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 

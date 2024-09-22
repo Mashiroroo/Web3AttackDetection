@@ -28,7 +28,18 @@ rpc_nodes = [
     'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al4IyDM-d_sR74_ChlDYfw4q',
     'https://lb.drpc.org/ogrpc?network=ethereum&dkey=Asv3nQwPQE6AqrmVKYZBEgAFdL22d-8R74-_hlDYfw4q',
     'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6_PDK6eKgR74_hhlDYfw4q',
-    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6oHm4xeKgR74_ehlDYfw4q']
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6oHm4xeKgR74_ehlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al5eQjrPeK8R74_lhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al5eQjrPeK8R74_lhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6c1n1BeK8R74_nhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6mTzM_eK8R74_ohlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6s4AGeeK8R74_phlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6ygV_seK8R74_qhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al7J_mDHeK8R74_rhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al7W-snueK8R74_thlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al7g3OOreK8R74_uhlDYfw4q'
+
+]
 
 random.seed(123)
 
@@ -50,6 +61,7 @@ def create_processor(retries=3):
             return processor
         print(f"Failed to connect to the Ethereum node: {rpc_url}. Retrying...")
         time.sleep(1)
+    time.sleep(10)
     raise Exception("Unable to connect to any Ethereum node.")
 
 
@@ -130,7 +142,6 @@ with open(output, 'a', newline='') as csvfile:
     if os.stat(output).st_size == 0:
         writer.writeheader()
 
-    # 设置 tqdm 的总量为目标交易数量，并更新已处理数量
     with tqdm(total=target_transaction_count, initial=current_processed_count, desc="Processing transactions") as pbar:
         with ThreadPoolExecutor(max_workers=os.cpu_count() or 10) as executor:
             future_to_block = {executor.submit(process_block, block_num): block_num for block_num in random_blocks}
