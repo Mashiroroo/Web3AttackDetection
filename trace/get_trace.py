@@ -1,7 +1,9 @@
+import logging
 import os
 import time
-import logging
+
 from web3 import Web3
+
 from utils.get_fields import get_chain_and_tx
 from utils.processor import Processor
 

@@ -4,9 +4,9 @@ import re
 
 from tqdm import tqdm
 from web3 import Web3
-from trace.trace_debug import parse_trace
-from utils.processor import Processor
+
 from utils.get_fields import get_chain_by_tx
+from utils.processor import Processor
 
 trace_data_dir = r'../trace_data'
 processor = Processor(transaction=None, chain=None)

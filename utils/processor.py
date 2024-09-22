@@ -8,12 +8,14 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 
 
 class Processor:
-    def __init__(self, transaction, chain):
+    def __init__(self, transaction, chain, rpc_node):
         self.config_path = os.path.join(current_dir, '../config.yaml')
-        self.config = self.load_config()
         self.transaction = transaction
         self.chain = chain
-        self.rpc_node = self.config['rpc_nodes'].get(chain, None)
+        self.rpc_node = rpc_node
+        if self.chain is not None:
+            self.config = self.load_config()
+            self.rpc_node = self.config['rpc_nodes'].get(chain, None)
         if self.rpc_node is not None:
             self.w3 = Web3(Web3.HTTPProvider(self.rpc_node))
         else:
