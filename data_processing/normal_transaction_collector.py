@@ -124,15 +124,15 @@ last_processed_block = get_last_processed_block(output)
 current_processed_count = get_transaction_count(output)
 
 latest_block = processor.w3.eth.block_number
-end_block = latest_block - 1000000
+target_transaction_count = 100000
+end_block = 1000000
 
 if last_processed_block - end_block > 0:
-    random_blocks = random.sample(range(end_block, last_processed_block), last_processed_block - end_block)
+    random_blocks = random.sample(range(end_block, last_processed_block), target_transaction_count*5)
 else:
     print("区块范围无效，请调整 end_block 的值。")
     exit()
 
-target_transaction_count = 100000
 sampled_transactions = []
 
 with open(output, 'a', newline='') as csvfile:
@@ -157,7 +157,7 @@ with open(output, 'a', newline='') as csvfile:
                         # 更新进度条
                         pbar.update(1)
 
-                    if len(sampled_transactions) >= target_transaction_count:
+                    if get_transaction_count(output) >= target_transaction_count:
                         print(f"Reached target of {target_transaction_count} transactions.")
                         break
 
