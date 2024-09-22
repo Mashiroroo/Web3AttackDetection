@@ -16,7 +16,7 @@ rpc_nodes = [
     'https://go.getblock.io/2f9bba8389884e98b3a23fa727d50980',
     'https://eth.api.onfinality.io/public',
     'https://1rpc.io/eth',
-    'https://rpc.flashbots.net',
+    # 'https://rpc.flashbots.net',
     'https://lb.drpc.org/ogrpc?network=ethereum&dkey=Asv3nQwPQE6AqrmVKYZBEgAFdL22d-8R74-_hlDYfw4q',
     'https://rpc.ankr.com/eth',
     'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al63O0vVeKgR74_ghlDYfw4q',
@@ -159,9 +159,10 @@ with open(output, 'a', newline='') as csvfile:
 
                     if get_transaction_count(output) >= target_transaction_count:
                         print(f"Reached target of {target_transaction_count} transactions.")
+                        executor.shutdown(wait=False)
                         break
 
                 except Exception as e:
                     print(f"处理区块 {block_num} 时出错: {e}")
 
-print(f"Collected {len(sampled_transactions)} unique contract-interacting transactions.")
+print(f"Collected {get_transaction_count(output)} unique contract-interacting transactions.")
