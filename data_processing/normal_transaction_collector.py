@@ -1,5 +1,4 @@
 import csv
-import json
 import os
 import random
 import time
@@ -9,6 +8,7 @@ from tqdm import tqdm
 
 from utils.processor import Processor
 
+output = 'transactions.csv'
 rpc_nodes = [
     'https://cloudflare-eth.com',
     'https://ethereum.blockpi.network/v1/rpc/4ca6dcb6a65b915676a8f0b7246a4839086c6dd7',
@@ -18,19 +18,33 @@ rpc_nodes = [
     'https://1rpc.io/eth',
     'https://rpc.flashbots.net',
     'https://lb.drpc.org/ogrpc?network=ethereum&dkey=Asv3nQwPQE6AqrmVKYZBEgAFdL22d-8R74-_hlDYfw4q',
-    'https://rpc.ankr.com/eth'
-]
+    'https://rpc.ankr.com/eth',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al63O0vVeKgR74_ghlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al5vgPg9eKgR74_chlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6WvxNheKgR74_dhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al7c4vJFeKgR74_khlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al7S1iypeKgR74_jhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6vcdfheKgR74_fhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al4IyDM-d_sR74_ChlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=Asv3nQwPQE6AqrmVKYZBEgAFdL22d-8R74-_hlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6_PDK6eKgR74_hhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6oHm4xeKgR74_ehlDYfw4q']
 
 random.seed(123)
 
+node_index = 0  # 全局节点索引
 
-def get_random_rpc_node():
-    return random.choice(rpc_nodes)
+
+def get_next_rpc_node():
+    global node_index
+    rpc_node = rpc_nodes[node_index]
+    node_index = (node_index + 1) % len(rpc_nodes)  # 轮询
+    return rpc_node
 
 
 def create_processor(retries=3):
     for _ in range(retries):
-        rpc_url = get_random_rpc_node()
+        rpc_url = get_next_rpc_node()
         processor = Processor(transaction=None, chain=None, rpc_node=rpc_url)
         if processor.w3.is_connected():
             return processor
@@ -39,7 +53,6 @@ def create_processor(retries=3):
     raise Exception("Unable to connect to any Ethereum node.")
 
 
-progress_file = 'progress.json'
 address_cache = {}
 
 
@@ -72,15 +85,31 @@ def process_block(block_num):
 
 processor = create_processor()
 
-if os.path.exists(progress_file):
-    with open(progress_file, 'r') as f:
-        progress = json.load(f)
-    last_processed_block = progress['last_processed_block']
-    # 读取当前已处理的交易数量
-    current_processed_count = progress.get('transaction_count', 0)
-else:
-    last_processed_block = processor.w3.eth.block_number
-    current_processed_count = 0  # 初始为 0
+
+def get_transaction_count(csv_file):
+    if not os.path.exists(csv_file):
+        return 0
+    with open(csv_file, 'r') as f:
+        reader = csv.reader(f)
+        row = sum(1 for _ in reader)
+        return row - 1 if row > 0 else 0
+
+
+def get_last_processed_block(csv_file):
+    if not os.path.exists(csv_file):
+        return random_blocks[0]
+    with open(csv_file, 'r') as f:
+        reader = csv.DictReader(f)
+        last_row = None
+        for row in reader:
+            last_row = row
+        print(last_row)
+        return int(last_row['blockNumber']) if last_row else None
+
+
+last_processed_block = get_last_processed_block(output)
+
+current_processed_count = get_transaction_count(output)
 
 latest_block = processor.w3.eth.block_number
 end_block = latest_block - 1000000
@@ -94,11 +123,11 @@ else:
 target_transaction_count = 100000
 sampled_transactions = []
 
-with open('transactions.csv', 'a', newline='') as csvfile:
+with open(output, 'a', newline='') as csvfile:
     fieldnames = ['blockNumber', 'transactionHash']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-    if os.stat('transactions.csv').st_size == 0:
+    if os.stat(output).st_size == 0:
         writer.writeheader()
 
     # 设置 tqdm 的总量为目标交易数量，并更新已处理数量
@@ -121,21 +150,7 @@ with open('transactions.csv', 'a', newline='') as csvfile:
                         print(f"Reached target of {target_transaction_count} transactions.")
                         break
 
-                    # 每隔几块保存一次进度
-                    if block_num % 100 == 0:
-                        with open(progress_file, 'w') as f:
-                            json.dump({
-                                'last_processed_block': block_num,
-                                'transaction_count': len(sampled_transactions)
-                            }, f)
                 except Exception as e:
                     print(f"处理区块 {block_num} 时出错: {e}")
-
-# 最终保存进度
-with open(progress_file, 'w') as f:
-    json.dump({
-        'last_processed_block': last_processed_block,
-        'transaction_count': len(sampled_transactions)
-    }, f)
 
 print(f"Collected {len(sampled_transactions)} unique contract-interacting transactions.")

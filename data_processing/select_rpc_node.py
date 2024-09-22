@@ -1,25 +1,16 @@
 from utils.processor import Processor
 
 rpc_nodes = [
-    'https://rpc.ankr.com/eth',
-    'https://ethereum.blockpi.network/v1/rpc/4ca6dcb6a65b915676a8f0b7246a4839086c6dd7',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al5vgPg9eKgR74_chlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al4IyDM-d_sR74_ChlDYfw4q',
     'https://lb.drpc.org/ogrpc?network=ethereum&dkey=Asv3nQwPQE6AqrmVKYZBEgAFdL22d-8R74-_hlDYfw4q',
-    'https://cloudflare-eth.com',
-    'https://api.blocknative.com/v0/jsonrpc',
-    'https://nd-123-456-789.p2pify.com/',
-    'https://eth-mainnet.blastapi.io/',
-    'https://nodes.mewapi.io/rpc/eth',
-    'https://rpc.flashbots.net',
-    'https://eth.mainnet.public.allnodes.com',
-    'https://1rpc.io/eth',
-    'https://eth.api.onfinality.io/public',
-    'https://rpc.gw.fm',
-    'https://api.covalenthq.com/v1/pricing/ETH/',
-    'https://ethereum.public-rpc.gsr.io',
-    'https://ethereum-mainnet.core.chainstack.com/8edf135d4f7a63e93b69c44decc7a538',
-    'https://ethereum-mainnet.core.chainstack.com/beacon',
-    'https://ethereum-mainnet.core.chainstack.com',
-    'https://go.getblock.io/2f9bba8389884e98b3a23fa727d50980'
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6WvxNheKgR74_dhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6oHm4xeKgR74_ehlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6vcdfheKgR74_fhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al63O0vVeKgR74_ghlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al6_PDK6eKgR74_hhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al7S1iypeKgR74_jhlDYfw4q',
+    'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al7c4vJFeKgR74_khlDYfw4q',
 ]
 
 rpc_res_node = []
