@@ -1,3 +1,4 @@
+import argparse
 import csv
 import os
 import random
@@ -8,7 +9,6 @@ from tqdm import tqdm
 
 from utils.processor import Processor
 
-output = 'transactions.csv'
 rpc_nodes = [
     'https://cloudflare-eth.com',
     'https://ethereum.blockpi.network/v1/rpc/4ca6dcb6a65b915676a8f0b7246a4839086c6dd7',
@@ -38,18 +38,16 @@ rpc_nodes = [
     'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al7J_mDHeK8R74_rhlDYfw4q',
     'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al7W-snueK8R74_thlDYfw4q',
     'https://lb.drpc.org/ogrpc?network=ethereum&dkey=AslpqdMF10aJj7M_sfS8al7g3OOreK8R74_uhlDYfw4q'
-
 ]
 
 random.seed(123)
-
-node_index = 0  # 全局节点索引
+node_index = 0
 
 
 def get_next_rpc_node():
     global node_index
     rpc_node = rpc_nodes[node_index]
-    node_index = (node_index + 1) % len(rpc_nodes)  # 轮询
+    node_index = (node_index + 1) % len(rpc_nodes)
     return rpc_node
 
 
@@ -83,7 +81,7 @@ def is_contract_address(processor, address):
         return False
 
 
-def process_block(block_num):
+def process_block_for_contracts(block_num):
     processor = create_processor()
     try:
         block = processor.w3.eth.get_block(block_num, full_transactions=True)
@@ -95,7 +93,16 @@ def process_block(block_num):
     return None
 
 
-processor = create_processor()
+def process_block_for_random(block_num):
+    processor = create_processor()
+    try:
+        block = processor.w3.eth.get_block(block_num, full_transactions=True)
+        if block.transactions:
+            tx = random.choice(block.transactions)
+            return {'blockNumber': block_num, 'transactionHash': '0x' + tx.hash.hex()}
+    except Exception as e:
+        print(f"Error fetching block {block_num}: {e}")
+    return None
 
 
 def get_transaction_count(csv_file):
@@ -109,60 +116,89 @@ def get_transaction_count(csv_file):
 
 def get_last_processed_block(csv_file):
     if not os.path.exists(csv_file):
-        return random_blocks[0]
+        return None
     with open(csv_file, 'r') as f:
         reader = csv.DictReader(f)
         last_row = None
         for row in reader:
             last_row = row
-        print(last_row)
         return int(last_row['blockNumber']) if last_row else None
 
 
-last_processed_block = get_last_processed_block(output)
+def collect_transactions(mode, output, target_transaction_count):
+    processor = create_processor()
 
-current_processed_count = get_transaction_count(output)
+    latest_block = processor.w3.eth.block_number
+    end_block = 1000000
 
-latest_block = processor.w3.eth.block_number
-target_transaction_count = 100000
-end_block = 1000000
+    last_processed_block = get_last_processed_block(output)
+    if last_processed_block is None:
+        last_processed_block = latest_block
 
-if last_processed_block - end_block > 0:
-    random_blocks = random.sample(range(end_block, last_processed_block), target_transaction_count*5)
-else:
-    print("区块范围无效，请调整 end_block 的值。")
-    exit()
+    if last_processed_block - end_block > 0:
+        random_blocks = random.sample(range(end_block, last_processed_block), target_transaction_count * 5)
+    else:
+        print("区块范围无效，请调整 end_block 的值。")
+        exit()
 
-sampled_transactions = []
+    current_processed_count = get_transaction_count(output)
 
-with open(output, 'a', newline='') as csvfile:
-    fieldnames = ['blockNumber', 'transactionHash']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    with open(output, 'a', newline='') as csvfile:
+        fieldnames = ['blockNumber', 'transactionHash']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-    if os.stat(output).st_size == 0:
-        writer.writeheader()
+        if os.stat(output).st_size == 0:
+            writer.writeheader()
 
-    with tqdm(total=target_transaction_count, initial=current_processed_count, desc="Processing transactions") as pbar:
-        with ThreadPoolExecutor(max_workers=os.cpu_count() or 10) as executor:
-            future_to_block = {executor.submit(process_block, block_num): block_num for block_num in random_blocks}
+        with tqdm(total=target_transaction_count, initial=current_processed_count,
+                  desc="Processing transactions") as pbar:
+            with ThreadPoolExecutor(max_workers=os.cpu_count() or 10) as executor:
+                if mode == 'contract':
+                    future_to_block = {executor.submit(process_block_for_contracts, block_num): block_num for block_num
+                                       in random_blocks}
+                else:
+                    future_to_block = {executor.submit(process_block_for_random, block_num): block_num for block_num in
+                                       random_blocks}
 
-            for future in as_completed(future_to_block):
-                block_num = future_to_block[future]
-                try:
-                    result = future.result()
-                    if result:
-                        sampled_transactions.append(result)
-                        writer.writerow(result)
+                for future in as_completed(future_to_block):
+                    block_num = future_to_block[future]
+                    try:
+                        result = future.result()
+                        if result:
+                            writer.writerow(result)
+                            pbar.update(1)
 
-                        # 更新进度条
-                        pbar.update(1)
+                        if get_transaction_count(output) >= target_transaction_count:
+                            print(f"Reached target of {target_transaction_count} transactions.")
+                            executor.shutdown(wait=False)
+                            break
 
-                    if get_transaction_count(output) >= target_transaction_count:
-                        print(f"Reached target of {target_transaction_count} transactions.")
-                        executor.shutdown(wait=False)
-                        break
+                    except Exception as e:
+                        print(f"处理区块 {block_num} 时出错: {e}")
 
-                except Exception as e:
-                    print(f"处理区块 {block_num} 时出错: {e}")
+    print(f"Collected {get_transaction_count(output)} unique transactions.")
 
-print(f"Collected {get_transaction_count(output)} unique contract-interacting transactions.")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Collect Ethereum transactions")
+    parser.add_argument(
+        '--mode', choices=['contract', 'random'], required=True,
+        help="Mode: 'contract' to collect contract transactions, 'random' to collect random transactions"
+    )
+    parser.add_argument(
+        '--output', type=str, default='transactions.csv',
+        help="Output CSV file for collected transactions"
+    )
+    parser.add_argument(
+        '--count', type=int, default=50000,
+        help="Target number of transactions to collect"
+    )
+
+    args = parser.parse_args()
+
+    collect_transactions(args.mode, args.output, args.count)
+
+    '''
+    python transaction_collector.py --mode contract --output contract_transactions.csv --count 100000
+    python -m data_processing.transaction_collector --mode random --output random_transactions.csv --count 50000
+    '''
