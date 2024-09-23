@@ -126,12 +126,15 @@ def get_combined_info(tx):
 
 
 if __name__ == "__main__":
-    chain, tx = get_chain_and_tx()
-    for tx_hash in tqdm(tx):
-        chain_id = get_chain_id(tx_hash)
-        if chain_id is None:
-            continue
-
-        combined_data = get_combined_info(tx_hash)
-        with open(f'data/{tx_hash}.json', 'w') as json_file:
-            json.dump(combined_data, json_file, indent=4)
+    chain_id = get_chain_id('0x5a86e1e738683a3e5d095fa34ae7592f6a08d172cc1fcb41c36751fe38c5b1a5')
+    res = get_combined_info('0x5a86e1e738683a3e5d095fa34ae7592f6a08d172cc1fcb41c36751fe38c5b1a5')
+    print(res)
+    # chain, tx = get_chain_and_tx()
+    # for tx_hash in tqdm(tx):
+    #     chain_id = get_chain_id(tx_hash)
+    #     if chain_id is None:
+    #         continue
+    #
+    #     combined_data = get_combined_info(tx_hash)
+    #     with open(f'data/{tx_hash}.json', 'w') as json_file:
+    #         json.dump(combined_data, json_file, indent=4)

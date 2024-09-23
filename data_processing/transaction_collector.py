@@ -170,7 +170,7 @@ def collect_transactions(mode, output, target_transaction_count):
 
                         if get_transaction_count(output) >= target_transaction_count:
                             print(f"Reached target of {target_transaction_count} transactions.")
-                            executor.shutdown(wait=False)
+                            # executor.shutdown(wait=False)
                             break
 
                     except Exception as e:
