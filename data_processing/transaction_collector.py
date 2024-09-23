@@ -136,7 +136,7 @@ def collect_transactions(mode, output, target_transaction_count):
         last_processed_block = latest_block
 
     if last_processed_block - end_block > 0:
-        random_blocks = random.sample(range(end_block, last_processed_block), target_transaction_count * 5)
+        random_blocks = random.sample(range(end_block, latest_block), target_transaction_count * 5)
     else:
         print("区块范围无效，请调整 end_block 的值。")
         exit()
