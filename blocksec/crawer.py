@@ -1,9 +1,12 @@
+import csv
 import json
-from tqdm import tqdm
-from utils.get_fields import get_chain_and_tx
+import time
+
 import requests
 from fake_useragent import UserAgent
-import time
+from tqdm import tqdm
+
+ua = UserAgent()
 
 
 # 重试机制函数
@@ -26,7 +29,6 @@ def get_with_retries(url, headers, data, retries=3, delay=5, method='post'):
 
 
 def get_chain_id(tx):
-    ua = UserAgent()
     url = f'https://app.blocksec.com/api/v1/website-search?query={tx}'
     head = {"User-Agent": ua.random}
 
@@ -45,27 +47,23 @@ def get_chain_id(tx):
         return None
 
 
-def get_balance_change(tx):
-    ua = UserAgent()
+def get_balance_change(tx, chain_id):
     url = "https://app.blocksec.com/api/v1/onchain/tx/balance-change"
     data = {"chainID": chain_id, "txnHash": tx, "blocked": False}
     head = {"User-Agent": ua.random}
 
     response_text = get_with_retries(url, head, data, retries=3, delay=5)
-    if response_text is None:
-        return "{}"  # 返回空数据以继续流程
-    return response_text
+    return response_text or "{}"
 
 
-def get_profile(tx):
-    ua = UserAgent()
+def get_profile(tx, chain_id):
     url = "https://app.blocksec.com/api/v1/onchain/tx/profile"
     data = {"chainID": chain_id, "txnHash": tx, "blocked": False}
     head = {"User-Agent": ua.random}
 
     response_text = get_with_retries(url, head, data, retries=3, delay=5)
     if response_text is None:
-        return None, None, None  # 返回空数据以避免程序崩溃
+        return None, None, None
 
     try:
         profile = json.loads(response_text)
@@ -75,60 +73,90 @@ def get_profile(tx):
         return None, None, None
 
 
-def get_address_label(tx):
-    ua = UserAgent()
+def get_address_label(tx, chain_id):
     url = "https://app.blocksec.com/api/v1/onchain/tx/address-label"
     data = {"chainID": chain_id, "txnHash": tx, "blocked": False}
     head = {"User-Agent": ua.random}
 
     response_text = get_with_retries(url, head, data, retries=3, delay=5)
-    if response_text is None:
-        return "{}"
-    return response_text
+    return response_text or "{}"
 
 
-def get_trace(tx):
-    ua = UserAgent()
+def get_trace(tx, chain_id):
     url = "https://app.blocksec.com/api/v1/onchain/tx/trace"
     data = {"chainID": chain_id, "txnHash": tx, "blocked": False}
     head = {"User-Agent": ua.random}
 
     response_text = get_with_retries(url, head, data, retries=3, delay=5)
-    if response_text is None:
-        return "{}"
-    return response_text
+    return response_text or "{}"
 
 
-def get_state_change(tx):
-    ua = UserAgent()
+def get_state_change(tx, chain_id):
     url = "https://app.blocksec.com/api/v1/onchain/tx/state-change"
     data = {"chainID": chain_id, "txnHash": tx, "blocked": False}
     head = {"User-Agent": ua.random}
 
     response_text = get_with_retries(url, head, data, retries=3, delay=5)
-    if response_text is None:
-        return "{}"
-    return response_text
+    return response_text or "{}"
 
 
-def get_combined_info(tx):
+def get_combined_info(tx, chain_id):
+    basic_info, fund_flow, token_infos = get_profile(tx, chain_id)
     return {
-        "balance_change": json.loads(get_balance_change(tx)),
+        "balance_change": json.loads(get_balance_change(tx, chain_id)),
         "profile": {
-            "basic_info": get_profile(tx)[0],
-            "fund_flow": get_profile(tx)[1],
-            "token_infos": get_profile(tx)[2],
+            "basic_info": basic_info,
+            "fund_flow": fund_flow,
+            "token_infos": token_infos,
         },
-        "address_label": json.loads(get_address_label(tx)),
-        "trace": json.loads(get_trace(tx)),
-        "state_change": json.loads(get_state_change(tx))
+        "address_label": json.loads(get_address_label(tx, chain_id)),
+        "trace": json.loads(get_trace(tx, chain_id)),
+        "state_change": json.loads(get_state_change(tx, chain_id))
     }
 
 
+def read_transaction_hashes(file_path):
+    hashes = []
+    with open(file_path, mode='r', newline='') as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            if 'transactionHash' in row:
+                hashes.append(row['transactionHash'])
+    return hashes
+
+
+def read_last_processed_hash(checkpoint_file):
+    try:
+        with open(checkpoint_file, 'r') as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        return None
+
+
+def write_last_processed_hash(checkpoint_file, tx_hash):
+    with open(checkpoint_file, 'w') as f:
+        f.write(tx_hash)
+
+
 if __name__ == "__main__":
-    chain_id = get_chain_id('0x5a86e1e738683a3e5d095fa34ae7592f6a08d172cc1fcb41c36751fe38c5b1a5')
-    res = get_combined_info('0x5a86e1e738683a3e5d095fa34ae7592f6a08d172cc1fcb41c36751fe38c5b1a5')
-    print(res)
+    chain_id = 1
+    transaction_hashes = read_transaction_hashes('../random_transactions.csv')
+    checkpoint_file = 'last_processed_hash.txt'
+    last_processed_hash = read_last_processed_hash(checkpoint_file)
+    start_index = transaction_hashes.index(last_processed_hash) + 1 if last_processed_hash in transaction_hashes else 0
+    with tqdm(total=len(transaction_hashes), initial=start_index, desc="Processing Transactions") as pbar:
+        for tx_hash in transaction_hashes[start_index:]:
+            try:
+                chain_id = 1
+                combined_data = get_combined_info(tx_hash, chain_id)
+                with open(f'normal_data/{tx_hash}.json', 'w') as json_file:
+                    json.dump(combined_data, json_file, indent=4)
+                write_last_processed_hash(checkpoint_file, tx_hash)
+                pbar.update(1)
+            except Exception as e:
+                print(f"Error processing {tx_hash}: {e}")
+                break
+
     # chain, tx = get_chain_and_tx()
     # for tx_hash in tqdm(tx):
     #     chain_id = get_chain_id(tx_hash)
