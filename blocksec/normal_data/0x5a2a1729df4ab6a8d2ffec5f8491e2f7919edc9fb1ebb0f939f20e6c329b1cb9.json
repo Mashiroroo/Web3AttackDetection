@@ -1,0 +1,765 @@
+{
+    "balance_change": {
+        "balanceChanges": []
+    },
+    "profile": {
+        "basic_info": {
+            "baseFee": "3.402227932",
+            "blockNumber": 20465087,
+            "callData": "0x0dd8dd02000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000007221a2819d3826cdb84da15f036381222e805e250000000000000000000000000000000000000000000000000000000000000001000000000000000000000000acb55c530acdb2849e6d4f36992cd8c9d50ed8f70000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000005f68e8131ecf80000",
+            "debugEnable": true,
+            "errorInfo": "",
+            "eventCount": 2,
+            "feeRecipient": "0x95222290dd7278aa3ddd389cc1e1d165cc4bafe5",
+            "formatValue": "0",
+            "gasLimit": 173248,
+            "gasPrice": "3.403167932",
+            "gasUsed": 103485,
+            "intTxnCount": 3,
+            "internalRevert": false,
+            "internalRevertMessage": "",
+            "isContractCreation": false,
+            "isFlashloan": false,
+            "maxFee": "3.543161862",
+            "nonce": 47,
+            "overwritedBlockNumber": -1,
+            "priorityFee": "0.00094",
+            "receiver": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a",
+            "revertMessage": "",
+            "sender": "0x7221a2819d3826cdb84da15f036381222e805e25",
+            "simulationEnable": true,
+            "sourceTxnHash": "0x5a2a1729df4ab6a8d2ffec5f8491e2f7919edc9fb1ebb0f939f20e6c329b1cb9",
+            "status": true,
+            "timestamp": "2024-08-05T21:35:47Z",
+            "transactionFee": "0.00035217683344302",
+            "txnHash": "0x5a2a1729df4ab6a8d2ffec5f8491e2f7919edc9fb1ebb0f939f20e6c329b1cb9",
+            "txnIndex": 144,
+            "type": 2,
+            "value": "0"
+        },
+        "fund_flow": [],
+        "token_infos": [
+            {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "decimals": 18
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "decimals": 18
+            }
+        ]
+    },
+    "address_label": {
+        "labels": [
+            {
+                "address": "0x0000000000000000000000000000000000000003",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x858646372cc42e1a627fce94aa7a7033e7cf075a",
+                "label": "EigenLayer: Strategy Manager"
+            },
+            {
+                "address": "0x1784be6401339fc0fedf7e9379409f5c1bfe9dda",
+                "label": "DelegationManager"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000001",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000002",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000004",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "label": "Ether"
+            },
+            {
+                "address": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a",
+                "label": "EigenLayer: Delegation"
+            },
+            {
+                "address": "0x70f44c13944d49a236e3cd7a94f48f5dab6c619b",
+                "label": "StrategyManager"
+            }
+        ]
+    },
+    "trace": {
+        "accountLabels": null,
+        "dataMap": {
+            "-1": {
+                "invocation": {
+                    "address": "0x7221a2819d3826cdb84da15f036381222e805e25",
+                    "callData": "",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "",
+                    "gasUsed": 0,
+                    "id": -1,
+                    "methodDecoded": false,
+                    "operation": "",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "",
+                    "status": false,
+                    "value": ""
+                },
+                "nodeType": 0
+            },
+            "0": {
+                "invocation": {
+                    "address": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a",
+                    "callData": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000007221a2819d3826cdb84da15f036381222e805e250000000000000000000000000000000000000000000000000000000000000001000000000000000000000000acb55c530acdb2849e6d4f36992cd8c9d50ed8f70000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000005f68e8131ecf80000",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "queuedWithdrawalParams",
+                                "type": "(address[],uint256[],address)[]",
+                                "value": [
+                                    [
+                                        {
+                                            "name": "strategies",
+                                            "type": "address[]",
+                                            "value": [
+                                                "0xacb55c530acdb2849e6d4f36992cd8c9d50ed8f7"
+                                            ]
+                                        },
+                                        {
+                                            "name": "shares",
+                                            "type": "uint256[]",
+                                            "value": [
+                                                "110,000,000,000,000,000,000"
+                                            ]
+                                        },
+                                        {
+                                            "name": "withdrawer",
+                                            "type": "address",
+                                            "value": "0x7221a2819d3826cdb84da15f036381222e805e25"
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "queueWithdrawals",
+                        "returnParams": [
+                            {
+                                "name": "",
+                                "type": "bytes32[]",
+                                "value": [
+                                    "0x430b6aebfbead3c017339f8d14c1fc527426c2dd1565ec1798fe68fb44288470"
+                                ]
+                            }
+                        ],
+                        "signature": "queueWithdrawals((address[],uint256[],address)[])"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x7221a2819d3826cdb84da15f036381222e805e25",
+                    "gasUsed": 103485,
+                    "id": 0,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001430b6aebfbead3c017339f8d14c1fc527426c2dd1565ec1798fe68fb44288470",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x0dd8dd02",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "1": {
+                "invocation": {
+                    "address": "0x1784be6401339fc0fedf7e9379409f5c1bfe9dda",
+                    "callData": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000007221a2819d3826cdb84da15f036381222e805e250000000000000000000000000000000000000000000000000000000000000001000000000000000000000000acb55c530acdb2849e6d4f36992cd8c9d50ed8f70000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000005f68e8131ecf80000",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "queuedWithdrawalParams",
+                                "type": "(address[],uint256[],address)[]",
+                                "value": [
+                                    [
+                                        {
+                                            "name": "strategies",
+                                            "type": "address[]",
+                                            "value": [
+                                                "0xacb55c530acdb2849e6d4f36992cd8c9d50ed8f7"
+                                            ]
+                                        },
+                                        {
+                                            "name": "shares",
+                                            "type": "uint256[]",
+                                            "value": [
+                                                "110,000,000,000,000,000,000"
+                                            ]
+                                        },
+                                        {
+                                            "name": "withdrawer",
+                                            "type": "address",
+                                            "value": "0x7221a2819d3826cdb84da15f036381222e805e25"
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "queueWithdrawals",
+                        "returnParams": [
+                            {
+                                "name": "",
+                                "type": "bytes32[]",
+                                "value": [
+                                    "0x430b6aebfbead3c017339f8d14c1fc527426c2dd1565ec1798fe68fb44288470"
+                                ]
+                            }
+                        ],
+                        "signature": "queueWithdrawals((address[],uint256[],address)[])"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a",
+                    "gasUsed": 82717,
+                    "id": 1,
+                    "methodDecoded": true,
+                    "operation": "DELEGATECALL",
+                    "output": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001430b6aebfbead3c017339f8d14c1fc527426c2dd1565ec1798fe68fb44288470",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x0dd8dd02",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "2": {
+                "event": {
+                    "contract": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a",
+                    "decodedLog": {
+                        "name": "OperatorSharesDecreased",
+                        "params": [
+                            {
+                                "name": "operator",
+                                "type": "address",
+                                "value": "0xdbed88d83176316fc46797b43adee927dc2ff2f5"
+                            },
+                            {
+                                "name": "staker",
+                                "type": "address",
+                                "value": "0x7221a2819d3826cdb84da15f036381222e805e25"
+                            },
+                            {
+                                "name": "strategy",
+                                "type": "address",
+                                "value": "0xacb55c530acdb2849e6d4f36992cd8c9d50ed8f7"
+                            },
+                            {
+                                "name": "shares",
+                                "type": "uint256",
+                                "value": "110,000,000,000,000,000,000"
+                            }
+                        ],
+                        "signature": "OperatorSharesDecreased(address,address,address,uint256)"
+                    },
+                    "id": 2,
+                    "logData": "0x0000000000000000000000007221a2819d3826cdb84da15f036381222e805e25000000000000000000000000acb55c530acdb2849e6d4f36992cd8c9d50ed8f7000000000000000000000000000000000000000000000005f68e8131ecf80000",
+                    "logDecoded": true,
+                    "operation": "EVENT",
+                    "revert": false,
+                    "status": true,
+                    "topics": [
+                        "0x6909600037b75d7b4733aedd815442b5ec018a827751c832aaff64eba5d6d2dd",
+                        "0x000000000000000000000000dbed88d83176316fc46797b43adee927dc2ff2f5"
+                    ]
+                },
+                "nodeType": 1
+            },
+            "3": {
+                "invocation": {
+                    "address": "0x858646372cc42e1a627fce94aa7a7033e7cf075a",
+                    "callData": "0x0000000000000000000000007221a2819d3826cdb84da15f036381222e805e25000000000000000000000000acb55c530acdb2849e6d4f36992cd8c9d50ed8f7000000000000000000000000000000000000000000000005f68e8131ecf80000",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "staker",
+                                "type": "address",
+                                "value": "0x7221a2819d3826cdb84da15f036381222e805e25"
+                            },
+                            {
+                                "name": "strategy",
+                                "type": "address",
+                                "value": "0xacb55c530acdb2849e6d4f36992cd8c9d50ed8f7"
+                            },
+                            {
+                                "name": "shares",
+                                "type": "uint256",
+                                "value": "110,000,000,000,000,000,000"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "removeShares",
+                        "returnParams": [],
+                        "signature": "removeShares(address,address,uint256)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a",
+                    "gasUsed": 30267,
+                    "id": 3,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x8c80d4e5",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "4": {
+                "invocation": {
+                    "address": "0x70f44c13944d49a236e3cd7a94f48f5dab6c619b",
+                    "callData": "0x0000000000000000000000007221a2819d3826cdb84da15f036381222e805e25000000000000000000000000acb55c530acdb2849e6d4f36992cd8c9d50ed8f7000000000000000000000000000000000000000000000005f68e8131ecf80000",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "staker",
+                                "type": "address",
+                                "value": "0x7221a2819d3826cdb84da15f036381222e805e25"
+                            },
+                            {
+                                "name": "strategy",
+                                "type": "address",
+                                "value": "0xacb55c530acdb2849e6d4f36992cd8c9d50ed8f7"
+                            },
+                            {
+                                "name": "shares",
+                                "type": "uint256",
+                                "value": "110,000,000,000,000,000,000"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "removeShares",
+                        "returnParams": [],
+                        "signature": "removeShares(address,address,uint256)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x858646372cc42e1a627fce94aa7a7033e7cf075a",
+                    "gasUsed": 22942,
+                    "id": 4,
+                    "methodDecoded": true,
+                    "operation": "DELEGATECALL",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x8c80d4e5",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "5": {
+                "event": {
+                    "contract": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a",
+                    "decodedLog": {
+                        "name": "WithdrawalQueued",
+                        "params": [
+                            {
+                                "name": "withdrawalRoot",
+                                "type": "bytes32",
+                                "value": "0x430b6aebfbead3c017339f8d14c1fc527426c2dd1565ec1798fe68fb44288470"
+                            },
+                            {
+                                "name": "withdrawal",
+                                "type": "(address,address,address,uint256,uint32,address[],uint256[])",
+                                "value": [
+                                    {
+                                        "name": "staker",
+                                        "type": "address",
+                                        "value": "0x7221a2819d3826cdb84da15f036381222e805e25"
+                                    },
+                                    {
+                                        "name": "delegatedTo",
+                                        "type": "address",
+                                        "value": "0xdbed88d83176316fc46797b43adee927dc2ff2f5"
+                                    },
+                                    {
+                                        "name": "withdrawer",
+                                        "type": "address",
+                                        "value": "0x7221a2819d3826cdb84da15f036381222e805e25"
+                                    },
+                                    {
+                                        "name": "nonce",
+                                        "type": "uint256",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "name": "startBlock",
+                                        "type": "uint32",
+                                        "value": "20,465,087"
+                                    },
+                                    {
+                                        "name": "strategies",
+                                        "type": "address[]",
+                                        "value": [
+                                            "0xacb55c530acdb2849e6d4f36992cd8c9d50ed8f7"
+                                        ]
+                                    },
+                                    {
+                                        "name": "shares",
+                                        "type": "uint256[]",
+                                        "value": [
+                                            "110,000,000,000,000,000,000"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "signature": "WithdrawalQueued(bytes32,(address,address,address,uint256,uint32,address[],uint256[]))"
+                    },
+                    "id": 5,
+                    "logData": "0x430b6aebfbead3c017339f8d14c1fc527426c2dd1565ec1798fe68fb4428847000000000000000000000000000000000000000000000000000000000000000400000000000000000000000007221a2819d3826cdb84da15f036381222e805e25000000000000000000000000dbed88d83176316fc46797b43adee927dc2ff2f50000000000000000000000007221a2819d3826cdb84da15f036381222e805e25000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000013845bf00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000acb55c530acdb2849e6d4f36992cd8c9d50ed8f70000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000005f68e8131ecf80000",
+                    "logDecoded": true,
+                    "operation": "EVENT",
+                    "revert": false,
+                    "status": true,
+                    "topics": [
+                        "0x9009ab153e8014fbfb02f2217f5cde7aa7f9ad734ae85ca3ee3f4ca2fdd499f9"
+                    ]
+                },
+                "nodeType": 1
+            }
+        },
+        "gasFlame": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Initial Gas",
+                                "value": 22992
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "depth": 3,
+                                                        "name": "removeShares",
+                                                        "value": 22942
+                                                    }
+                                                ],
+                                                "depth": 2,
+                                                "name": "removeShares",
+                                                "value": 30267
+                                            }
+                                        ],
+                                        "depth": 1,
+                                        "name": "queueWithdrawals",
+                                        "value": 82717
+                                    }
+                                ],
+                                "depth": 0,
+                                "name": "Executed Gas",
+                                "value": 90093
+                            }
+                        ],
+                        "depth": -1,
+                        "name": "Actual Gas Used",
+                        "value": 103485
+                    },
+                    {
+                        "children": [],
+                        "depth": -1,
+                        "name": "Refunded Gas",
+                        "value": 9600
+                    }
+                ],
+                "depth": -2,
+                "name": "Total Gas",
+                "value": 113085
+            }
+        ],
+        "isConfirmed": true,
+        "mainTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depth": 2,
+                                        "id": 2,
+                                        "order": 2
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depth": 3,
+                                                "id": 4,
+                                                "order": 4
+                                            }
+                                        ],
+                                        "depth": 2,
+                                        "id": 3,
+                                        "order": 3
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 2,
+                                        "id": 5,
+                                        "order": 5
+                                    }
+                                ],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "mainTraceNodeCount": 6,
+        "parentIdMap": {
+            "0": -1,
+            "1": 0,
+            "2": 1,
+            "3": 1,
+            "4": 3,
+            "5": 1
+        },
+        "tidyTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depth": 2,
+                                        "id": 2,
+                                        "order": 2
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depth": 3,
+                                                "id": 4,
+                                                "order": 4
+                                            }
+                                        ],
+                                        "depth": 2,
+                                        "id": 3,
+                                        "order": 3
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 2,
+                                        "id": 5,
+                                        "order": 5
+                                    }
+                                ],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "tidyTraceNodeCount": 6
+    },
+    "state_change": {
+        "stateChanges": [
+            {
+                "address": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a",
+                "erc": "",
+                "slots": [
+                    {
+                        "current": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                        "key": "0x34c231352e5c3b7ea9fb4f2c0fa22b452ff22cc3970c6bd6da4d592d2fc3e3ea",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    },
+                    {
+                        "current": "0x0000000000000000000000000000000000000000000695f8eb5dd159273b6393",
+                        "key": "0xf6e076fb3a90e75da513667cfeeecd685266d675af1d775f27c7b2206e6e9fa9",
+                        "prev": "0x0000000000000000000000000000000000000000000695fee1ec528b14336393"
+                    },
+                    {
+                        "current": "0x0000000000000000000000000000000000000000000000000000000000000002",
+                        "key": "0xe9952a29b39c33812ba1b191de4e15405525756989f926ef2741dc8b903142bb",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000001"
+                    }
+                ],
+                "storageVariables": [
+                    {
+                        "name": "cumulativeWithdrawalsQueued",
+                        "type": "mapping(address => uint256)",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "0x7221a2819d3826cdb84da15f036381222e805e25",
+                                    "value": {
+                                        "current": "2",
+                                        "prev": "1",
+                                        "typeTag": 1
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    },
+                    {
+                        "name": "pendingWithdrawals",
+                        "type": "mapping(bytes32 => bool)",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "0x430b6aebfbead3c017339f8d14c1fc527426c2dd1565ec1798fe68fb44288470",
+                                    "value": {
+                                        "current": "true",
+                                        "prev": "false",
+                                        "typeTag": 1
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    },
+                    {
+                        "name": "operatorShares",
+                        "type": "mapping(address => mapping(contract IStrategy => uint256))",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "0xdbed88d83176316fc46797b43adee927dc2ff2f5",
+                                    "value": {
+                                        "pairs": [
+                                            {
+                                                "key": "0xacb55c530acdb2849e6d4f36992cd8c9d50ed8f7",
+                                                "value": {
+                                                    "current": "7961779276107584741532563",
+                                                    "prev": "7961889276107584741532563",
+                                                    "typeTag": 1
+                                                }
+                                            }
+                                        ],
+                                        "typeTag": 4
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    }
+                ]
+            },
+            {
+                "address": "0x858646372cc42e1a627fce94aa7a7033e7cf075a",
+                "erc": "",
+                "slots": [
+                    {
+                        "current": "0x0000000000000000000000000fe4f44bee93503346a3ac9ee5a26b130a5796d6",
+                        "key": "0xfbd9f32c0d2777f99d4b641cc0a902daa9b5e378f1dadd708a51b589975e9206",
+                        "prev": "0x000000000000000000000000acb55c530acdb2849e6d4f36992cd8c9d50ed8f7"
+                    },
+                    {
+                        "current": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                        "key": "0xfbd9f32c0d2777f99d4b641cc0a902daa9b5e378f1dadd708a51b589975e9207",
+                        "prev": "0x0000000000000000000000000fe4f44bee93503346a3ac9ee5a26b130a5796d6"
+                    },
+                    {
+                        "current": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                        "key": "0x9327461ead7296d109c925ca453b0ddbb8b5da555fa1cbd961052bed8071e395",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000002"
+                    },
+                    {
+                        "current": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                        "key": "0xb3ea4e9c75875cf84fe456b5d833fc96275b1e5797546f56e844c80b99df6d75",
+                        "prev": "0x000000000000000000000000000000000000000000000005f68e8131ecf80000"
+                    }
+                ],
+                "storageVariables": [
+                    {
+                        "name": "stakerStrategyList",
+                        "type": "mapping(address => contract IStrategy[])",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "0x7221a2819d3826cdb84da15f036381222e805e25",
+                                    "value": {
+                                        "elemType": "contract IStrategy",
+                                        "elems": [
+                                            {
+                                                "index": 0,
+                                                "value": {
+                                                    "current": "0x0fe4f44bee93503346a3ac9ee5a26b130a5796d6",
+                                                    "prev": "0xacb55c530acdb2849e6d4f36992cd8c9d50ed8f7",
+                                                    "typeTag": 1
+                                                }
+                                            }
+                                        ],
+                                        "typeTag": 2
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    },
+                    {
+                        "name": "stakerStrategyShares",
+                        "type": "mapping(address => mapping(contract IStrategy => uint256))",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "0x7221a2819d3826cdb84da15f036381222e805e25",
+                                    "value": {
+                                        "pairs": [
+                                            {
+                                                "key": "0xacb55c530acdb2849e6d4f36992cd8c9d50ed8f7",
+                                                "value": {
+                                                    "current": "0",
+                                                    "prev": "110000000000000000000",
+                                                    "typeTag": 1
+                                                }
+                                            }
+                                        ],
+                                        "typeTag": 4
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

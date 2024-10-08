@@ -1,0 +1,562 @@
+{
+    "balance_change": {
+        "balanceChanges": []
+    },
+    "profile": {
+        "basic_info": {
+            "baseFee": "14.586891277",
+            "blockNumber": 16138039,
+            "callData": "0xbcd1c1e500000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000008be",
+            "debugEnable": true,
+            "errorInfo": "",
+            "eventCount": 1,
+            "feeRecipient": "0xdafea492d9c6733ae3d56b7ed1adb60692c98bc5",
+            "formatValue": "0",
+            "gasLimit": 388813,
+            "gasPrice": "17.086891277",
+            "gasUsed": 321211,
+            "intTxnCount": 3,
+            "internalRevert": false,
+            "internalRevertMessage": "",
+            "isContractCreation": false,
+            "isFlashloan": false,
+            "maxFee": "27.86077635",
+            "nonce": 429,
+            "overwritedBlockNumber": -1,
+            "priorityFee": "2.5",
+            "receiver": "0x0da920b49477f7d02a1da63a198fc877f65a40c4",
+            "revertMessage": "",
+            "sender": "0xeec926658b0aca1b37299f20abba29b422415eff",
+            "simulationEnable": true,
+            "sourceTxnHash": "0x4d2f2bc2b6132cb1b022c0aeea202f11762356ff61585e403d7805eaf0e26abd",
+            "status": true,
+            "timestamp": "2022-12-08T05:55:35Z",
+            "transactionFee": "0.005488497433976447",
+            "txnHash": "0x4d2f2bc2b6132cb1b022c0aeea202f11762356ff61585e403d7805eaf0e26abd",
+            "txnIndex": 16,
+            "type": 2,
+            "value": "0"
+        },
+        "fund_flow": [],
+        "token_infos": [
+            {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "decimals": 18
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "decimals": 18
+            }
+        ]
+    },
+    "address_label": {
+        "labels": [
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "label": "Ether"
+            },
+            {
+                "address": "0x8013266cb5c9dd48be3ad7d1ce832874d64b3ce1",
+                "label": "BBB: BOOP Token"
+            },
+            {
+                "address": "0xff35d339ee07acde54c135fbee39765010620d33",
+                "label": "UUPSProxy"
+            },
+            {
+                "address": "0x0da920b49477f7d02a1da63a198fc877f65a40c4",
+                "label": "BeepBoopAmmo"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000001",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000002",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000003",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000004",
+                "label": "Precompiled"
+            }
+        ]
+    },
+    "trace": {
+        "accountLabels": null,
+        "dataMap": {
+            "-1": {
+                "invocation": {
+                    "address": "0xeec926658b0aca1b37299f20abba29b422415eff",
+                    "callData": "",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "",
+                    "gasUsed": 0,
+                    "id": -1,
+                    "methodDecoded": false,
+                    "operation": "",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "",
+                    "status": false,
+                    "value": ""
+                },
+                "nodeType": 0
+            },
+            "0": {
+                "invocation": {
+                    "address": "0x0da920b49477f7d02a1da63a198fc877f65a40c4",
+                    "callData": "0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000008be",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "round",
+                                "type": "uint256",
+                                "value": "1"
+                            },
+                            {
+                                "name": "tokenIds",
+                                "type": "uint256[]",
+                                "value": [
+                                    "2,238"
+                                ]
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "purchaseAmmo",
+                        "returnParams": [],
+                        "signature": "purchaseAmmo(uint256,uint256[])"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0xeec926658b0aca1b37299f20abba29b422415eff",
+                    "gasUsed": 321211,
+                    "id": 0,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0xbcd1c1e5",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "1": {
+                "invocation": {
+                    "address": "0x8013266cb5c9dd48be3ad7d1ce832874d64b3ce1",
+                    "callData": "0x000000000000000000000000eec926658b0aca1b37299f20abba29b422415eff00000000000000000000000000000000000000000000043c33c1937564800000",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "user",
+                                "type": "address",
+                                "value": "0xeec926658b0aca1b37299f20abba29b422415eff"
+                            },
+                            {
+                                "name": "amount",
+                                "type": "uint256",
+                                "value": "20,000,000,000,000,000,000,000"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "spendBeepBoop",
+                        "returnParams": [],
+                        "signature": "spendBeepBoop(address,uint256)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x0da920b49477f7d02a1da63a198fc877f65a40c4",
+                    "gasUsed": 244791,
+                    "id": 1,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0xc2f7df3d",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "2": {
+                "invocation": {
+                    "address": "0xff35d339ee07acde54c135fbee39765010620d33",
+                    "callData": "0x000000000000000000000000eec926658b0aca1b37299f20abba29b422415eff",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "staker",
+                                "type": "address",
+                                "value": "0xeec926658b0aca1b37299f20abba29b422415eff"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "getAccumulatedAmount",
+                        "returnParams": [
+                            {
+                                "name": "",
+                                "type": "uint256",
+                                "value": "18,427,840,770,833,333,333,333,309"
+                            }
+                        ],
+                        "signature": "getAccumulatedAmount(address)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x8013266cb5c9dd48be3ad7d1ce832874d64b3ce1",
+                    "gasUsed": 215458,
+                    "id": 2,
+                    "methodDecoded": true,
+                    "operation": "STATICCALL",
+                    "output": "0x0000000000000000000000000000000000000000000f3e3f3ff94c120d5d153d",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x04129667",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "3": {
+                "invocation": {
+                    "address": "0xfd636f462f464776f18f3dfe87650659d4954319",
+                    "callData": "0x000000000000000000000000eec926658b0aca1b37299f20abba29b422415eff",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "staker",
+                                "type": "address",
+                                "value": "0xeec926658b0aca1b37299f20abba29b422415eff"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "getAccumulatedAmount",
+                        "returnParams": [
+                            {
+                                "name": "",
+                                "type": "uint256",
+                                "value": "18,427,840,770,833,333,333,333,309"
+                            }
+                        ],
+                        "signature": "getAccumulatedAmount(address)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0xff35d339ee07acde54c135fbee39765010620d33",
+                    "gasUsed": 210560,
+                    "id": 3,
+                    "methodDecoded": true,
+                    "operation": "DELEGATECALL",
+                    "output": "0x0000000000000000000000000000000000000000000f3e3f3ff94c120d5d153d",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x04129667",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "4": {
+                "event": {
+                    "contract": "0x8013266cb5c9dd48be3ad7d1ce832874d64b3ce1",
+                    "decodedLog": {
+                        "name": "Spend",
+                        "params": [
+                            {
+                                "name": "caller",
+                                "type": "address",
+                                "value": "0x0da920b49477f7d02a1da63a198fc877f65a40c4"
+                            },
+                            {
+                                "name": "userAddress",
+                                "type": "address",
+                                "value": "0xeec926658b0aca1b37299f20abba29b422415eff"
+                            },
+                            {
+                                "name": "amount",
+                                "type": "uint256",
+                                "value": "20,000,000,000,000,000,000,000"
+                            },
+                            {
+                                "name": "tax",
+                                "type": "uint256",
+                                "value": "0"
+                            }
+                        ],
+                        "signature": "Spend(address,address,uint256,uint256)"
+                    },
+                    "id": 4,
+                    "logData": "0x00000000000000000000000000000000000000000000043c33c19375648000000000000000000000000000000000000000000000000000000000000000000000",
+                    "logDecoded": true,
+                    "operation": "EVENT",
+                    "revert": false,
+                    "status": true,
+                    "topics": [
+                        "0xed8cfe3600cacf009dc67354491d44da19a77f26a4aed42181ba6824ccb35d72",
+                        "0x0000000000000000000000000da920b49477f7d02a1da63a198fc877f65a40c4",
+                        "0x000000000000000000000000eec926658b0aca1b37299f20abba29b422415eff"
+                    ]
+                },
+                "nodeType": 1
+            }
+        },
+        "gasFlame": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Initial Gas",
+                                "value": 21636
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "depth": 3,
+                                                        "name": "getAccumulatedAmount",
+                                                        "value": 210560
+                                                    }
+                                                ],
+                                                "depth": 2,
+                                                "name": "getAccumulatedAmount",
+                                                "value": 215458
+                                            }
+                                        ],
+                                        "depth": 1,
+                                        "name": "spendBeepBoop",
+                                        "value": 244791
+                                    }
+                                ],
+                                "depth": 0,
+                                "name": "Executed Gas",
+                                "value": 302375
+                            }
+                        ],
+                        "depth": -1,
+                        "name": "Actual Gas Used",
+                        "value": 321211
+                    },
+                    {
+                        "children": [],
+                        "depth": -1,
+                        "name": "Refunded Gas",
+                        "value": 2800
+                    }
+                ],
+                "depth": -2,
+                "name": "Total Gas",
+                "value": 324011
+            }
+        ],
+        "isConfirmed": true,
+        "mainTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depth": 3,
+                                                "id": 3,
+                                                "order": 3
+                                            }
+                                        ],
+                                        "depth": 2,
+                                        "id": 2,
+                                        "order": 2
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 2,
+                                        "id": 4,
+                                        "order": 4
+                                    }
+                                ],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "mainTraceNodeCount": 5,
+        "parentIdMap": {
+            "0": -1,
+            "1": 0,
+            "2": 1,
+            "3": 2,
+            "4": 1
+        },
+        "tidyTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depth": 2,
+                                        "id": 4,
+                                        "order": 4
+                                    }
+                                ],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "tidyTraceNodeCount": 3
+    },
+    "state_change": {
+        "stateChanges": [
+            {
+                "address": "0x0da920b49477f7d02a1da63a198fc877f65a40c4",
+                "erc": "",
+                "slots": [
+                    {
+                        "current": "0x0000000000000000000000000000000000000000000000000000000000000499",
+                        "key": "0xa15bc60c955c405d20d9149c709e2460f1c2d9a497496a7f46004d1772c3054c",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000498"
+                    },
+                    {
+                        "current": "0x00000000000000000000000000000000000000000000000000000000000008be",
+                        "key": "0x2c644dcf44e265ba93879b2da89e1b16ab48fc5eb8e31bc16b0612d6da846889",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    },
+                    {
+                        "current": "0x0000000000000000000000000000000000000000000000000000000000000499",
+                        "key": "0x8580f370bc19653faced55a16fe5cfc0b7eb3705cc0fb5b3d9bb8053f5fda306",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    }
+                ],
+                "storageVariables": [
+                    {
+                        "name": "_tokensWithAmmoForRound",
+                        "type": "mapping(uint256 => struct EnumerableSet.UintSet)",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "1",
+                                    "value": {
+                                        "fields": [
+                                            {
+                                                "name": "_inner",
+                                                "type": "struct EnumerableSet.Set",
+                                                "value": {
+                                                    "fields": [
+                                                        {
+                                                            "name": "_values",
+                                                            "type": "bytes32[]",
+                                                            "value": {
+                                                                "elemType": "bytes32",
+                                                                "elems": [
+                                                                    {
+                                                                        "index": 1176,
+                                                                        "value": {
+                                                                            "current": "0x00000000000000000000000000000000000000000000000000000000000008be",
+                                                                            "prev": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                                                                            "typeTag": 1
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "typeTag": 2
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "_indexes",
+                                                            "type": "mapping(bytes32 => uint256)",
+                                                            "value": {
+                                                                "pairs": [
+                                                                    {
+                                                                        "key": "0x00000000000000000000000000000000000000000000000000000000000008be",
+                                                                        "value": {
+                                                                            "current": "1177",
+                                                                            "prev": "0",
+                                                                            "typeTag": 1
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "typeTag": 4
+                                                            }
+                                                        }
+                                                    ],
+                                                    "typeTag": 3
+                                                }
+                                            }
+                                        ],
+                                        "typeTag": 3
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    }
+                ]
+            },
+            {
+                "address": "0x8013266cb5c9dd48be3ad7d1ce832874d64b3ce1",
+                "erc": "ERC-20",
+                "slots": [
+                    {
+                        "current": "0x0000000000000000000000000000000000000000000c83e6f18840677c400000",
+                        "key": "0x24ab37648a1834af1cd0e6bfbfbe6d8df610f72be3073e44bbb2a4ee3e7b7bf2",
+                        "prev": "0x0000000000000000000000000000000000000000000c7faabdc6acf217c00000"
+                    }
+                ],
+                "storageVariables": [
+                    {
+                        "name": "spentAmount",
+                        "type": "mapping(address => uint256)",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "0xeec926658b0aca1b37299f20abba29b422415eff",
+                                    "value": {
+                                        "current": "15130000000000000000000000",
+                                        "prev": "15110000000000000000000000",
+                                        "typeTag": 1
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

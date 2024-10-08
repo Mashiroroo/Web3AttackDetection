@@ -1,0 +1,360 @@
+{
+    "balance_change": {
+        "balanceChanges": [
+            {
+                "account": "0xea6c59c77de39701283442b0d008eab4ce338ed3",
+                "assets": [
+                    {
+                        "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                        "amount": "0.1",
+                        "iconUrl": "https://assets.blocksec.com/image/1663669189317-3.png",
+                        "isERC1155": false,
+                        "isERC721": false,
+                        "sign": false,
+                        "value": "162.098753"
+                    }
+                ]
+            },
+            {
+                "account": "0xe98550a9c13d6f0a90d60727be265ee11c4d2906",
+                "assets": [
+                    {
+                        "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                        "amount": "0.1",
+                        "iconUrl": "https://assets.blocksec.com/image/1663669189317-3.png",
+                        "isERC1155": false,
+                        "isERC721": false,
+                        "sign": true,
+                        "value": "162.098753"
+                    }
+                ]
+            }
+        ]
+    },
+    "profile": {
+        "basic_info": {
+            "baseFee": "27.872511977",
+            "blockNumber": 16588841,
+            "callData": "0x1998aeef",
+            "debugEnable": true,
+            "errorInfo": "",
+            "eventCount": 1,
+            "feeRecipient": "0xdafea492d9c6733ae3d56b7ed1adb60692c98bc5",
+            "formatValue": "0.1",
+            "gasLimit": 71248,
+            "gasPrice": "28.922511977",
+            "gasUsed": 54806,
+            "intTxnCount": 0,
+            "internalRevert": false,
+            "internalRevertMessage": "",
+            "isContractCreation": false,
+            "isFlashloan": false,
+            "maxFee": "39.06",
+            "nonce": 737,
+            "overwritedBlockNumber": -1,
+            "priorityFee": "1.05",
+            "receiver": "0xe98550a9c13d6f0a90d60727be265ee11c4d2906",
+            "revertMessage": "",
+            "sender": "0xea6c59c77de39701283442b0d008eab4ce338ed3",
+            "simulationEnable": true,
+            "sourceTxnHash": "0xac624fd2e35ca8659f168f1b7fd7af37ff667456e9ed31f9170da15e077c3769",
+            "status": true,
+            "timestamp": "2023-02-09T04:34:11Z",
+            "transactionFee": "0.001585127191411462",
+            "txnHash": "0xac624fd2e35ca8659f168f1b7fd7af37ff667456e9ed31f9170da15e077c3769",
+            "txnIndex": 71,
+            "type": 2,
+            "value": "100000000000000000"
+        },
+        "fund_flow": [
+            {
+                "amount": "0.1",
+                "from": "0xea6c59c77de39701283442b0d008eab4ce338ed3",
+                "id": 1,
+                "isERC1155": false,
+                "isERC721": false,
+                "isReverted": false,
+                "order": 1,
+                "to": "0xe98550a9c13d6f0a90d60727be265ee11c4d2906",
+                "token": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+            }
+        ],
+        "token_infos": [
+            {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "decimals": 18
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "decimals": 18
+            }
+        ]
+    },
+    "address_label": {
+        "labels": [
+            {
+                "address": "0x0000000000000000000000000000000000000004",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "label": "Ether"
+            },
+            {
+                "address": "0xe98550a9c13d6f0a90d60727be265ee11c4d2906",
+                "label": "FairAuction"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000001",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000002",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000003",
+                "label": "Precompiled"
+            }
+        ]
+    },
+    "trace": {
+        "accountLabels": null,
+        "dataMap": {
+            "-1": {
+                "invocation": {
+                    "address": "0xea6c59c77de39701283442b0d008eab4ce338ed3",
+                    "callData": "",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "",
+                    "gasUsed": 0,
+                    "id": -1,
+                    "methodDecoded": false,
+                    "operation": "",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "",
+                    "status": false,
+                    "value": ""
+                },
+                "nodeType": 0
+            },
+            "0": {
+                "invocation": {
+                    "address": "0xe98550a9c13d6f0a90d60727be265ee11c4d2906",
+                    "callData": "0x",
+                    "decodedMethod": {
+                        "callParams": [],
+                        "constructorArguments": "",
+                        "name": "bid",
+                        "returnParams": [],
+                        "signature": "bid()"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0xea6c59c77de39701283442b0d008eab4ce338ed3",
+                    "gasUsed": 54806,
+                    "id": 0,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x1998aeef",
+                    "status": true,
+                    "value": "0.1"
+                },
+                "nodeType": 0
+            },
+            "1": {
+                "event": {
+                    "contract": "0xe98550a9c13d6f0a90d60727be265ee11c4d2906",
+                    "decodedLog": {
+                        "name": "Bid",
+                        "params": [
+                            {
+                                "name": "user",
+                                "type": "address",
+                                "value": "0xea6c59c77de39701283442b0d008eab4ce338ed3"
+                            },
+                            {
+                                "name": "bidAmount",
+                                "type": "uint256",
+                                "value": "100,000,000,000,000,000"
+                            },
+                            {
+                                "name": "currentBid",
+                                "type": "uint256",
+                                "value": "100,000,000,000,000,000"
+                            },
+                            {
+                                "name": "totalBid",
+                                "type": "uint256",
+                                "value": "574,630,000,000,000,000,000"
+                            }
+                        ],
+                        "signature": "Bid(address,uint256,uint256,uint256)"
+                    },
+                    "id": 1,
+                    "logData": "0x000000000000000000000000000000000000000000000000016345785d8a0000000000000000000000000000000000000000000000000000016345785d8a000000000000000000000000000000000000000000000000001f2697dc7ad2b70000",
+                    "logDecoded": true,
+                    "operation": "EVENT",
+                    "revert": false,
+                    "status": true,
+                    "topics": [
+                        "0x4dcc013473324698bfbe263facec4ea4b1bc43624236542deabec62c2122b305",
+                        "0x000000000000000000000000ea6c59c77de39701283442b0d008eab4ce338ed3"
+                    ]
+                },
+                "nodeType": 1
+            }
+        },
+        "gasFlame": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Initial Gas",
+                                "value": 21064
+                            },
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Executed Gas",
+                                "value": 33742
+                            }
+                        ],
+                        "depth": -1,
+                        "name": "Actual Gas Used",
+                        "value": 54806
+                    },
+                    {
+                        "children": [],
+                        "depth": -1,
+                        "name": "Refunded Gas",
+                        "value": 0
+                    }
+                ],
+                "depth": -2,
+                "name": "Total Gas",
+                "value": 54806
+            }
+        ],
+        "isConfirmed": true,
+        "mainTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "mainTraceNodeCount": 2,
+        "parentIdMap": {
+            "0": -1,
+            "1": 0
+        },
+        "tidyTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "tidyTraceNodeCount": 2
+    },
+    "state_change": {
+        "stateChanges": [
+            {
+                "address": "0xe98550a9c13d6f0a90d60727be265ee11c4d2906",
+                "erc": "",
+                "slots": [
+                    {
+                        "current": "0x000000000000000000000000000000000000000000000000016345785d8a0000",
+                        "key": "0x110eab254a097b9f091aae249ee4e2f52889832b6bd9357705e76e79aa75d207",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    }
+                ],
+                "storageVariables": [
+                    {
+                        "name": "userToBidData",
+                        "type": "mapping(address => struct FairAuction.BidData)",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "0xea6c59c77de39701283442b0d008eab4ce338ed3",
+                                    "value": {
+                                        "fields": [
+                                            {
+                                                "name": "currentBid",
+                                                "type": "uint240",
+                                                "value": {
+                                                    "current": "100000000000000000",
+                                                    "prev": "0",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "mintClaimed",
+                                                "type": "bool",
+                                                "value": {
+                                                    "current": "false",
+                                                    "prev": "false",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "refundClaimed",
+                                                "type": "bool",
+                                                "value": {
+                                                    "current": "false",
+                                                    "prev": "false",
+                                                    "typeTag": 1
+                                                }
+                                            }
+                                        ],
+                                        "typeTag": 3
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

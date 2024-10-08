@@ -1,0 +1,512 @@
+{
+    "balance_change": {
+        "balanceChanges": [
+            {
+                "account": "0x76ecae8bffca24d2bf7744aa4b2d242325cba945",
+                "assets": [
+                    {
+                        "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                        "amount": "0.029",
+                        "iconUrl": "https://assets.blocksec.com/image/1663669189317-3.png",
+                        "isERC1155": false,
+                        "isERC721": false,
+                        "sign": false,
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "account": "0x04797c1ae852a31665d8e512ddae33e6044ef39d",
+                "assets": [
+                    {
+                        "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                        "amount": "0.029",
+                        "iconUrl": "https://assets.blocksec.com/image/1663669189317-3.png",
+                        "isERC1155": false,
+                        "isERC721": false,
+                        "sign": true,
+                        "value": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "profile": {
+        "basic_info": {
+            "baseFee": "",
+            "blockNumber": 6320975,
+            "callData": "0x6bf0f4a10000000000000000000000000000000000000000000000000000000000000032",
+            "debugEnable": true,
+            "errorInfo": "",
+            "eventCount": 2,
+            "feeRecipient": "0xea674fdde714fd979de3edf0f56aa9716b898ec8",
+            "formatValue": "0.029",
+            "gasLimit": 60000,
+            "gasPrice": "5.11",
+            "gasUsed": 43208,
+            "intTxnCount": 0,
+            "internalRevert": false,
+            "internalRevertMessage": "",
+            "isContractCreation": false,
+            "isFlashloan": false,
+            "maxFee": "",
+            "nonce": 4110,
+            "overwritedBlockNumber": -1,
+            "priorityFee": "",
+            "receiver": "0x04797c1ae852a31665d8e512ddae33e6044ef39d",
+            "revertMessage": "",
+            "sender": "0x76ecae8bffca24d2bf7744aa4b2d242325cba945",
+            "simulationEnable": true,
+            "sourceTxnHash": "0x044f83fc3fa00ba6af9b9e456a7179228f183a3fd88b53043ebc4954f79dae44",
+            "status": true,
+            "timestamp": "2018-09-13T00:02:11Z",
+            "transactionFee": "0.00022079288",
+            "txnHash": "0x044f83fc3fa00ba6af9b9e456a7179228f183a3fd88b53043ebc4954f79dae44",
+            "txnIndex": 90,
+            "type": 0,
+            "value": "29000000000000000"
+        },
+        "fund_flow": [
+            {
+                "amount": "0.029",
+                "from": "0x76ecae8bffca24d2bf7744aa4b2d242325cba945",
+                "id": 1,
+                "isERC1155": false,
+                "isERC721": false,
+                "isReverted": false,
+                "order": 1,
+                "to": "0x04797c1ae852a31665d8e512ddae33e6044ef39d",
+                "token": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+            }
+        ],
+        "token_infos": [
+            {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "decimals": 18
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "decimals": 18
+            }
+        ]
+    },
+    "address_label": {
+        "labels": [
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "label": "Ether"
+            },
+            {
+                "address": "0x04797c1ae852a31665d8e512ddae33e6044ef39d",
+                "label": "InstaDice"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000001",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000002",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000003",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000004",
+                "label": "Precompiled"
+            }
+        ]
+    },
+    "trace": {
+        "accountLabels": null,
+        "dataMap": {
+            "-1": {
+                "invocation": {
+                    "address": "0x76ecae8bffca24d2bf7744aa4b2d242325cba945",
+                    "callData": "",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "",
+                    "gasUsed": 0,
+                    "id": -1,
+                    "methodDecoded": false,
+                    "operation": "",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "",
+                    "status": false,
+                    "value": ""
+                },
+                "nodeType": 0
+            },
+            "0": {
+                "invocation": {
+                    "address": "0x04797c1ae852a31665d8e512ddae33e6044ef39d",
+                    "callData": "0x0000000000000000000000000000000000000000000000000000000000000032",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "_number",
+                                "type": "uint8",
+                                "value": "50"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "roll",
+                        "returnParams": [
+                            {
+                                "name": "_success",
+                                "type": "bool",
+                                "value": true
+                            }
+                        ],
+                        "signature": "roll(uint8)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x76ecae8bffca24d2bf7744aa4b2d242325cba945",
+                    "gasUsed": 43208,
+                    "id": 0,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x6bf0f4a1",
+                    "status": true,
+                    "value": "0.029"
+                },
+                "nodeType": 0
+            },
+            "1": {
+                "event": {
+                    "contract": "0x04797c1ae852a31665d8e512ddae33e6044ef39d",
+                    "decodedLog": {
+                        "name": "RollFinalized",
+                        "params": [
+                            {
+                                "name": "id",
+                                "type": "uint32",
+                                "value": "8,156"
+                            },
+                            {
+                                "name": "user",
+                                "type": "address",
+                                "value": "0x76ecae8bffca24d2bf7744aa4b2d242325cba945"
+                            },
+                            {
+                                "name": "time",
+                                "type": "uint256",
+                                "value": "1,536,796,931"
+                            },
+                            {
+                                "name": "result",
+                                "type": "uint8",
+                                "value": "100"
+                            },
+                            {
+                                "name": "payout",
+                                "type": "uint256",
+                                "value": "0"
+                            }
+                        ],
+                        "signature": "RollFinalized(uint256,uint32,address,uint8,uint256)"
+                    },
+                    "id": 1,
+                    "logData": "0x000000000000000000000000000000000000000000000000000000005b99a90300000000000000000000000000000000000000000000000000000000000000640000000000000000000000000000000000000000000000000000000000000000",
+                    "logDecoded": true,
+                    "operation": "EVENT",
+                    "revert": false,
+                    "status": true,
+                    "topics": [
+                        "0xc348ccde978a2c01c21e8f0e259146c5d8601cead7f68c0bc00ce5c6d3f6934b",
+                        "0x0000000000000000000000000000000000000000000000000000000000001fdc",
+                        "0x00000000000000000000000076ecae8bffca24d2bf7744aa4b2d242325cba945"
+                    ]
+                },
+                "nodeType": 1
+            },
+            "2": {
+                "event": {
+                    "contract": "0x04797c1ae852a31665d8e512ddae33e6044ef39d",
+                    "decodedLog": {
+                        "name": "RollWagered",
+                        "params": [
+                            {
+                                "name": "id",
+                                "type": "uint32",
+                                "value": "8,157"
+                            },
+                            {
+                                "name": "user",
+                                "type": "address",
+                                "value": "0x76ecae8bffca24d2bf7744aa4b2d242325cba945"
+                            },
+                            {
+                                "name": "time",
+                                "type": "uint256",
+                                "value": "1,536,796,931"
+                            },
+                            {
+                                "name": "bet",
+                                "type": "uint256",
+                                "value": "29,000,000,000,000,000"
+                            },
+                            {
+                                "name": "number",
+                                "type": "uint8",
+                                "value": "50"
+                            },
+                            {
+                                "name": "payout",
+                                "type": "uint256",
+                                "value": "58,000,000,000,000,000"
+                            }
+                        ],
+                        "signature": "RollWagered(uint256,uint32,address,uint256,uint8,uint256)"
+                    },
+                    "id": 2,
+                    "logData": "0x000000000000000000000000000000000000000000000000000000005b99a90300000000000000000000000000000000000000000000000000670758aa7c8000000000000000000000000000000000000000000000000000000000000000003200000000000000000000000000000000000000000000000000ce0eb154f90000",
+                    "logDecoded": true,
+                    "operation": "EVENT",
+                    "revert": false,
+                    "status": true,
+                    "topics": [
+                        "0xc08bb48db68c79ac63f029c53f1f0b955ec78fada4410a0aaf04d25400eafd1e",
+                        "0x0000000000000000000000000000000000000000000000000000000000001fdd",
+                        "0x00000000000000000000000076ecae8bffca24d2bf7744aa4b2d242325cba945"
+                    ]
+                },
+                "nodeType": 1
+            }
+        },
+        "gasFlame": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Initial Gas",
+                                "value": 21464
+                            },
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Executed Gas",
+                                "value": 21744
+                            }
+                        ],
+                        "depth": -1,
+                        "name": "Actual Gas Used",
+                        "value": 43208
+                    },
+                    {
+                        "children": [],
+                        "depth": -1,
+                        "name": "Refunded Gas",
+                        "value": 0
+                    }
+                ],
+                "depth": -2,
+                "name": "Total Gas",
+                "value": 43208
+            }
+        ],
+        "isConfirmed": true,
+        "mainTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 2,
+                                "order": 2
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "mainTraceNodeCount": 3,
+        "parentIdMap": {
+            "0": -1,
+            "1": 0,
+            "2": 0
+        },
+        "tidyTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 2,
+                                "order": 2
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "tidyTraceNodeCount": 3
+    },
+    "state_change": {
+        "stateChanges": [
+            {
+                "address": "0x04797c1ae852a31665d8e512ddae33e6044ef39d",
+                "erc": "",
+                "slots": [
+                    {
+                        "current": "0x000000000000000000000000ce0eb154f90000320060734f00001fdd00000027",
+                        "key": "0xfd81f11cd4afa35296b9082d4650afc098e7909d22ff2b919c6641119bc754c3",
+                        "prev": "0x000000000000000000000000ce0eb154f90000320060734800001fdc00000027"
+                    },
+                    {
+                        "current": "0x0000000872582f5c842a9129000000087cb8680117ee800000001fdd00000060",
+                        "key": "0x0000000000000000000000000000000000000000000000000000000000000006",
+                        "prev": "0x0000000872582f5c842a9129000000087c5160a86d72000000001fdc00000060"
+                    }
+                ],
+                "storageVariables": [
+                    {
+                        "name": "stats",
+                        "type": "struct InstaDice.Stats",
+                        "value": {
+                            "fields": [
+                                {
+                                    "name": "numUsers",
+                                    "type": "uint32",
+                                    "value": {
+                                        "current": "96",
+                                        "prev": "96",
+                                        "typeTag": 1
+                                    }
+                                },
+                                {
+                                    "name": "numRolls",
+                                    "type": "uint32",
+                                    "value": {
+                                        "current": "8157",
+                                        "prev": "8156",
+                                        "typeTag": 1
+                                    }
+                                },
+                                {
+                                    "name": "totalWagered",
+                                    "type": "uint96",
+                                    "value": {
+                                        "current": "156561000000000000000",
+                                        "prev": "156532000000000000000",
+                                        "typeTag": 1
+                                    }
+                                },
+                                {
+                                    "name": "totalWon",
+                                    "type": "uint96",
+                                    "value": {
+                                        "current": "155813340182351614249",
+                                        "prev": "155813340182351614249",
+                                        "typeTag": 1
+                                    }
+                                }
+                            ],
+                            "typeTag": 3
+                        }
+                    },
+                    {
+                        "name": "users",
+                        "type": "mapping(address => struct InstaDice.User)",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "0x76ecae8bffca24d2bf7744aa4b2d242325cba945",
+                                    "value": {
+                                        "fields": [
+                                            {
+                                                "name": "id",
+                                                "type": "uint32",
+                                                "value": {
+                                                    "current": "39",
+                                                    "prev": "39",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "r_id",
+                                                "type": "uint32",
+                                                "value": {
+                                                    "current": "8157",
+                                                    "prev": "8156",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "r_block",
+                                                "type": "uint32",
+                                                "value": {
+                                                    "current": "6320975",
+                                                    "prev": "6320968",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "r_number",
+                                                "type": "uint8",
+                                                "value": {
+                                                    "current": "50",
+                                                    "prev": "50",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "r_payout",
+                                                "type": "uint72",
+                                                "value": {
+                                                    "current": "58000000000000000",
+                                                    "prev": "58000000000000000",
+                                                    "typeTag": 1
+                                                }
+                                            }
+                                        ],
+                                        "typeTag": 3
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

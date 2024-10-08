@@ -1,0 +1,210 @@
+{
+    "balance_change": {
+        "balanceChanges": []
+    },
+    "profile": {
+        "basic_info": {
+            "baseFee": "",
+            "blockNumber": 7693971,
+            "callData": "0xe9c90d015423f9dd7450bebb7fca01fd77f60bf1d5a31f4572d6688913a7574f9e81cfaa",
+            "debugEnable": true,
+            "errorInfo": "execution reverted",
+            "eventCount": 0,
+            "feeRecipient": "0x5a0b54d5dc17e0aadc383d2db43b0a0d3e029c4c",
+            "formatValue": "0",
+            "gasLimit": 400000,
+            "gasPrice": "6",
+            "gasUsed": 24745,
+            "intTxnCount": 0,
+            "internalRevert": false,
+            "internalRevertMessage": "",
+            "isContractCreation": false,
+            "isFlashloan": false,
+            "maxFee": "",
+            "nonce": 27118,
+            "overwritedBlockNumber": -1,
+            "priorityFee": "",
+            "receiver": "0x0c073c92e7684031cfc297b83ecc33619e864d18",
+            "revertMessage": "Bet already processed",
+            "sender": "0xfe1b558501737a26efaa062275db60008e659538",
+            "simulationEnable": true,
+            "sourceTxnHash": "0x67ce4037effa1ad252d083f1a9beacefc7ce21f205378c8f00cdaf43bf8c284d",
+            "status": false,
+            "timestamp": "2019-05-04T10:26:44Z",
+            "transactionFee": "0.00014847",
+            "txnHash": "0x67ce4037effa1ad252d083f1a9beacefc7ce21f205378c8f00cdaf43bf8c284d",
+            "txnIndex": 10,
+            "type": 0,
+            "value": "0"
+        },
+        "fund_flow": [],
+        "token_infos": [
+            {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "decimals": 18
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "decimals": 18
+            }
+        ]
+    },
+    "address_label": {
+        "labels": [
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "label": "Ether"
+            },
+            {
+                "address": "0x0c073c92e7684031cfc297b83ecc33619e864d18",
+                "label": "Xether.io: Games"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000001",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000002",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000003",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000004",
+                "label": "Precompiled"
+            }
+        ]
+    },
+    "trace": {
+        "accountLabels": null,
+        "dataMap": {
+            "-1": {
+                "invocation": {
+                    "address": "0xfe1b558501737a26efaa062275db60008e659538",
+                    "callData": "",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "",
+                    "gasUsed": 0,
+                    "id": -1,
+                    "methodDecoded": false,
+                    "operation": "",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "",
+                    "status": false,
+                    "value": ""
+                },
+                "nodeType": 0
+            },
+            "0": {
+                "invocation": {
+                    "address": "0x0c073c92e7684031cfc297b83ecc33619e864d18",
+                    "callData": "0x5423f9dd7450bebb7fca01fd77f60bf1d5a31f4572d6688913a7574f9e81cfaa",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "reveal",
+                                "type": "uint256",
+                                "value": "38,057,843,433,499,626,785,447,981,687,217,117,862,155,863,286,361,864,522,437,161,726,267,254,493,098"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "settleBetRoulette",
+                        "returnParams": [],
+                        "signature": "settleBetRoulette(uint256)"
+                    },
+                    "errorInfo": "execution reverted",
+                    "fromAddress": "0xfe1b558501737a26efaa062275db60008e659538",
+                    "gasUsed": 24745,
+                    "id": 0,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001542657420616c72656164792070726f6365737365640000000000000000000000",
+                    "revert": true,
+                    "revertMessage": "Bet already processed",
+                    "selector": "0xe9c90d01",
+                    "status": false,
+                    "value": "0"
+                },
+                "nodeType": 0
+            }
+        },
+        "gasFlame": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Initial Gas",
+                                "value": 23448
+                            },
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Executed Gas",
+                                "value": 1297
+                            }
+                        ],
+                        "depth": -1,
+                        "name": "Actual Gas Used",
+                        "value": 24745
+                    },
+                    {
+                        "children": [],
+                        "depth": -1,
+                        "name": "Refunded Gas",
+                        "value": 0
+                    }
+                ],
+                "depth": -2,
+                "name": "Total Gas",
+                "value": 24745
+            }
+        ],
+        "isConfirmed": true,
+        "mainTrace": [
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "mainTraceNodeCount": 1,
+        "parentIdMap": {
+            "0": -1
+        },
+        "tidyTrace": [
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "tidyTraceNodeCount": 1
+    },
+    "state_change": {
+        "stateChanges": []
+    }
+}

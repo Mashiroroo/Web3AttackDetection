@@ -1,0 +1,559 @@
+{
+    "balance_change": {
+        "balanceChanges": []
+    },
+    "profile": {
+        "basic_info": {
+            "baseFee": "",
+            "blockNumber": 9049294,
+            "callData": "0xf65d2f9b000000000000000000000000322c33a22c49f7356e21d3ae48ae1e2a5a7c344e000000000000000000000000a584c1c59b64c62697fdecfe1e6a884d9f8ebf9f000000000000000000000000537c07ac02a35d0d7b90c47121d93148afd2d32245eefcef18895283840ab11eb33e5548b9b6c0d891dab14cb0ff771eb47f0691",
+            "debugEnable": true,
+            "errorInfo": "",
+            "eventCount": 2,
+            "feeRecipient": "0xaa5c4244f05c92781c4f259913319d8ba1acf05e",
+            "formatValue": "0",
+            "gasLimit": 200000,
+            "gasPrice": "8.250825",
+            "gasUsed": 142250,
+            "intTxnCount": 3,
+            "internalRevert": false,
+            "internalRevertMessage": "",
+            "isContractCreation": false,
+            "isFlashloan": false,
+            "maxFee": "",
+            "nonce": 70,
+            "overwritedBlockNumber": -1,
+            "priorityFee": "",
+            "receiver": "0xab76c6d00c603a7615d5459132c1745eb1fb4f6c",
+            "revertMessage": "",
+            "sender": "0x537c07ac02a35d0d7b90c47121d93148afd2d322",
+            "simulationEnable": true,
+            "sourceTxnHash": "0x2a5efbefb4a62c50422d2f7848a46fab7b955ff146e81fa05eb785f3b7cf8704",
+            "status": true,
+            "timestamp": "2019-12-04T12:36:28Z",
+            "transactionFee": "0.00117367985625",
+            "txnHash": "0x2a5efbefb4a62c50422d2f7848a46fab7b955ff146e81fa05eb785f3b7cf8704",
+            "txnIndex": 69,
+            "type": 0,
+            "value": "0"
+        },
+        "fund_flow": [],
+        "token_infos": [
+            {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "decimals": 18
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "decimals": 18
+            }
+        ]
+    },
+    "address_label": {
+        "labels": [
+            {
+                "address": "0x0000000000000000000000000000000000000002",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000003",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000004",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "label": "Ether"
+            },
+            {
+                "address": "0xab76c6d00c603a7615d5459132c1745eb1fb4f6c",
+                "label": "WalletFactory"
+            },
+            {
+                "address": "0x989a2ad9acaa8c4e50b2fc6b650d6e1809b9195b",
+                "label": "CloneableWallet"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000001",
+                "label": "Precompiled"
+            }
+        ]
+    },
+    "trace": {
+        "accountLabels": null,
+        "dataMap": {
+            "-1": {
+                "invocation": {
+                    "address": "0x537c07ac02a35d0d7b90c47121d93148afd2d322",
+                    "callData": "",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "",
+                    "gasUsed": 0,
+                    "id": -1,
+                    "methodDecoded": false,
+                    "operation": "",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "",
+                    "status": false,
+                    "value": ""
+                },
+                "nodeType": 0
+            },
+            "0": {
+                "invocation": {
+                    "address": "0xab76c6d00c603a7615d5459132c1745eb1fb4f6c",
+                    "callData": "0x000000000000000000000000322c33a22c49f7356e21d3ae48ae1e2a5a7c344e000000000000000000000000a584c1c59b64c62697fdecfe1e6a884d9f8ebf9f000000000000000000000000537c07ac02a35d0d7b90c47121d93148afd2d32245eefcef18895283840ab11eb33e5548b9b6c0d891dab14cb0ff771eb47f0691",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "_recoveryAddress",
+                                "type": "address",
+                                "value": "0x322c33a22c49f7356e21d3ae48ae1e2a5a7c344e"
+                            },
+                            {
+                                "name": "_authorizedAddress",
+                                "type": "address",
+                                "value": "0xa584c1c59b64c62697fdecfe1e6a884d9f8ebf9f"
+                            },
+                            {
+                                "name": "_cosigner",
+                                "type": "uint256",
+                                "value": "476,612,194,701,071,798,215,855,543,127,615,386,626,647,315,234"
+                            },
+                            {
+                                "name": "_salt",
+                                "type": "bytes32",
+                                "value": "0x45eefcef18895283840ab11eb33e5548b9b6c0d891dab14cb0ff771eb47f0691"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "deployCloneWallet2",
+                        "returnParams": [],
+                        "signature": "deployCloneWallet2(address,address,uint256,bytes32)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x537c07ac02a35d0d7b90c47121d93148afd2d322",
+                    "gasUsed": 142250,
+                    "id": 0,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0xf65d2f9b",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "1": {
+                "invocation": {
+                    "address": "0x4bb75d3e1406861b4729148b479c730e45befa1c",
+                    "callData": "0x3d602d80600a3d3981f3363d3d373d3d3d363d73989a2ad9acaa8c4e50b2fc6b650d6e1809b9195b5af43d82803e903d91602b57fd5bf3",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "0xab76c6d00c603a7615d5459132c1745eb1fb4f6c",
+                    "gasUsed": 9031,
+                    "id": 1,
+                    "methodDecoded": false,
+                    "operation": "CREATE2",
+                    "output": "0x363d3d373d3d3d363d73989a2ad9acaa8c4e50b2fc6b650d6e1809b9195b5af43d82803e903d91602b57fd5bf3",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "2": {
+                "invocation": {
+                    "address": "0x4bb75d3e1406861b4729148b479c730e45befa1c",
+                    "callData": "0x000000000000000000000000a584c1c59b64c62697fdecfe1e6a884d9f8ebf9f000000000000000000000000537c07ac02a35d0d7b90c47121d93148afd2d322000000000000000000000000322c33a22c49f7356e21d3ae48ae1e2a5a7c344e",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "_authorizedAddress",
+                                "type": "address",
+                                "value": "0xa584c1c59b64c62697fdecfe1e6a884d9f8ebf9f"
+                            },
+                            {
+                                "name": "_cosigner",
+                                "type": "uint256",
+                                "value": "476,612,194,701,071,798,215,855,543,127,615,386,626,647,315,234"
+                            },
+                            {
+                                "name": "_recoveryAddress",
+                                "type": "address",
+                                "value": "0x322c33a22c49f7356e21d3ae48ae1e2a5a7c344e"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "init",
+                        "returnParams": [],
+                        "signature": "init(address,uint256,address)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0xab76c6d00c603a7615d5459132c1745eb1fb4f6c",
+                    "gasUsed": 68510,
+                    "id": 2,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x43fc00b8",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "3": {
+                "invocation": {
+                    "address": "0x989a2ad9acaa8c4e50b2fc6b650d6e1809b9195b",
+                    "callData": "0x000000000000000000000000a584c1c59b64c62697fdecfe1e6a884d9f8ebf9f000000000000000000000000537c07ac02a35d0d7b90c47121d93148afd2d322000000000000000000000000322c33a22c49f7356e21d3ae48ae1e2a5a7c344e",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "_authorizedAddress",
+                                "type": "address",
+                                "value": "0xa584c1c59b64c62697fdecfe1e6a884d9f8ebf9f"
+                            },
+                            {
+                                "name": "_cosigner",
+                                "type": "uint256",
+                                "value": "476,612,194,701,071,798,215,855,543,127,615,386,626,647,315,234"
+                            },
+                            {
+                                "name": "_recoveryAddress",
+                                "type": "address",
+                                "value": "0x322c33a22c49f7356e21d3ae48ae1e2a5a7c344e"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "init",
+                        "returnParams": [],
+                        "signature": "init(address,uint256,address)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x4bb75d3e1406861b4729148b479c730e45befa1c",
+                    "gasUsed": 67729,
+                    "id": 3,
+                    "methodDecoded": true,
+                    "operation": "DELEGATECALL",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x43fc00b8",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "4": {
+                "event": {
+                    "contract": "0x4bb75d3e1406861b4729148b479c730e45befa1c",
+                    "decodedLog": {
+                        "name": "Authorized",
+                        "params": [
+                            {
+                                "name": "authorizedAddress",
+                                "type": "address",
+                                "value": "0xa584c1c59b64c62697fdecfe1e6a884d9f8ebf9f"
+                            },
+                            {
+                                "name": "cosigner",
+                                "type": "uint256",
+                                "value": "476,612,194,701,071,798,215,855,543,127,615,386,626,647,315,234"
+                            }
+                        ],
+                        "signature": "Authorized(address,uint256)"
+                    },
+                    "id": 4,
+                    "logData": "0x000000000000000000000000a584c1c59b64c62697fdecfe1e6a884d9f8ebf9f000000000000000000000000537c07ac02a35d0d7b90c47121d93148afd2d322",
+                    "logDecoded": true,
+                    "operation": "EVENT",
+                    "revert": false,
+                    "status": true,
+                    "topics": [
+                        "0xb39b5f240c7440b58c1c6cfd328b09ff9aa18b3c8ef4b829774e4f5bad039416"
+                    ]
+                },
+                "nodeType": 1
+            },
+            "5": {
+                "event": {
+                    "contract": "0xab76c6d00c603a7615d5459132c1745eb1fb4f6c",
+                    "decodedLog": {
+                        "name": "WalletCreated",
+                        "params": [
+                            {
+                                "name": "wallet",
+                                "type": "address",
+                                "value": "0x4bb75d3e1406861b4729148b479c730e45befa1c"
+                            },
+                            {
+                                "name": "authorizedAddress",
+                                "type": "address",
+                                "value": "0xa584c1c59b64c62697fdecfe1e6a884d9f8ebf9f"
+                            },
+                            {
+                                "name": "full",
+                                "type": "bool",
+                                "value": false
+                            }
+                        ],
+                        "signature": "WalletCreated(address,address,bool)"
+                    },
+                    "id": 5,
+                    "logData": "0x0000000000000000000000004bb75d3e1406861b4729148b479c730e45befa1c000000000000000000000000a584c1c59b64c62697fdecfe1e6a884d9f8ebf9f0000000000000000000000000000000000000000000000000000000000000000",
+                    "logDecoded": true,
+                    "operation": "EVENT",
+                    "revert": false,
+                    "status": true,
+                    "topics": [
+                        "0xfd5c7d04ef72e301e8daac76d1bfd9ae073e324f201abf494c837caf16ccd63d"
+                    ]
+                },
+                "nodeType": 1
+            }
+        },
+        "gasFlame": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Initial Gas",
+                                "value": 27672
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depth": 1,
+                                        "name": "contract creation",
+                                        "value": 9031
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depth": 2,
+                                                "name": "init",
+                                                "value": 67729
+                                            }
+                                        ],
+                                        "depth": 1,
+                                        "name": "init",
+                                        "value": 68510
+                                    }
+                                ],
+                                "depth": 0,
+                                "name": "Executed Gas",
+                                "value": 114578
+                            }
+                        ],
+                        "depth": -1,
+                        "name": "Actual Gas Used",
+                        "value": 142250
+                    },
+                    {
+                        "children": [],
+                        "depth": -1,
+                        "name": "Refunded Gas",
+                        "value": 0
+                    }
+                ],
+                "depth": -2,
+                "name": "Total Gas",
+                "value": 142250
+            }
+        ],
+        "isConfirmed": true,
+        "mainTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depth": 3,
+                                                "id": 4,
+                                                "order": 4
+                                            }
+                                        ],
+                                        "depth": 2,
+                                        "id": 3,
+                                        "order": 3
+                                    }
+                                ],
+                                "depth": 1,
+                                "id": 2,
+                                "order": 2
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 5,
+                                "order": 5
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "mainTraceNodeCount": 6,
+        "parentIdMap": {
+            "0": -1,
+            "1": 0,
+            "2": 0,
+            "3": 2,
+            "4": 3,
+            "5": 0
+        },
+        "tidyTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depth": 3,
+                                                "id": 4,
+                                                "order": 4
+                                            }
+                                        ],
+                                        "depth": 2,
+                                        "id": 3,
+                                        "order": 3
+                                    }
+                                ],
+                                "depth": 1,
+                                "id": 2,
+                                "order": 2
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 5,
+                                "order": 5
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "tidyTraceNodeCount": 6
+    },
+    "state_change": {
+        "stateChanges": [
+            {
+                "address": "0x4bb75d3e1406861b4729148b479c730e45befa1c",
+                "erc": "",
+                "slots": [
+                    {
+                        "current": "0x000000000000000000000000537c07ac02a35d0d7b90c47121d93148afd2d322",
+                        "key": "0x7f8f8d5aae821856830bc78d8d50a497b76309041987fc3483edf68763a6173d",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    },
+                    {
+                        "current": "0x000000000000000000000001322c33a22c49f7356e21d3ae48ae1e2a5a7c344e",
+                        "key": "0x0000000000000000000000000000000000000000000000000000000000000004",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    },
+                    {
+                        "current": "0x0000000000000000000000010000000000000000000000000000000000000000",
+                        "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    }
+                ],
+                "storageVariables": [
+                    {
+                        "name": "authorizations",
+                        "type": "mapping(uint256 => uint256)",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "2406445692796407183116642743579613232889043271583",
+                                    "value": {
+                                        "current": "476612194701071798215855543127615386626647315234",
+                                        "prev": "0",
+                                        "typeTag": 1
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    },
+                    {
+                        "name": "recoveryAddress",
+                        "type": "address",
+                        "value": {
+                            "current": "0x322c33a22c49f7356e21d3ae48ae1e2a5a7c344e",
+                            "prev": "0x0000000000000000000000000000000000000000",
+                            "typeTag": 1
+                        }
+                    },
+                    {
+                        "name": "initialized",
+                        "type": "bool",
+                        "value": {
+                            "current": "true",
+                            "prev": "false",
+                            "typeTag": 1
+                        }
+                    },
+                    {
+                        "name": "authVersion",
+                        "type": "uint256",
+                        "value": {
+                            "current": "1461501637330902918203684832716283019655932542976",
+                            "prev": "0",
+                            "typeTag": 1
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

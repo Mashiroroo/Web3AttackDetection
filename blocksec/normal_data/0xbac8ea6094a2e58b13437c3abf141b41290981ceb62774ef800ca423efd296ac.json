@@ -1,0 +1,539 @@
+{
+    "balance_change": {
+        "balanceChanges": []
+    },
+    "profile": {
+        "basic_info": {
+            "baseFee": "",
+            "blockNumber": 6835662,
+            "callData": "0x3ccfd60b",
+            "debugEnable": true,
+            "errorInfo": "execution reverted",
+            "eventCount": 0,
+            "feeRecipient": "0xea674fdde714fd979de3edf0f56aa9716b898ec8",
+            "formatValue": "0",
+            "gasLimit": 7599999,
+            "gasPrice": "6.1",
+            "gasUsed": 104836,
+            "intTxnCount": 7,
+            "internalRevert": true,
+            "internalRevertMessage": "",
+            "isContractCreation": false,
+            "isFlashloan": false,
+            "maxFee": "",
+            "nonce": 304,
+            "overwritedBlockNumber": -1,
+            "priorityFee": "",
+            "receiver": "0x42d1485477ef74a502dbcd921cdcea3c4ff07a13",
+            "revertMessage": "",
+            "sender": "0x1efadea02fef271d8796d4efb264eee91759773e",
+            "simulationEnable": true,
+            "sourceTxnHash": "0xbac8ea6094a2e58b13437c3abf141b41290981ceb62774ef800ca423efd296ac",
+            "status": false,
+            "timestamp": "2018-12-06T08:44:57Z",
+            "transactionFee": "0.0006394996",
+            "txnHash": "0xbac8ea6094a2e58b13437c3abf141b41290981ceb62774ef800ca423efd296ac",
+            "txnIndex": 1,
+            "type": 0,
+            "value": "0"
+        },
+        "fund_flow": [],
+        "token_infos": [
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "decimals": 18
+            },
+            {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "decimals": 18
+            }
+        ]
+    },
+    "address_label": {
+        "labels": [
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "label": "Ether"
+            },
+            {
+                "address": "0x42d1485477ef74a502dbcd921cdcea3c4ff07a13",
+                "label": "OlympusIndex"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000001",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000002",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000003",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000004",
+                "label": "Precompiled"
+            }
+        ]
+    },
+    "trace": {
+        "accountLabels": null,
+        "dataMap": {
+            "-1": {
+                "invocation": {
+                    "address": "0x1efadea02fef271d8796d4efb264eee91759773e",
+                    "callData": "",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "",
+                    "gasUsed": 0,
+                    "id": -1,
+                    "methodDecoded": false,
+                    "operation": "",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "",
+                    "status": false,
+                    "value": ""
+                },
+                "nodeType": 0
+            },
+            "0": {
+                "invocation": {
+                    "address": "0x42d1485477ef74a502dbcd921cdcea3c4ff07a13",
+                    "callData": "0x",
+                    "decodedMethod": {
+                        "callParams": [],
+                        "constructorArguments": "",
+                        "name": "withdraw",
+                        "returnParams": [],
+                        "signature": "withdraw()"
+                    },
+                    "errorInfo": "execution reverted",
+                    "fromAddress": "0x1efadea02fef271d8796d4efb264eee91759773e",
+                    "gasUsed": 104836,
+                    "id": 0,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "",
+                    "revert": true,
+                    "revertMessage": "",
+                    "selector": "0x3ccfd60b",
+                    "status": false,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "1": {
+                "invocation": {
+                    "address": "0xa05d9428f76463fbe54e71109bf392c9c114e792",
+                    "callData": "0x00000000000000000000000042d1485477ef74a502dbcd921cdcea3c4ff07a130000000000000000000000000000000000000000000000000000000000000001",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "0x42d1485477ef74a502dbcd921cdcea3c4ff07a13",
+                    "gasUsed": 885,
+                    "id": 1,
+                    "methodDecoded": false,
+                    "operation": "CALL",
+                    "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                    "revert": true,
+                    "revertMessage": "",
+                    "selector": "0x919253e8",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "2": {
+                "invocation": {
+                    "address": "0xa05d9428f76463fbe54e71109bf392c9c114e792",
+                    "callData": "0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000001efadea02fef271d8796d4efb264eee91759773e",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "destId",
+                                "type": "uint256",
+                                "value": "1"
+                            },
+                            {
+                                "name": "tokenAddr",
+                                "type": "address",
+                                "value": "0x1efadea02fef271d8796d4efb264eee91759773e"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "isAllowed",
+                        "returnParams": [
+                            {
+                                "name": "",
+                                "type": "bool",
+                                "value": true
+                            }
+                        ],
+                        "signature": "isAllowed(uint256,address)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x42d1485477ef74a502dbcd921cdcea3c4ff07a13",
+                    "gasUsed": 1248,
+                    "id": 2,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                    "revert": true,
+                    "revertMessage": "",
+                    "selector": "0x5faa299a",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "3": {
+                "invocation": {
+                    "address": "0x3a91a1108506b90b3a7347db4a670d145f95d3dc",
+                    "callData": "0x",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "0x42d1485477ef74a502dbcd921cdcea3c4ff07a13",
+                    "gasUsed": 41495,
+                    "id": 3,
+                    "methodDecoded": false,
+                    "operation": "CALL",
+                    "output": "",
+                    "revert": true,
+                    "revertMessage": "",
+                    "selector": "0xa6c30b29",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "4": {
+                "invocation": {
+                    "address": "0x534004ede1a26752e6373dc55c73596a0b549312",
+                    "callData": "0x",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "0x42d1485477ef74a502dbcd921cdcea3c4ff07a13",
+                    "gasUsed": 1226,
+                    "id": 4,
+                    "methodDecoded": false,
+                    "operation": "CALL",
+                    "output": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000",
+                    "revert": true,
+                    "revertMessage": "",
+                    "selector": "0x5ad7c05c",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "5": {
+                "invocation": {
+                    "address": "0xcc8447a301568e61e1aa79c5046f2e4b17753187",
+                    "callData": "0x576974686472617750726f766964657200000000000000000000000000000000",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "_id",
+                                "type": "bytes32",
+                                "value": "0x576974686472617750726f766964657200000000000000000000000000000000"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "getStatus",
+                        "returnParams": [
+                            {
+                                "name": "",
+                                "type": "uint8",
+                                "value": "0"
+                            }
+                        ],
+                        "signature": "getStatus(bytes32)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x42d1485477ef74a502dbcd921cdcea3c4ff07a13",
+                    "gasUsed": 580,
+                    "id": 5,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "revert": true,
+                    "revertMessage": "",
+                    "selector": "0x5de28ae0",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "6": {
+                "invocation": {
+                    "address": "0xcc8447a301568e61e1aa79c5046f2e4b17753187",
+                    "callData": "0x4765744574680000000000000000000000000000000000000000000000000000",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "_id",
+                                "type": "bytes32",
+                                "value": "0x4765744574680000000000000000000000000000000000000000000000000000"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "getStatus",
+                        "returnParams": [
+                            {
+                                "name": "",
+                                "type": "uint8",
+                                "value": "0"
+                            }
+                        ],
+                        "signature": "getStatus(bytes32)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x42d1485477ef74a502dbcd921cdcea3c4ff07a13",
+                    "gasUsed": 580,
+                    "id": 6,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "revert": true,
+                    "revertMessage": "",
+                    "selector": "0x5de28ae0",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "7": {
+                "invocation": {
+                    "address": "0x726677d34e4fa66c1594528ecb6f23e7c0ba6e08",
+                    "callData": "0x576974686472617750726f766964657200000000000000000000000000000000",
+                    "decodedMethod": null,
+                    "errorInfo": "execution reverted",
+                    "fromAddress": "0x42d1485477ef74a502dbcd921cdcea3c4ff07a13",
+                    "gasUsed": 585,
+                    "id": 7,
+                    "methodDecoded": false,
+                    "operation": "CALL",
+                    "output": "",
+                    "revert": true,
+                    "revertMessage": "",
+                    "selector": "0x3bce34a4",
+                    "status": false,
+                    "value": "0"
+                },
+                "nodeType": 0
+            }
+        },
+        "gasFlame": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Initial Gas",
+                                "value": 21272
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depth": 1,
+                                        "name": "0x919253e8",
+                                        "value": 885
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 1,
+                                        "name": "isAllowed",
+                                        "value": 1248
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 1,
+                                        "name": "0xa6c30b29",
+                                        "value": 41495
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 1,
+                                        "name": "0x5ad7c05c",
+                                        "value": 1226
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 1,
+                                        "name": "getStatus",
+                                        "value": 580
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 1,
+                                        "name": "getStatus",
+                                        "value": 580
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 1,
+                                        "name": "0x3bce34a4",
+                                        "value": 585
+                                    }
+                                ],
+                                "depth": 0,
+                                "name": "Executed Gas",
+                                "value": 83564
+                            }
+                        ],
+                        "depth": -1,
+                        "name": "Actual Gas Used",
+                        "value": 104836
+                    },
+                    {
+                        "children": [],
+                        "depth": -1,
+                        "name": "Refunded Gas",
+                        "value": 0
+                    }
+                ],
+                "depth": -2,
+                "name": "Total Gas",
+                "value": 104836
+            }
+        ],
+        "isConfirmed": true,
+        "mainTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 2,
+                                "order": 2
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 3,
+                                "order": 3
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 4,
+                                "order": 4
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 5,
+                                "order": 5
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 6,
+                                "order": 6
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 7,
+                                "order": 7
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "mainTraceNodeCount": 8,
+        "parentIdMap": {
+            "0": -1,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0
+        },
+        "tidyTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 2,
+                                "order": 2
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 3,
+                                "order": 3
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 4,
+                                "order": 4
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 5,
+                                "order": 5
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 6,
+                                "order": 6
+                            },
+                            {
+                                "children": [],
+                                "depth": 1,
+                                "id": 7,
+                                "order": 7
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "tidyTraceNodeCount": 8
+    },
+    "state_change": {
+        "stateChanges": []
+    }
+}

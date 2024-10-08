@@ -1,0 +1,574 @@
+{
+    "balance_change": {
+        "balanceChanges": []
+    },
+    "profile": {
+        "basic_info": {
+            "baseFee": "58.972058111",
+            "blockNumber": 19360523,
+            "callData": "0x99c26d0200000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec7000000000000000000000000000000000000000000000000021f39e385aad298000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006b175474e89094c44da98b954eedeac495271d0f00000000000000000000000000000000000000000000000001e70009df3a16db00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "debugEnable": true,
+            "errorInfo": "",
+            "eventCount": 2,
+            "feeRecipient": "0x4838b106fce9647bdf1e7877bf73ce8b0bad5f97",
+            "formatValue": "0",
+            "gasLimit": 63906,
+            "gasPrice": "60.972058111",
+            "gasUsed": 50734,
+            "intTxnCount": 1,
+            "internalRevert": false,
+            "internalRevertMessage": "",
+            "isContractCreation": false,
+            "isFlashloan": false,
+            "maxFee": "67.552029032",
+            "nonce": 14957,
+            "overwritedBlockNumber": -1,
+            "priorityFee": "2",
+            "receiver": "0x421c69eaa54646294db30026aee80d01988a6876",
+            "revertMessage": "",
+            "sender": "0xc3a53976e9855d815a08f577c2beef2a799470b7",
+            "simulationEnable": true,
+            "sourceTxnHash": "0xa06d2efe9d0b12c386b7c6d0bf4f3688765678f59e3757dc8ff528a3eeb614ac",
+            "status": true,
+            "timestamp": "2024-03-04T08:11:59Z",
+            "transactionFee": "0.003093356396203474",
+            "txnHash": "0xa06d2efe9d0b12c386b7c6d0bf4f3688765678f59e3757dc8ff528a3eeb614ac",
+            "txnIndex": 23,
+            "type": 2,
+            "value": "0"
+        },
+        "fund_flow": [],
+        "token_infos": [
+            {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "decimals": 18
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "decimals": 18
+            }
+        ]
+    },
+    "address_label": {
+        "labels": [
+            {
+                "address": "0x0000000000000000000000000000000000000004",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0xcf7124e93ad63d25b26b67ba79b0bdb53cd71221",
+                "label": "IporOracle"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000001",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000002",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000003",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "label": "Ether"
+            },
+            {
+                "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                "label": "Sky: Dai Stablecoin"
+            },
+            {
+                "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                "label": "Tether: USDT Stablecoin"
+            },
+            {
+                "address": "0x421c69eaa54646294db30026aee80d01988a6876",
+                "label": "IPOR: Oracle"
+            }
+        ]
+    },
+    "trace": {
+        "accountLabels": null,
+        "dataMap": {
+            "-1": {
+                "invocation": {
+                    "address": "0xc3a53976e9855d815a08f577c2beef2a799470b7",
+                    "callData": "",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "",
+                    "gasUsed": 0,
+                    "id": -1,
+                    "methodDecoded": false,
+                    "operation": "",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "",
+                    "status": false,
+                    "value": ""
+                },
+                "nodeType": 0
+            },
+            "0": {
+                "invocation": {
+                    "address": "0x421c69eaa54646294db30026aee80d01988a6876",
+                    "callData": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec7000000000000000000000000000000000000000000000000021f39e385aad298000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006b175474e89094c44da98b954eedeac495271d0f00000000000000000000000000000000000000000000000001e70009df3a16db00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "indexesToUpdate",
+                                "type": "(address,uint256,uint256,uint256)[]",
+                                "value": [
+                                    [
+                                        {
+                                            "name": "asset",
+                                            "type": "address",
+                                            "value": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+                                        },
+                                        {
+                                            "name": "indexValue",
+                                            "type": "uint256",
+                                            "value": "152,904,561,716,810,392"
+                                        },
+                                        {
+                                            "name": "updateTimestamp",
+                                            "type": "uint256",
+                                            "value": "0"
+                                        },
+                                        {
+                                            "name": "quasiIbtPrice",
+                                            "type": "uint256",
+                                            "value": "0"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "name": "asset",
+                                            "type": "address",
+                                            "value": "0x6b175474e89094c44da98b954eedeac495271d0f"
+                                        },
+                                        {
+                                            "name": "indexValue",
+                                            "type": "uint256",
+                                            "value": "137,078,356,057,921,243"
+                                        },
+                                        {
+                                            "name": "updateTimestamp",
+                                            "type": "uint256",
+                                            "value": "0"
+                                        },
+                                        {
+                                            "name": "quasiIbtPrice",
+                                            "type": "uint256",
+                                            "value": "0"
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "updateIndexes",
+                        "returnParams": [],
+                        "signature": "updateIndexes((address,uint256,uint256,uint256)[])"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0xc3a53976e9855d815a08f577c2beef2a799470b7",
+                    "gasUsed": 50734,
+                    "id": 0,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x99c26d02",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "1": {
+                "invocation": {
+                    "address": "0xcf7124e93ad63d25b26b67ba79b0bdb53cd71221",
+                    "callData": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec7000000000000000000000000000000000000000000000000021f39e385aad298000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006b175474e89094c44da98b954eedeac495271d0f00000000000000000000000000000000000000000000000001e70009df3a16db00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "indexesToUpdate",
+                                "type": "(address,uint256,uint256,uint256)[]",
+                                "value": [
+                                    [
+                                        {
+                                            "name": "asset",
+                                            "type": "address",
+                                            "value": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+                                        },
+                                        {
+                                            "name": "indexValue",
+                                            "type": "uint256",
+                                            "value": "152,904,561,716,810,392"
+                                        },
+                                        {
+                                            "name": "updateTimestamp",
+                                            "type": "uint256",
+                                            "value": "0"
+                                        },
+                                        {
+                                            "name": "quasiIbtPrice",
+                                            "type": "uint256",
+                                            "value": "0"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "name": "asset",
+                                            "type": "address",
+                                            "value": "0x6b175474e89094c44da98b954eedeac495271d0f"
+                                        },
+                                        {
+                                            "name": "indexValue",
+                                            "type": "uint256",
+                                            "value": "137,078,356,057,921,243"
+                                        },
+                                        {
+                                            "name": "updateTimestamp",
+                                            "type": "uint256",
+                                            "value": "0"
+                                        },
+                                        {
+                                            "name": "quasiIbtPrice",
+                                            "type": "uint256",
+                                            "value": "0"
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "updateIndexes",
+                        "returnParams": [],
+                        "signature": "updateIndexes((address,uint256,uint256,uint256)[])"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x421c69eaa54646294db30026aee80d01988a6876",
+                    "gasUsed": 22760,
+                    "id": 1,
+                    "methodDecoded": true,
+                    "operation": "DELEGATECALL",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x99c26d02",
+                    "status": true,
+                    "value": "0"
+                },
+                "nodeType": 0
+            },
+            "2": {
+                "event": {
+                    "contract": "0x421c69eaa54646294db30026aee80d01988a6876",
+                    "decodedLog": {
+                        "name": "IporIndexUpdate",
+                        "params": [
+                            {
+                                "name": "asset",
+                                "type": "address",
+                                "value": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+                            },
+                            {
+                                "name": "indexValue",
+                                "type": "uint256",
+                                "value": "152,904,561,716,810,392"
+                            },
+                            {
+                                "name": "quasiIbtPrice",
+                                "type": "uint256",
+                                "value": "969,261,356,643,260,683,914,816"
+                            },
+                            {
+                                "name": "updateTimestamp",
+                                "type": "uint256",
+                                "value": "1,709,539,919"
+                            }
+                        ],
+                        "signature": "IporIndexUpdate(address,uint256,uint256,uint256)"
+                    },
+                    "id": 2,
+                    "logData": "0x000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec7000000000000000000000000000000000000000000000000021f39e385aad29800000000000000000000000000000000000000000000cd3fc3701449452e0e400000000000000000000000000000000000000000000000000000000065e5824f",
+                    "logDecoded": true,
+                    "operation": "EVENT",
+                    "revert": false,
+                    "status": true,
+                    "topics": [
+                        "0xbb22f748620ecd45b238e2957e83a3f304dd729db0a6513be80c24d1cf04de26"
+                    ]
+                },
+                "nodeType": 1
+            },
+            "3": {
+                "event": {
+                    "contract": "0x421c69eaa54646294db30026aee80d01988a6876",
+                    "decodedLog": {
+                        "name": "IporIndexUpdate",
+                        "params": [
+                            {
+                                "name": "asset",
+                                "type": "address",
+                                "value": "0x6b175474e89094c44da98b954eedeac495271d0f"
+                            },
+                            {
+                                "name": "indexValue",
+                                "type": "uint256",
+                                "value": "137,078,356,057,921,243"
+                            },
+                            {
+                                "name": "quasiIbtPrice",
+                                "type": "uint256",
+                                "value": "768,778,902,666,562,473,269,352"
+                            },
+                            {
+                                "name": "updateTimestamp",
+                                "type": "uint256",
+                                "value": "1,709,539,919"
+                            }
+                        ],
+                        "signature": "IporIndexUpdate(address,uint256,uint256,uint256)"
+                    },
+                    "id": 3,
+                    "logData": "0x0000000000000000000000006b175474e89094c44da98b954eedeac495271d0f00000000000000000000000000000000000000000000000001e70009df3a16db00000000000000000000000000000000000000000000a2cb967b7a0b54bf98680000000000000000000000000000000000000000000000000000000065e5824f",
+                    "logDecoded": true,
+                    "operation": "EVENT",
+                    "revert": false,
+                    "status": true,
+                    "topics": [
+                        "0xbb22f748620ecd45b238e2957e83a3f304dd729db0a6513be80c24d1cf04de26"
+                    ]
+                },
+                "nodeType": 1
+            }
+        },
+        "gasFlame": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Initial Gas",
+                                "value": 23028
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depth": 1,
+                                        "name": "updateIndexes",
+                                        "value": 22760
+                                    }
+                                ],
+                                "depth": 0,
+                                "name": "Executed Gas",
+                                "value": 27706
+                            }
+                        ],
+                        "depth": -1,
+                        "name": "Actual Gas Used",
+                        "value": 50734
+                    },
+                    {
+                        "children": [],
+                        "depth": -1,
+                        "name": "Refunded Gas",
+                        "value": 0
+                    }
+                ],
+                "depth": -2,
+                "name": "Total Gas",
+                "value": 50734
+            }
+        ],
+        "isConfirmed": true,
+        "mainTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depth": 2,
+                                        "id": 2,
+                                        "order": 2
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 2,
+                                        "id": 3,
+                                        "order": 3
+                                    }
+                                ],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "mainTraceNodeCount": 4,
+        "parentIdMap": {
+            "0": -1,
+            "1": 0,
+            "2": 1,
+            "3": 1
+        },
+        "tidyTrace": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depth": 2,
+                                        "id": 2,
+                                        "order": 2
+                                    },
+                                    {
+                                        "children": [],
+                                        "depth": 2,
+                                        "id": 3,
+                                        "order": 3
+                                    }
+                                ],
+                                "depth": 1,
+                                "id": 1,
+                                "order": 1
+                            }
+                        ],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "tidyTraceNodeCount": 4
+    },
+    "state_change": {
+        "stateChanges": [
+            {
+                "address": "0x421c69eaa54646294db30026aee80d01988a6876",
+                "erc": "",
+                "slots": [
+                    {
+                        "current": "0x0000b01c65e5824f01e70009df3a16db000000000000a2cb967b7a0b54bf9868",
+                        "key": "0x93970cb1a3b320ef1c76df9f6c08ac0278ccb6a77b555ad0ce1e1d9b80861856",
+                        "prev": "0x0000b01c65e57b4701e41d7e1b6780d2000000000000a2be4a8c1b5aa4fdd3d8"
+                    },
+                    {
+                        "current": "0x00020be165e5824f021f39e385aad298000000000000cd3fc3701449452e0e40",
+                        "key": "0xd2179372cc4dbc38cd783b06942c7fb795e6f568beb62c98660630fae16aa88f",
+                        "prev": "0x00020be165e57b4702084b3a71fcd27c000000000000cd31791f2157cb861660"
+                    }
+                ],
+                "storageVariables": [
+                    {
+                        "name": "_indexes",
+                        "type": "mapping(address => struct IporOracleTypes.IPOR)",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "0x6b175474e89094c44da98b954eedeac495271d0f",
+                                    "value": {
+                                        "fields": [
+                                            {
+                                                "name": "quasiIbtPrice",
+                                                "type": "uint128",
+                                                "value": {
+                                                    "current": "768778902666562473269352",
+                                                    "prev": "768533623297419014689752",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "indexValue",
+                                                "type": "uint64",
+                                                "value": {
+                                                    "current": "137078356057921243",
+                                                    "prev": "136266316190810322",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "lastUpdateTimestamp",
+                                                "type": "uint32",
+                                                "value": {
+                                                    "current": "1709539919",
+                                                    "prev": "1709538119",
+                                                    "typeTag": 1
+                                                }
+                                            }
+                                        ],
+                                        "typeTag": 3
+                                    }
+                                },
+                                {
+                                    "key": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+                                    "value": {
+                                        "fields": [
+                                            {
+                                                "name": "quasiIbtPrice",
+                                                "type": "uint128",
+                                                "value": {
+                                                    "current": "969261356643260683914816",
+                                                    "prev": "968997747179152864581216",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "indexValue",
+                                                "type": "uint64",
+                                                "value": {
+                                                    "current": "152904561716810392",
+                                                    "prev": "146449702282121852",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "lastUpdateTimestamp",
+                                                "type": "uint32",
+                                                "value": {
+                                                    "current": "1709539919",
+                                                    "prev": "1709538119",
+                                                    "typeTag": 1
+                                                }
+                                            }
+                                        ],
+                                        "typeTag": 3
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

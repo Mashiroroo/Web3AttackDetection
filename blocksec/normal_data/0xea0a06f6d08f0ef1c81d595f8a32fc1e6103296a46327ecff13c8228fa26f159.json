@@ -1,0 +1,381 @@
+{
+    "balance_change": {
+        "balanceChanges": [
+            {
+                "account": "0x6eac7d87a9f2ad5c8c03c79e71b9038468043780",
+                "assets": [
+                    {
+                        "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                        "amount": "0.0085",
+                        "iconUrl": "https://assets.blocksec.com/image/1663669189317-3.png",
+                        "isERC1155": false,
+                        "isERC721": false,
+                        "sign": false,
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "account": "0x30e0130141b3f113480a5941ca180ad8c5f98612",
+                "assets": [
+                    {
+                        "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                        "amount": "0.0085",
+                        "iconUrl": "https://assets.blocksec.com/image/1663669189317-3.png",
+                        "isERC1155": false,
+                        "isERC721": false,
+                        "sign": true,
+                        "value": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "profile": {
+        "basic_info": {
+            "baseFee": "",
+            "blockNumber": 9406357,
+            "callData": "0x5fba7a560000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001d68747470733a2f2f736f756e64636c6f75642e636f6d2f747472737474000000",
+            "debugEnable": true,
+            "errorInfo": "",
+            "eventCount": 0,
+            "feeRecipient": "0x5a0b54d5dc17e0aadc383d2db43b0a0d3e029c4c",
+            "formatValue": "0.0085",
+            "gasLimit": 158867,
+            "gasPrice": "8",
+            "gasUsed": 158867,
+            "intTxnCount": 0,
+            "internalRevert": false,
+            "internalRevertMessage": "",
+            "isContractCreation": false,
+            "isFlashloan": false,
+            "maxFee": "",
+            "nonce": 3170,
+            "overwritedBlockNumber": -1,
+            "priorityFee": "",
+            "receiver": "0x30e0130141b3f113480a5941ca180ad8c5f98612",
+            "revertMessage": "",
+            "sender": "0x6eac7d87a9f2ad5c8c03c79e71b9038468043780",
+            "simulationEnable": true,
+            "sourceTxnHash": "0xea0a06f6d08f0ef1c81d595f8a32fc1e6103296a46327ecff13c8228fa26f159",
+            "status": true,
+            "timestamp": "2020-02-03T00:39:50Z",
+            "transactionFee": "0.001270936",
+            "txnHash": "0xea0a06f6d08f0ef1c81d595f8a32fc1e6103296a46327ecff13c8228fa26f159",
+            "txnIndex": 5,
+            "type": 0,
+            "value": "8500000000000000"
+        },
+        "fund_flow": [
+            {
+                "amount": "0.0085",
+                "from": "0x6eac7d87a9f2ad5c8c03c79e71b9038468043780",
+                "id": 1,
+                "isERC1155": false,
+                "isERC721": false,
+                "isReverted": false,
+                "order": 1,
+                "to": "0x30e0130141b3f113480a5941ca180ad8c5f98612",
+                "token": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+            }
+        ],
+        "token_infos": [
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "decimals": 18
+            },
+            {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "decimals": 18
+            }
+        ]
+    },
+    "address_label": {
+        "labels": [
+            {
+                "address": "0x30e0130141b3f113480a5941ca180ad8c5f98612",
+                "label": "MarbleNFTCandidate"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000001",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000002",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000003",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0x0000000000000000000000000000000000000004",
+                "label": "Precompiled"
+            },
+            {
+                "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                "label": "Ether"
+            }
+        ]
+    },
+    "trace": {
+        "accountLabels": null,
+        "dataMap": {
+            "-1": {
+                "invocation": {
+                    "address": "0x6eac7d87a9f2ad5c8c03c79e71b9038468043780",
+                    "callData": "",
+                    "decodedMethod": null,
+                    "errorInfo": "",
+                    "fromAddress": "",
+                    "gasUsed": 0,
+                    "id": -1,
+                    "methodDecoded": false,
+                    "operation": "",
+                    "output": "",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "",
+                    "status": false,
+                    "value": ""
+                },
+                "nodeType": 0
+            },
+            "0": {
+                "invocation": {
+                    "address": "0x30e0130141b3f113480a5941ca180ad8c5f98612",
+                    "callData": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001d68747470733a2f2f736f756e64636c6f75642e636f6d2f747472737474000000",
+                    "decodedMethod": {
+                        "callParams": [
+                            {
+                                "name": "_uri",
+                                "type": "string",
+                                "value": "https://soundcloud.com/ttrstt"
+                            }
+                        ],
+                        "constructorArguments": "",
+                        "name": "createCandidate",
+                        "returnParams": [
+                            {
+                                "name": "index",
+                                "type": "uint256",
+                                "value": "49,560"
+                            }
+                        ],
+                        "signature": "createCandidate(string)"
+                    },
+                    "errorInfo": "",
+                    "fromAddress": "0x6eac7d87a9f2ad5c8c03c79e71b9038468043780",
+                    "gasUsed": 158867,
+                    "id": 0,
+                    "methodDecoded": true,
+                    "operation": "CALL",
+                    "output": "0x000000000000000000000000000000000000000000000000000000000000c198",
+                    "revert": false,
+                    "revertMessage": "",
+                    "selector": "0x5fba7a56",
+                    "status": true,
+                    "value": "0.0085"
+                },
+                "nodeType": 0
+            }
+        },
+        "gasFlame": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Initial Gas",
+                                "value": 21820
+                            },
+                            {
+                                "children": [],
+                                "depth": 0,
+                                "name": "Executed Gas",
+                                "value": 137047
+                            }
+                        ],
+                        "depth": -1,
+                        "name": "Actual Gas Used",
+                        "value": 158867
+                    },
+                    {
+                        "children": [],
+                        "depth": -1,
+                        "name": "Refunded Gas",
+                        "value": 0
+                    }
+                ],
+                "depth": -2,
+                "name": "Total Gas",
+                "value": 158867
+            }
+        ],
+        "isConfirmed": true,
+        "mainTrace": [
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "mainTraceNodeCount": 1,
+        "parentIdMap": {
+            "0": -1
+        },
+        "tidyTrace": [
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depth": 0,
+                        "id": 0,
+                        "order": 0
+                    }
+                ],
+                "depth": -1,
+                "id": -1,
+                "order": -1
+            }
+        ],
+        "tidyTraceNodeCount": 1
+    },
+    "state_change": {
+        "stateChanges": [
+            {
+                "address": "0x30e0130141b3f113480a5941ca180ad8c5f98612",
+                "erc": "",
+                "slots": [
+                    {
+                        "current": "0x000000000000000000000000000000000000000000000000000000000000c199",
+                        "key": "0x0000000000000000000000000000000000000000000000000000000000000008",
+                        "prev": "0x000000000000000000000000000000000000000000000000000000000000c198"
+                    },
+                    {
+                        "current": "0x80582fada4cf567dd8844f5ebad38d0d5ad932563e24dfb1ce8320af917886a1",
+                        "key": "0xf3f7a9fe364faab93b216da50a3214154f22a0a2b415b23a84c8169e8b64307b",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    },
+                    {
+                        "current": "0x000000000000000000000000000000000000000000000000000000000000c198",
+                        "key": "0xe8e45c5c778cda7fe47580c67ee87cc1011cf671eb9cbf642cd01a3062f6fe43",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    },
+                    {
+                        "current": "0x0000000000000000000000006eac7d87a9f2ad5c8c03c79e71b9038468043780",
+                        "key": "0xe8e45c5c778cda7fe47580c67ee87cc1011cf671eb9cbf642cd01a3062f6fe44",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    },
+                    {
+                        "current": "0x000000000000000000000000000000000000000000000000001e32b478974000",
+                        "key": "0xe8e45c5c778cda7fe47580c67ee87cc1011cf671eb9cbf642cd01a3062f6fe45",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    },
+                    {
+                        "current": "0x68747470733a2f2f736f756e64636c6f75642e636f6d2f74747273747400003a",
+                        "key": "0xe8e45c5c778cda7fe47580c67ee87cc1011cf671eb9cbf642cd01a3062f6fe46",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    },
+                    {
+                        "current": "0x000000000000000000000000000000000000000000000000000000005e376bd6",
+                        "key": "0xe8e45c5c778cda7fe47580c67ee87cc1011cf671eb9cbf642cd01a3062f6fe47",
+                        "prev": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                    }
+                ],
+                "storageVariables": [
+                    {
+                        "name": "uriHashToCandidates",
+                        "type": "mapping(uint256 => struct MarbleNFTCandidate.Candidate)",
+                        "value": {
+                            "pairs": [
+                                {
+                                    "key": "58051856223864177787450768196268848908993360968390159753601474072740581901985",
+                                    "value": {
+                                        "fields": [
+                                            {
+                                                "name": "index",
+                                                "type": "uint256",
+                                                "value": {
+                                                    "current": "49560",
+                                                    "prev": "0",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "owner",
+                                                "type": "address",
+                                                "value": {
+                                                    "current": "0x6eac7d87a9f2ad5c8c03c79e71b9038468043780",
+                                                    "prev": "0x0000000000000000000000000000000000000000",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "mintingPrice",
+                                                "type": "uint256",
+                                                "value": {
+                                                    "current": "8500000000000000",
+                                                    "prev": "0",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "uri",
+                                                "type": "string",
+                                                "value": {
+                                                    "current": "https://soundcloud.com/ttrstt",
+                                                    "prev": "",
+                                                    "typeTag": 1
+                                                }
+                                            },
+                                            {
+                                                "name": "created",
+                                                "type": "uint256",
+                                                "value": {
+                                                    "current": "1580690390",
+                                                    "prev": "0",
+                                                    "typeTag": 1
+                                                }
+                                            }
+                                        ],
+                                        "typeTag": 3
+                                    }
+                                }
+                            ],
+                            "typeTag": 4
+                        }
+                    },
+                    {
+                        "name": "uriHashIndex",
+                        "type": "uint256[]",
+                        "value": {
+                            "elemType": "uint256",
+                            "elems": [
+                                {
+                                    "index": 49560,
+                                    "value": {
+                                        "current": "58051856223864177787450768196268848908993360968390159753601474072740581901985",
+                                        "prev": "0",
+                                        "typeTag": 1
+                                    }
+                                }
+                            ],
+                            "typeTag": 2
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
