@@ -1,6 +1,6 @@
 import json
 import os
-import numpy as np
+
 import torch
 import torch.nn as nn
 from sklearn.feature_extraction.text import CountVectorizer
@@ -15,12 +15,11 @@ print(f"Using device: {device}")
 
 # 数据集类
 class TransactionDataset(Dataset):
-    def __init__(self, folder_path, label):
+    def __init__(self, folder_path):
         self.data = []
-        self.labels = []
-        self.file_names = []  # 存储文件名
-        self.label = label
         self.vectorizer = CountVectorizer(max_features=20000)
+
+        # 加载数据
         self.load_data(folder_path)
 
     def load_data(self, folder_path):
@@ -46,8 +45,6 @@ class TransactionDataset(Dataset):
                             'state_change': str(data['state_change'].get('stateChanges', []))
                         }
                         self.data.append(features)
-                        self.labels.append(self.label)
-                        self.file_names.append(filename)  # 存储文件名
                 except Exception as e:
                     print(f"读取 {filename} 时出错: {e}")
 
@@ -63,61 +60,55 @@ class TransactionDataset(Dataset):
         return len(self.data)
 
     def __getitem__(self, idx):
-        return (torch.tensor(self.vectorized_features[idx], dtype=torch.float32),
-                torch.tensor(self.labels[idx], dtype=torch.float32),
-                self.file_names[idx])  # 返回文件名
+        return torch.tensor(self.vectorized_features[idx], dtype=torch.float32)
 
 
 # Transformer 模型构建
 class TransformerModel(nn.Module):
     def __init__(self, input_dim, n_heads, num_classes, dim_feedforward, num_layers):
         super(TransformerModel, self).__init__()
-        self.embedding = nn.Linear(input_dim, 128)  # 输入特征嵌入
+        self.embedding = nn.Linear(input_dim, 256)  # 增加嵌入维度
         self.transformer_encoder = nn.TransformerEncoder(
-            nn.TransformerEncoderLayer(d_model=128, nhead=n_heads, dim_feedforward=dim_feedforward),
+            nn.TransformerEncoderLayer(d_model=256, nhead=n_heads, dim_feedforward=dim_feedforward),
             num_layers=num_layers
         )
-        self.fc = nn.Linear(128, num_classes)
+        self.fc = nn.Linear(256, num_classes)  # 更新全连接层的输入维度
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
-        x = x.unsqueeze(1)  # 增加序列维度
-        x = self.embedding(x)  # 嵌入
-        x = self.transformer_encoder(x)  # 编码
-        x = x.mean(dim=1)  # 取平均
+        x = x.unsqueeze(1)  # 形状为 [batch_size, seq_len=1, feature_dim]
+        x = self.embedding(x)  # 形状为 [batch_size, seq_len=1, embedding_dim]
+        x = self.transformer_encoder(x)  # [batch_size, seq_len=1, embedding_dim]
+        x = x.mean(dim=1)  # 取平均，形状为 [batch_size, embedding_dim]
         x = self.fc(x)
         return self.sigmoid(x)
 
 
-# 加载模型和数据并进行预测
-def load_model_and_predict(model_path, test_data_folder):
-    # 加载模型
-    input_dim = 20000
-    model = TransformerModel(input_dim=input_dim, n_heads=4, num_classes=1, dim_feedforward=256, num_layers=2).to(
-        device)
-    model.load_state_dict(torch.load(model_path))
+# 预测函数
+def predict(model, dataset):
     model.eval()
+    probabilities = []
 
-    # 加载测试数据
-    test_data = TransactionDataset(test_data_folder, label=1)
-    test_data.vectorize()
-
-    # 进行预测
     with torch.no_grad():
-        inputs = torch.tensor(test_data.vectorized_features, dtype=torch.float32).to(device)
-        outputs = model(inputs).squeeze()
-        probabilities = outputs.cpu().numpy()
+        inputs = torch.tensor(dataset.vectorized_features, dtype=torch.float32).to(device)
+        outputs = model(inputs).squeeze()  # 预测
+        probabilities = outputs.cpu().numpy()  # 将预测结果转为numpy数组
 
-    return test_data.file_names, probabilities
+    return probabilities
 
 
-# 主程序
-if __name__ == "__main__":
-    model_path = 'best_model.pth'  # 替换为你的模型路径
-    test_data_folder = '../data'  # 替换为你的测试数据文件夹路径
+# 加载最佳模型
+model = TransformerModel(input_dim=20000, n_heads=4, num_classes=1, dim_feedforward=512, num_layers=4).to(device)
+model.load_state_dict(torch.load('best_model.pth'))
 
-    file_names, probabilities = load_model_and_predict(model_path, test_data_folder)
+# 加载测试数据
+test_folder = '../normal_data'  # 修改为你要遍历的文件夹路径
+test_dataset = TransactionDataset(test_folder)
+test_dataset.vectorize()  # 向量化数据
 
-    # 输出结果
-    for file_name, probability in zip(file_names, probabilities):
-        print(f"文件: {file_name}, 攻击概率: {probability:.4f}")
+# 预测
+probabilities = predict(model, test_dataset)
+
+# 输出每个数据的攻击交易概率
+for idx, prob in enumerate(probabilities):
+    print(f"样本 {idx + 1} 的攻击交易概率: {prob:.4f}")

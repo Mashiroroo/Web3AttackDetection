@@ -1,5 +1,6 @@
 import json
 import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
@@ -71,16 +72,15 @@ class TransactionDataset(Dataset):
 class TransformerModel(nn.Module):
     def __init__(self, input_dim, n_heads, num_classes, dim_feedforward, num_layers):
         super(TransformerModel, self).__init__()
-        self.embedding = nn.Linear(input_dim, 128)  # 输入特征嵌入
+        self.embedding = nn.Linear(input_dim, 256)  # 增加嵌入维度
         self.transformer_encoder = nn.TransformerEncoder(
-            nn.TransformerEncoderLayer(d_model=128, nhead=n_heads, dim_feedforward=dim_feedforward),
+            nn.TransformerEncoderLayer(d_model=256, nhead=n_heads, dim_feedforward=dim_feedforward),
             num_layers=num_layers
         )
-        self.fc = nn.Linear(128, num_classes)
+        self.fc = nn.Linear(256, num_classes)  # 更新全连接层的输入维度
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
-        # 增加序列维度
         x = x.unsqueeze(1)  # 形状为 [batch_size, seq_len=1, feature_dim]
         x = self.embedding(x)  # 形状为 [batch_size, seq_len=1, embedding_dim]
         x = self.transformer_encoder(x)  # [batch_size, seq_len=1, embedding_dim]
@@ -101,7 +101,7 @@ def train_model(attack_folder, non_attack_folder, batch_size, epochs):
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
     # 初始化 Transformer 模型
-    model = TransformerModel(input_dim=20000, n_heads=4, num_classes=1, dim_feedforward=256, num_layers=2).to(device)
+    model = TransformerModel(input_dim=20000, n_heads=4, num_classes=1, dim_feedforward=512, num_layers=4).to(device)
 
     criterion = nn.BCELoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=1e-5)  # 添加正则化
