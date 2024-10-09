@@ -145,7 +145,7 @@ def train_model(attack_folder, non_attack_folder, batch_size, epochs):
 batch_size = 64
 
 # 训练模型
-model, history_list = train_model('../data', '../normal_data', batch_size, epochs=50)
+model, history_list = train_model('../data', '../normal_data', batch_size, epochs=80)
 
 # 加载最佳模型
 model.load_state_dict(torch.load('best_model.pth'))
