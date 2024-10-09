@@ -1,5 +1,6 @@
 import json
 import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
@@ -68,25 +69,19 @@ class TransactionDataset(Dataset):
 
 
 # Transformer 模型构建
-class TransformerModel(nn.Module):
-    def __init__(self, input_dim, n_heads, num_classes, dim_feedforward, num_layers):
-        super(TransformerModel, self).__init__()
-        self.embedding = nn.Linear(input_dim, 128)  # 输入特征嵌入
-        self.transformer_encoder = nn.TransformerEncoder(
-            nn.TransformerEncoderLayer(d_model=128, nhead=n_heads, dim_feedforward=dim_feedforward),
-            num_layers=num_layers
-        )
-        self.fc = nn.Linear(128, num_classes)
+class SimpleModel(nn.Module):
+    def __init__(self):
+        super(SimpleModel, self).__init__()
+        self.fc1 = nn.Linear(20000, 128)  # 减少输出单元数量
+        self.dropout = nn.Dropout(0.5)  # 增加 Dropout 丢弃率
+        self.fc2 = nn.Linear(128, 1)  # 适应前一层的输出
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
-        # 增加序列维度
-        x = x.unsqueeze(1)  # 形状为 [batch_size, seq_len=1, feature_dim]
-        x = self.embedding(x)  # 形状为 [batch_size, seq_len=1, embedding_dim]
-        x = self.transformer_encoder(x)  # [batch_size, seq_len=1, embedding_dim]
-        x = x.mean(dim=1)  # 取平均，形状为 [batch_size, embedding_dim]
-        x = self.fc(x)
-        return self.sigmoid(x)
+        x = torch.relu(self.fc1(x))
+        x = self.dropout(x)
+        x = self.sigmoid(self.fc2(x))
+        return x
 
 
 # 训练模型函数
@@ -100,9 +95,7 @@ def train_model(attack_folder, non_attack_folder, batch_size, epochs):
     train_dataset = torch.utils.data.ConcatDataset([attack_dataset, non_attack_dataset])
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
-    # 初始化 Transformer 模型
-    model = TransformerModel(input_dim=20000, n_heads=4, num_classes=1, dim_feedforward=256, num_layers=2).to(device)
-
+    model = SimpleModel().to(device)
     criterion = nn.BCELoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=1e-5)  # 添加正则化
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=2, factor=0.5, verbose=True)  # 学习率调度器
