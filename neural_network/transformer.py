@@ -72,9 +72,9 @@ class TransactionDataset(Dataset):
 class SimpleModel(nn.Module):
     def __init__(self):
         super(SimpleModel, self).__init__()
-        self.fc1 = nn.Linear(20000, 64)  # 减少输出单元数量
-        self.dropout = nn.Dropout(0.6)  # 增加 Dropout 丢弃率
-        self.fc2 = nn.Linear(64, 1)  # 适应前一层的输出
+        self.fc1 = nn.Linear(20000, 128)  # 减少输出单元数量
+        self.dropout = nn.Dropout(0.5)  # 增加 Dropout 丢弃率
+        self.fc2 = nn.Linear(128, 1)  # 适应前一层的输出
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
@@ -135,10 +135,10 @@ def train_model(attack_folder, non_attack_folder, batch_size, epochs):
 
 
 # 定义数据批量大小
-batch_size = 16
+batch_size = 64
 
 # 训练模型
-model, history_list = train_model('../data', '../normal_data', batch_size, epochs=10)
+model, history_list = train_model('../data', '../normal_data', batch_size, epochs=50)
 
 # 加载最佳模型
 model.load_state_dict(torch.load('best_model.pth'))
@@ -181,7 +181,7 @@ def plot_training_curves(history_list):
     plt.legend()
     plt.tight_layout()
     plt.savefig('training_curves.png')
-    plt.show()
+    # plt.show()
 
 
 # 绘制训练过程曲线
