@@ -1,15 +1,17 @@
 import json
 import os
 import pickle
+
 import matplotlib.pyplot as plt
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics import accuracy_score, f1_score
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from torch.utils.data import DataLoader, Dataset
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, f1_score
 
 # 检查并使用GPU
 gpu_id = 1  # 根据你的需求选择ID
@@ -32,7 +34,9 @@ class TransactionDataset(Dataset):
         for filename in os.listdir(folder_path):
             if filename.endswith('.json'):
                 try:
-                    with open(os.path.join(folder_path, filename)) as f:
+                    file_path = os.path.join(folder_path, filename)
+                    file_size = os.path.getsize(file_path)  # 获取文件大小
+                    with open(file_path) as f:
                         data = json.load(f)
                         features = {
                             'balance_change': data['balance_change'].get('balanceChanges', []),
@@ -49,6 +53,7 @@ class TransactionDataset(Dataset):
                             'tidy_trace': data['trace'].get('tidyTrace', []),
                             'tidy_trace_node_count': data['trace'].get('tidyTraceNodeCount', 0),
                             'state_change': data['state_change'].get('stateChanges', []),
+                            'file_size': file_size  # 添加文件大小特征
                         }
                         self.data.append(features)
                 except Exception as e:
@@ -57,6 +62,15 @@ class TransactionDataset(Dataset):
     def vectorize(self):
         texts = [str(item) for item in self.data]
         self.vectorized_features = self.vectorizer.fit_transform(texts).toarray()
+
+        # 对文件大小进行处理
+        file_sizes = [item['file_size'] for item in self.data]
+        file_sizes = np.log1p(file_sizes)  # 对数变换，避免负数
+        file_sizes = file_sizes.reshape(-1, 1)  # 调整维度以便拼接
+
+        # 拼接向量化特征和文件大小特征
+        self.vectorized_features = np.hstack((self.vectorized_features, file_sizes))
+
         self.vectorized_features = self.scaler.fit_transform(self.vectorized_features)
 
     def save_vectorizer_and_scaler(self, vectorizer_path, scaler_path):
@@ -124,27 +138,33 @@ def train_model(attack_folder, non_attack_folder, batch_size, epochs):
     attack_dataset = TransactionDataset(attack_folder, label=1)
     non_attack_dataset = TransactionDataset(non_attack_folder, label=0)
 
-    all_data = attack_dataset.data + non_attack_dataset.data
-    vectorizer = CountVectorizer(max_features=20000)
-    scaler = StandardScaler()
+    # 向量化特征
+    attack_dataset.vectorize()
+    non_attack_dataset.vectorize()
 
-    vectorized_features = vectorizer.fit_transform([str(item) for item in all_data]).toarray()
-    vectorized_features = scaler.fit_transform(vectorized_features)
+    # 获取最终的向量化特征维度
+    input_dim = attack_dataset.vectorized_features.shape[1]
 
-    attack_len = len(attack_dataset)
-    attack_dataset.vectorized_features = vectorized_features[:attack_len]
-    non_attack_dataset.vectorized_features = vectorized_features[attack_len:]
+    # 创建标签列表
+    labels = [1] * len(attack_dataset) + [0] * len(non_attack_dataset)
 
+    # 结合数据集并进行分层抽样
+    combined_dataset = torch.utils.data.ConcatDataset([attack_dataset, non_attack_dataset])
     train_dataset, val_dataset = train_test_split(
-        torch.utils.data.ConcatDataset([attack_dataset, non_attack_dataset]),
-        test_size=0.2,
-        random_state=42
+        combined_dataset,
+        test_size=0.3,
+        random_state=42,
+        stratify=labels  # 使用分层抽样
     )
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
-    model = TransformerModel(input_dim=20000, n_heads=4, num_classes=1, dim_feedforward=512, num_layers=6).to(device)
+    # 其余代码保持不变
+
+    # 使用获取的 input_dim
+    model = TransformerModel(input_dim=input_dim, n_heads=4, num_classes=1, dim_feedforward=512, num_layers=6).to(
+        device)
 
     # 使用加权损失函数
     attack_weight = 10  # 可调整
@@ -188,23 +208,15 @@ def train_model(attack_folder, non_attack_folder, batch_size, epochs):
         val_history_list.append(average_val_loss)
         accuracy_list.append(accuracy)
         f1_list.append(f1)
-
-        # if average_val_loss < best_val_loss:
-        #     best_val_loss = average_val_loss
-        #     torch.save(model.state_dict(), 'best_model.pth')
-        #     patience_counter = 0
-        # else:
-        #     patience_counter += 1
-        #     if patience_counter >= 5:
-        #         print("Early stopping...")
-        #         break
+    torch.save(model.state_dict(), 'transformer_model.pth')
 
     with open('vectorizer.pkl', 'wb') as v_file:
-        pickle.dump(vectorizer, v_file)
+        pickle.dump(attack_dataset.vectorizer, v_file)
     with open('scaler.pkl', 'wb') as s_file:
-        pickle.dump(scaler, s_file)
+        pickle.dump(attack_dataset.scaler, s_file)
 
     return model, history_list, val_history_list, accuracy_list, f1_list
+
 
 # 可视化训练过程曲线
 def plot_training_curves(history_list, val_history_list, accuracy_list, f1_list):
@@ -246,9 +258,8 @@ non_attack_folder = '../normal_data'
 batch_size = 64
 epochs = 50
 
-model, history_list, val_history_list, accuracy_list, f1_list = train_model(attack_folder, non_attack_folder, batch_size, epochs)
+model, history_list, val_history_list, accuracy_list, f1_list = train_model(attack_folder, non_attack_folder,
+                                                                            batch_size, epochs)
 
 # 可视化训练过程曲线
 plot_training_curves(history_list, val_history_list, accuracy_list, f1_list)
-
-
