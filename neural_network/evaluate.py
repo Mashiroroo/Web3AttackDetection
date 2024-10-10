@@ -102,7 +102,7 @@ model = TransformerModel(input_dim=20000, n_heads=4, num_classes=1, dim_feedforw
 model.load_state_dict(torch.load('best_model.pth'))
 
 # 加载测试数据
-test_folder = '../normal_data'  # 修改为你要遍历的文件夹路径
+test_folder = '../test_data'  # 修改为你要遍历的文件夹路径
 test_dataset = TransactionDataset(test_folder)
 test_dataset.vectorize()  # 向量化数据
 
