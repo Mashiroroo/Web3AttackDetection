@@ -150,7 +150,7 @@ def train_model(attack_folder, non_attack_folder, batch_size, epochs):
     attack_weight = 10  # 可调整
     non_attack_weight = 1
     criterion = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([attack_weight]).to(device))
-    optimizer = optim.AdamW(model.parameters(), lr=0.00001, weight_decay=1e-5)
+    optimizer = optim.AdamW(model.parameters(), lr=5e-6, weight_decay=1e-5)
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=2, factor=0.5, verbose=True)
 
     history_list = []
